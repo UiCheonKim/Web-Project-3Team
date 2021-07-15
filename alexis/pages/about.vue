@@ -1,60 +1,57 @@
 <template>
-    <div class="about-page-wrapper">
+  <div class="about-page-wrapper">
+    <Header />
 
-        <Header />
+    <OffCanvasMobileMenu />
 
-        <OffCanvasMobileMenu />
+    <SearchPopup />
 
-        <SearchPopup />
+    <PageTitle />
 
-        <PageTitle />
+    <ServiceArea />
 
-        <ServiceArea />
+    <TeamArea />
 
-        <TeamArea />
+    <Blockquote />
 
-        <Blockquote />
+    <GalleryOne />
 
-        <GalleryOne />
+    <AwardsAchieved />
 
-        <AwardsAchieved />
+    <OurClient />
 
-        <OurClient />
+    <Footer />
 
-        <Footer />
-
-        <client-only>
-            <back-to-top class="scroll-top" bottom="30px">
-                <i class="arrow-top icofont-rounded-up"></i>
-                <i class="arrow-bottom icofont-rounded-up"></i>
-            </back-to-top>
-        </client-only>
-
-    </div>
+    <client-only>
+      <back-to-top class="scroll-top" bottom="30px">
+        <i class="arrow-top icofont-rounded-up"></i>
+        <i class="arrow-bottom icofont-rounded-up"></i>
+      </back-to-top>
+    </client-only>
+  </div>
 </template>
 
 <script>
-    export default {
-        components: {
-            Header: () => import('@/components/Header'),
-            OffCanvasMobileMenu: () => import('@/components/OffCanvasMobileMenu'),
-            SearchPopup: () => import('@/components/SearchPopup'),
-            PageTitle: () => import('@/components/PageTitle'),
-            ServiceArea: () => import('@/components/ServiceArea'),
-            TeamArea: () => import('@/components/TeamArea'),
-            Blockquote: () => import('@/components/Blockquote'),
-            GalleryOne: () => import('@/components/GalleryOne'),
-            AwardsAchieved: () => import('@/components/AwardsAchieved'),
-            OurClient: () => import('@/components/OurClient'),
-            Footer: () => import('@/components/Footer'),
-        },
+export default {
+  components: {
+    // 의천
+    Header: () => import("@/components/Header"),
+    OffCanvasMobileMenu: () => import("@/components/OffCanvasMobileMenu"),
+    SearchPopup: () => import("@/components/SearchPopup"),
+    PageTitle: () => import("@/components/PageTitle"),
+    ServiceArea: () => import("@/components/ServiceArea"),
+    TeamArea: () => import("@/components/TeamArea"),
+    Blockquote: () => import("@/components/Blockquote"),
+    GalleryOne: () => import("@/components/GalleryOne"),
+    AwardsAchieved: () => import("@/components/AwardsAchieved"),
+    OurClient: () => import("@/components/OurClient"),
+    Footer: () => import("@/components/Footer"),
+  },
 
-        head() {
-            return {
-                title: 'Aboutttttt'
-            }
-        },
+  head() {
+    return {
+      title: "Aboutttttt",
     };
+  },
+};
 </script>
-
-
