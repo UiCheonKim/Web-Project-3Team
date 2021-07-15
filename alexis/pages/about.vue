@@ -51,7 +51,7 @@
 
         head() {
             return {
-                title: 'About'
+                title: 'Aboutttttt'
             }
         },
     };

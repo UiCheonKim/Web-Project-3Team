@@ -2,50 +2,43 @@
   {
     "name": "about",
     "path": "/about",
-    "component": "C:\\\\Users\\\\HKEDU\\\\Desktop\\\\새 폴더 (4)\\\\alexis-photography-vue-nuxt-js-template-2021-04-24-07-16-19-utc\\\\alexis\\\\pages\\\\about.vue",
-    "chunkName": "pages/about",
-    "_name": "_6bf620a6"
+    "component": "C:\\\\Users\\\\HKEDU\\\\Documents\\\\GitHub\\\\Web-Project-4Team\\\\alexis\\\\pages\\\\about.vue",
+    "chunkName": "pages/about"
   },
   {
     "name": "blog",
     "path": "/blog",
-    "component": "C:\\\\Users\\\\HKEDU\\\\Desktop\\\\새 폴더 (4)\\\\alexis-photography-vue-nuxt-js-template-2021-04-24-07-16-19-utc\\\\alexis\\\\pages\\\\blog.vue",
-    "chunkName": "pages/blog",
-    "_name": "_42e077ce"
+    "component": "C:\\\\Users\\\\HKEDU\\\\Documents\\\\GitHub\\\\Web-Project-4Team\\\\alexis\\\\pages\\\\blog.vue",
+    "chunkName": "pages/blog"
   },
   {
     "name": "blog-details",
     "path": "/blog-details",
-    "component": "C:\\\\Users\\\\HKEDU\\\\Desktop\\\\새 폴더 (4)\\\\alexis-photography-vue-nuxt-js-template-2021-04-24-07-16-19-utc\\\\alexis\\\\pages\\\\blog-details.vue",
-    "chunkName": "pages/blog-details",
-    "_name": "_7856c60e"
+    "component": "C:\\\\Users\\\\HKEDU\\\\Documents\\\\GitHub\\\\Web-Project-4Team\\\\alexis\\\\pages\\\\blog-details.vue",
+    "chunkName": "pages/blog-details"
   },
   {
     "name": "contact",
     "path": "/contact",
-    "component": "C:\\\\Users\\\\HKEDU\\\\Desktop\\\\새 폴더 (4)\\\\alexis-photography-vue-nuxt-js-template-2021-04-24-07-16-19-utc\\\\alexis\\\\pages\\\\contact.vue",
-    "chunkName": "pages/contact",
-    "_name": "_496d6379"
+    "component": "C:\\\\Users\\\\HKEDU\\\\Documents\\\\GitHub\\\\Web-Project-4Team\\\\alexis\\\\pages\\\\contact.vue",
+    "chunkName": "pages/contact"
   },
   {
     "name": "portfolio",
     "path": "/portfolio",
-    "component": "C:\\\\Users\\\\HKEDU\\\\Desktop\\\\새 폴더 (4)\\\\alexis-photography-vue-nuxt-js-template-2021-04-24-07-16-19-utc\\\\alexis\\\\pages\\\\portfolio.vue",
-    "chunkName": "pages/portfolio",
-    "_name": "_d68b773e"
+    "component": "C:\\\\Users\\\\HKEDU\\\\Documents\\\\GitHub\\\\Web-Project-4Team\\\\alexis\\\\pages\\\\portfolio.vue",
+    "chunkName": "pages/portfolio"
   },
   {
     "name": "portfolio-details",
     "path": "/portfolio-details",
-    "component": "C:\\\\Users\\\\HKEDU\\\\Desktop\\\\새 폴더 (4)\\\\alexis-photography-vue-nuxt-js-template-2021-04-24-07-16-19-utc\\\\alexis\\\\pages\\\\portfolio-details.vue",
-    "chunkName": "pages/portfolio-details",
-    "_name": "_4f407e56"
+    "component": "C:\\\\Users\\\\HKEDU\\\\Documents\\\\GitHub\\\\Web-Project-4Team\\\\alexis\\\\pages\\\\portfolio-details.vue",
+    "chunkName": "pages/portfolio-details"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "C:\\\\Users\\\\HKEDU\\\\Desktop\\\\새 폴더 (4)\\\\alexis-photography-vue-nuxt-js-template-2021-04-24-07-16-19-utc\\\\alexis\\\\pages\\\\index.vue",
-    "chunkName": "pages/index",
-    "_name": "_e8a4092a"
+    "component": "C:\\\\Users\\\\HKEDU\\\\Documents\\\\GitHub\\\\Web-Project-4Team\\\\alexis\\\\pages\\\\index.vue",
+    "chunkName": "pages/index"
   }
 ]
