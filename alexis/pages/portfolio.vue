@@ -16,7 +16,6 @@
         <i class="arrow-bottom icofont-rounded-up"></i>
       </back-to-top>
     </client-only>
-    <div>feofeofeofeo</div>
   </div>
 </template>
 
