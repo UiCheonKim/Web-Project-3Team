@@ -30,6 +30,7 @@
           type="button"
           data-bs-toggle="dropdown"
           aria-expanded="false"
+          style="width: 14em"
         >
           {{ eventKinds }}
         </button>
@@ -67,6 +68,7 @@
           type="button"
           data-bs-toggle="dropdown"
           aria-expanded="false"
+          style="width: 14em"
         >
           {{ discountRanges }}
         </button>
@@ -95,9 +97,9 @@
       <label>선착순 인원:&nbsp;&nbsp; </label>
 
       <input
-        placeholder="    명"
+        placeholder="0~999명"
         style="margin: auto"
-        size="2"
+        size="17"
         type="text"
         v-model="number"
         maxlength="3"
