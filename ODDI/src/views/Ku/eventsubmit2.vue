@@ -14,7 +14,7 @@
         style="width: 60%; float:none; margin:0 auto"
       />
     </div>
-    <br />
+
     <br />
     <div class="text-center">
       <label>이벤트 종류 선택:&nbsp;</label>
@@ -63,31 +63,31 @@
           type="button"
           data-bs-toggle="dropdown"
           aria-expanded="false"
-        >
-          선택
-        </button>
+        ></button>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">10%</a></li>
+          <li>
+            <a class="dropdown-item" href="#">10%</a>
+          </li>
           <li><a class="dropdown-item" href="#">20%</a></li>
           <li><a class="dropdown-item" href="#">30%</a></li>
         </ul>
       </div>
     </div>
     <br />
-    <br />
-    <div v-if="type == 'a'">
+
+    <div v-if="type == 'a'" class="text-center">
       <label>선착순 인원:&nbsp;&nbsp; </label>
 
       <input
         placeholder="    명"
         style="margin: auto"
-        size="1"
+        size="2"
         type="text"
         v-model="number"
         maxlength="3"
       />
     </div>
-    <div v-if="type == 'b'">
+    <div v-if="type == 'b'" class="text-center">
       <label>추첨경품:&nbsp;&nbsp; </label>
       <input placeholder="입력하세요" />
     </div>
@@ -118,6 +118,7 @@
     <br />
 
     <div>
+      <!-- 이거 버튼도 가운데로 옮기고 싶은데 모르겠내욤....ㅜ -->
       <button class="btn btn-secondary" type="submit">등록</button>
     </div>
   </div>
@@ -132,6 +133,7 @@ export default {
 
       sampleData: "",
       eventKinds: "선택하세요",
+
       type: "",
       number: ""
     };
