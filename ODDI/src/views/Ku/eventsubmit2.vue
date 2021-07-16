@@ -31,12 +31,16 @@
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
-          선택
+          {{ eventKinds }}
         </button>
         <!--이거 부트스트랩인데 이게 안먹혀요,,ㅠㅠ -->
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#" @click="raffle()">추첨</a></li>
-          <li><a class="dropdown-item" href="#" @click="first()">선착순</a></li>
+          <li>
+            <a class="dropdown-item" href="#" @click="raffle()">추첨</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#" @click="first()">선착순</a>
+          </li>
         </ul>
       </div>
 
@@ -127,6 +131,7 @@ export default {
       styleInput: { border: "0.3mm dashed", padding: "8em 12em" },
 
       sampleData: "",
+      eventKinds: "선택하세요",
       type: "",
       number: ""
     };
@@ -142,9 +147,11 @@ export default {
   unmounted() {},
   methods: {
     raffle() {
+      this.eventKinds = "추첨";
       this.type = "a";
     },
     first() {
+      this.eventKinds = "선착순";
       this.type = "b";
     }
   }
