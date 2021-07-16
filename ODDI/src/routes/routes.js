@@ -3,7 +3,10 @@ import AuthLayout from "@/views/Pages/AuthLayout.vue";
 
 import NotFound from "@/views/NotFoundPage.vue";
 import KimTest from "@/views/Kim/KimTest.vue";
+// 구자영
 import KuTest from "@/views/Ku/KuTest.vue";
+import eventsubmit from "@/views/Ku/eventsubmit.vue";
+import eventsubmit2 from "@/views/Ku/eventsubmit2.vue";
 import SongTest from "@/views/Song/SongTest.vue";
 import DoTest from "@/views/Do/DoTest.vue";
 
@@ -58,10 +61,21 @@ const routes = [
         name: "KimTest",
         component: KimTest
       },
+      // 구자영
       {
         path: "/KuTest",
         name: "KuTest",
         component: KuTest
+      },
+      {
+        path: "/eventsubmit",
+        name: "eventsubmit",
+        component: eventsubmit
+      },
+      {
+        path: "/eventsubmit2",
+        name: "eventsubmit2",
+        component: eventsubmit2
       },
       {
         path: "/SongTest",
