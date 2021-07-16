@@ -2,6 +2,10 @@ import DashboardLayout from "@/views/Layout/DashboardLayout.vue";
 import AuthLayout from "@/views/Pages/AuthLayout.vue";
 
 import NotFound from "@/views/NotFoundPage.vue";
+import KimTest from "@/views/Kim/KimTest.vue";
+import KuTest from "@/views/Ku/KuTest.vue";
+import SongTest from "@/views/Song/SongTest.vue";
+import DoTest from "@/views/Do/DoTest.vue";
 
 const routes = [
   {
@@ -47,26 +51,22 @@ const routes = [
       {
         path: "/DoTest",
         name: "DoTest",
-        component: () =>
-          import(/* webpackChunkName: "demo" */ "../views/Do/DoTest.vue")
+        component: DoTest
       },
       {
         path: "/KimTest",
         name: "KimTest",
-        component: () =>
-          import(/* webpackChunkName: "demo" */ "../views/Kim/KimTest.vue")
+        component: KimTest
       },
       {
         path: "/KuTest",
         name: "KuTest",
-        component: () =>
-          import(/* webpackChunkName: "demo" */ "../views/Ku/KuTest.vue")
+        component: KuTest
       },
       {
         path: "/SongTest",
         name: "SongTest",
-        component: () =>
-          import(/* webpackChunkName: "demo" */ "../views/Song/SongTest.vue")
+        component: SongTest
       }
     ]
   },
