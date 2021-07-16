@@ -36,10 +36,14 @@
         <!--이거 부트스트랩인데 이게 안먹혀요,,ㅠㅠ -->
         <ul class="dropdown-menu">
           <li>
-            <a class="dropdown-item" href="#" @click="raffle()">추첨</a>
+            <a class="dropdown-item" href="#" @click="eventselectclick()"
+              >추첨</a
+            >
           </li>
           <li>
-            <a class="dropdown-item" href="#" @click="first()">선착순</a>
+            <a class="dropdown-item" href="#" @click="eventselectclick()"
+              >선착순</a
+            >
           </li>
         </ul>
       </div>
@@ -63,13 +67,25 @@
           type="button"
           data-bs-toggle="dropdown"
           aria-expanded="false"
-        ></button>
+        >
+          {{ discountRanges }}
+        </button>
         <ul class="dropdown-menu">
           <li>
-            <a class="dropdown-item" href="#">10%</a>
+            <a class="dropdown-item" href="#" @click="discountrangetclick(10)"
+              >10%</a
+            >
           </li>
-          <li><a class="dropdown-item" href="#">20%</a></li>
-          <li><a class="dropdown-item" href="#">30%</a></li>
+          <li>
+            <a class="dropdown-item" href="#" @click="discountrangetclick(20)"
+              >20%</a
+            >
+          </li>
+          <li>
+            <a class="dropdown-item" href="#" @click="discountrangetclick(30)"
+              >30%</a
+            >
+          </li>
         </ul>
       </div>
     </div>
@@ -117,7 +133,7 @@
     <br />
     <br />
 
-    <div>
+    <div style="text-align:center">
       <!-- 이거 버튼도 가운데로 옮기고 싶은데 모르겠내욤....ㅜ -->
       <button class="btn btn-secondary" type="submit">등록</button>
     </div>
@@ -132,7 +148,8 @@ export default {
       styleInput: { border: "0.3mm dashed", padding: "8em 12em" },
 
       sampleData: "",
-      eventKinds: "선택하세요",
+      eventKinds: "이벤트를 선택하세요",
+      discountRanges: "할인율을 선택하세요",
 
       type: "",
       number: ""
@@ -148,13 +165,21 @@ export default {
   mounted() {},
   unmounted() {},
   methods: {
-    raffle() {
-      this.eventKinds = "추첨";
-      this.type = "a";
+    eventselectclick() {
+      if (this.eventKinds == "추첨") {
+        this.eventKinds = "선착순";
+        this.type = "a";
+      } else {
+        this.eventKinds = "추첨";
+        this.type = "b";
+      }
     },
-    first() {
-      this.eventKinds = "선착순";
-      this.type = "b";
+    discountrangetclick(range) {
+      range == "10"
+        ? (this.discountRanges = "10%")
+        : range == "20"
+        ? (this.discountRanges = "20%")
+        : (this.discountRanges = "30%");
     }
   }
 };
