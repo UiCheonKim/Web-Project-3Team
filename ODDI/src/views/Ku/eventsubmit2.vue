@@ -34,17 +34,13 @@
         >
           {{ eventKinds }}
         </button>
-        <!--이거 부트스트랩인데 이게 안먹혀요,,ㅠㅠ -->
+
         <ul class="dropdown-menu">
           <li>
-            <a class="dropdown-item" href="#" @click="eventselectclick()"
-              >추첨</a
-            >
+            <a class="dropdown-item" href="#" @click="raffle()">추첨</a>
           </li>
           <li>
-            <a class="dropdown-item" href="#" @click="eventselectclick()"
-              >선착순</a
-            >
+            <a class="dropdown-item" href="#" @click="first()">선착순</a>
           </li>
         </ul>
       </div>
@@ -86,6 +82,16 @@
           <li>
             <a class="dropdown-item" href="#" @click="discountrangetclick(30)"
               >30%</a
+            >
+          </li>
+          <li>
+            <a class="dropdown-item" href="#" @click="discountrangetclick(40)"
+              >40%</a
+            >
+          </li>
+          <li>
+            <a class="dropdown-item" href="#" @click="discountrangetclick(50)"
+              >50%</a
             >
           </li>
         </ul>
@@ -136,7 +142,6 @@
     <br />
 
     <div style="text-align:center">
-      <!-- 이거 버튼도 가운데로 옮기고 싶은데 모르겠내욤....ㅜ -->
       <button class="btn btn-secondary" type="submit">등록</button>
     </div>
   </div>
@@ -167,21 +172,25 @@ export default {
   mounted() {},
   unmounted() {},
   methods: {
-    eventselectclick() {
-      if (this.eventKinds == "추첨") {
-        this.eventKinds = "선착순";
-        this.type = "a";
-      } else {
-        this.eventKinds = "추첨";
-        this.type = "b";
-      }
+    raffle() {
+      this.eventKinds = "선착순";
+      this.type = "a";
     },
+    first() {
+      this.eventKinds = "추첨";
+      this.type = "b";
+    },
+
     discountrangetclick(range) {
       range == "10"
         ? (this.discountRanges = "10%")
         : range == "20"
         ? (this.discountRanges = "20%")
-        : (this.discountRanges = "30%");
+        : range == "30"
+        ? (this.discountRanges = "30%")
+        : range == "40"
+        ? (this.discountRanges = "40%")
+        : (this.discountRanges = "50%");
     }
   }
 };
