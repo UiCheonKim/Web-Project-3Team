@@ -14,18 +14,20 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import Vue from 'vue';
-import DashboardPlugin from './plugins/dashboard-plugin';
-import App from './App.vue';
+import Vue from "vue";
+import DashboardPlugin from "./plugins/dashboard-plugin";
+import App from "./App.vue";
+import mixins from "./mixins";
 
 // router setup
-import router from './routes/router';
+import router from "./routes/router";
 // plugin setup
 Vue.use(DashboardPlugin);
+Vue.mixin(mixins);
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
+  el: "#app",
   render: h => h(App),
   router
 });
