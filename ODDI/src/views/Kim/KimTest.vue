@@ -17,8 +17,15 @@
         OOO 님 오늘 하루는 이상하고 특별하며 재밌는 날이 되십시오.
       </p>
     </base-header>
+    <!-- 메인 시작 -->
+    <!-- b-card => 배경 화면 -->
     <b-card class="border-0">
-      메인 시작
+      <table style="width:100%">
+        <tr>
+          <td>지도 들어가는 칸</td>
+          <td>리스트</td>
+        </tr>
+      </table>
     </b-card>
   </div>
 </template>
@@ -41,5 +48,9 @@ export default {
 <style scoped>
 .welcome {
   font-family: "Jua", sans-serif;
+}
+table tr,
+td {
+  border: 1px solid black;
 }
 </style>
