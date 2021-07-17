@@ -17,7 +17,9 @@
         OOO 님 오늘 하루는 이상하고 특별하고 재밌는 날이 되십시오.
       </p>
     </base-header>
-    <div></div>
+    <b-card class="border-0">
+      메인 시작
+    </b-card>
   </div>
 </template>
 <script>
