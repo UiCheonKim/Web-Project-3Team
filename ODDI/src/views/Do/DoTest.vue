@@ -2,22 +2,8 @@
   <div>
     <base-header class="pb-6 pb-8 pt-5 pt-md-8 bg-gradient-success">
       <!-- Card stats -->
-      <b-row>
-        <b-col>
-          <stats-card
-            title="Total traffic"
-            type="gradient-red"
-            sub-title="350,897"
-            icon="ni ni-active-40"
-            class="mb-4"
-          >
-            <template slot="footer">
-              <span class="text-success mr-2">3.48%</span>
-              <span class="text-nowrap">Since last month</span>
-            </template>
-          </stats-card>
-        </b-col>
-        <b-col xl="3" md="6">
+      <!-- <b-row>
+        <b-col xl="9" md="6">
           <stats-card
             title="Total traffic"
             type="gradient-orange"
@@ -45,32 +31,19 @@
             </template>
           </stats-card>
         </b-col>
-        <b-col xl="3" md="6">
-          <stats-card
-            title="Performance"
-            type="gradient-info"
-            sub-title="49,65%"
-            icon="ni ni-chart-bar-32"
-            class="mb-4"
-          >
-            <template slot="footer">
-              <span class="text-success mr-2">54.8%</span>
-              <span class="text-nowrap">Since last month</span>
-            </template>
-          </stats-card>
-        </b-col>
-      </b-row>
+      </b-row> -->
     </base-header>
 
     <!-- 이벤트 리스트 테이블 입니다 -->
     <b-card class="border-0">
       <b-card-header class="border-0">
-        <h3 class="mb-0">Dark table</h3>
+        <h3 class="mb-0">이벤트 리스트</h3>
       </b-card-header>
 
       <b-table
         hover
         sticky-header
+        responsive
         :items="eventList"
         :fields="fields"
         id="my-table"
