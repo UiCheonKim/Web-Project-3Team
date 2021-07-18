@@ -16,7 +16,7 @@
       <!-- <div class="container-sm">
         OOO 님 오늘 하루는 이상하고 특별하며 재밌는 날이 되십시오.
       </div> -->
-      <p style="font-size:1em; font-weight:bold width:70%">
+      <p style="font-size:1em; font-weight:bold; width:80%">
         OOO 님 오늘 하루는 이상하고 특별하며 재밌는 날이 되십시오.
       </p>
     </base-header>
