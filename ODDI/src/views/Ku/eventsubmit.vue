@@ -1,6 +1,13 @@
 <template>
   <div>
-    <h3 class="float-start">&nbsp;&nbsp;이벤트 등록</h3>
+    <base-header class="pb-6 pb-8 pt-5 pt-md-8 bg-gradient-success">
+    </base-header>
+    <br />
+
+    <br />
+
+    <h3 class="float-start" style="padding:1px 50px">이벤트 등록</h3>
+
     <br />
     <br />
     <br />
