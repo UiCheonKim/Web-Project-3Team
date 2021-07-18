@@ -140,6 +140,6 @@ export default {
 <style>
 .setprofile {
   display: inline;
-  padding-bottom: 3em;
+  padding-bottom: 1em;
 }
 </style>
