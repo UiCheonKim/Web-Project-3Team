@@ -1,12 +1,15 @@
 <template>
+  <!-- base-nav를 없애면 아예 새로운 창으로 위로 간다 -->
+  <!-- <div style="padding-bottom:0.3em"> -->
   <base-nav
     container-classes="container-fluid"
-    class="navbar-top navbar-expand"
+    class="navbar-top navbar-expand setprofile"
     :class="{ 'navbar-dark': type === 'default' }"
   >
     <!-- 좌측 상단에 메뉴 이름 나오기 했던 기능입니다. -->
     <!-- <a href="#" aria-current="page" class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block active router-link-active"> {{$route.name}} </a> -->
     <!-- Navbar links -->
+    <!-- 요건 오른쪽 끝으로 가게 만든다 -->
     <b-navbar-nav class="align-items-center ml-md-auto">
       <!-- This item dont have <b-nav-item> because item have data-action/data-target on tag <a>, wich we cant add -->
       <!-- <li class="nav-item d-sm-none">
@@ -17,20 +20,31 @@
     </b-navbar-nav>
 
     <!-- 우측상단에 검색기능있던 것입니다. -->
-    <b-navbar-nav class="align-items-center ml-auto ml-md-0">
-      <!-- <b-form class="navbar-search form-inline mr-sm-3"
-            :class="{'navbar-search-dark': type === 'default', 'navbar-search-light': type === 'light'}"
-            id="navbar-search-main"> -->
-      <!-- <b-form-group class="mb-0">
+    <!-- <b-navbar-nav class="align-items-center ml-auto ml-md-0">
+      <b-form
+        class="navbar-search form-inline mr-sm-3"
+        :class="{
+          'navbar-search-dark': type === 'default',
+          'navbar-search-light': type === 'light'
+        }"
+        id="navbar-search-main"
+      >
+        <b-form-group class="mb-0">
           <b-input-group class="input-group-alternative input-group-merge">
-            <b-form-input placeholder="Search" type="text"> </b-form-input> -->
+            <b-form-input placeholder="Search" type="text"> </b-form-input>
 
-      <!-- <div class="input-group-append">
-              <span class="input-group-text"><i class="fas fa-search"></i></span>
-            </div> -->
-      <!-- </b-input-group>
-        </b-form-group> -->
-      <!-- </b-form> -->
+            <div class="input-group-append">
+              <span class="input-group-text"
+                ><i class="fas fa-search"></i
+              ></span>
+            </div>
+          </b-input-group>
+        </b-form-group>
+      </b-form> -->
+
+    <!-- 똑같은거 -->
+    <!-- 요건 하얀색으로 만든다 -->
+    <b-navbar-nav class="align-items-center ml-auto ml-md-0">
       <base-dropdown
         menu-on-right
         class="nav-item"
@@ -39,12 +53,21 @@
         title-classes="nav-link pr-0"
       >
         <a href="#" class="nav-link pr-0" @click.prevent slot="title-container">
-          <b-media no-body class="align-items-center">
-            <span class="avatar avatar-sm rounded-circle">
+          <b-media
+            no-body
+            class="align-items-center"
+            style="padding-right:3.3em; "
+          >
+            <span
+              class="avatar avatar-sm rounded-circle"
+              style="padding-bottom:1.7em"
+            >
               <img alt="Image placeholder" src="img/theme/team-4.jpg" />
             </span>
             <b-media-body class="ml-2 d-none d-lg-block">
-              <span class="mb-0 text-sm  font-weight-bold">John Snow</span>
+              <span class="mb-1 text-sm font-weight-bold">John Snow</span>
+              <br />
+              <br />
             </b-media-body>
           </b-media>
         </a>
@@ -57,18 +80,7 @@
             <i class="ni ni-single-02"></i>
             <span>My profile</span>
           </b-dropdown-item>
-          <b-dropdown-item href="#!">
-            <i class="ni ni-settings-gear-65"></i>
-            <span>Settings</span>
-          </b-dropdown-item>
-          <b-dropdown-item href="#!">
-            <i class="ni ni-calendar-grid-58"></i>
-            <span>Activity</span>
-          </b-dropdown-item>
-          <b-dropdown-item href="#!">
-            <i class="ni ni-support-16"></i>
-            <span>Support</span>
-          </b-dropdown-item>
+
           <div class="dropdown-divider"></div>
           <b-dropdown-item href="#!">
             <i class="ni ni-user-run"></i>
@@ -78,6 +90,7 @@
       </base-dropdown>
     </b-navbar-nav>
   </base-nav>
+  <!-- </div> -->
 </template>
 <script>
 import { CollapseTransition } from "vue2-transitions";
@@ -124,3 +137,9 @@ export default {
   }
 };
 </script>
+<style>
+.setprofile {
+  display: inline;
+  padding-bottom: 1em;
+}
+</style>
