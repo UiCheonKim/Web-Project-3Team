@@ -9,16 +9,19 @@
           0-9까지만 가능
           class="pb-6 pb-6 pt-5 pt-md-2 bg-gradient-success"
     -->
-    <base-header
-      class="pt-md-3 pb-2 bg-gradient-success"
+    <base-header class="pb-6 pb-8 pt-5 pt-md-8 bg-gradient-success">
+      <!-- <base-header
+      class="pt-md-7 pb-2 bg-gradient-success"
       style="text-align:center"
-    >
+    > -->
       <p style="font-size:1em; font-weight:bold">
         OOO 님 오늘 하루는 이상하고 특별하며 재밌는 날이 되십시오.
       </p>
     </base-header>
+
     <b-card class="border-0">
-      <div class="container" style="margin-top:1em">
+      <!-- margin-top:1em -->
+      <div class="container" style="">
         <div class="row">
           <div class="col-12 col-sm-12 col-lg-12 col-xl-7">
             <!-- <div id="map" class="map"></div> -->
