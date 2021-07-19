@@ -9,341 +9,247 @@
           0-9까지만 가능
           class="pb-6 pb-6 pt-5 pt-md-2 bg-gradient-success"
     -->
-    <base-header class="pb-6 pb-8 pt-5 pt-md-8 bg-gradient-success">
+    <base-header class="pb-9 pb-8 pt-5 pt-md-4 bg-gradient-success">
       <!-- <base-header
       class="pt-md-7 pb-2 bg-gradient-success"
       style="text-align:center"
     > -->
-      <p style="font-size:1em; font-weight:bold">
-        OOO 님 오늘 하루는 이상하고 특별하며 재밌는 날이 되십시오.
-      </p>
+      <div class="a">
+        <h1>OOO 님 어서오세요.</h1>
+      </div>
+      <div class="b">
+        <h1>티켓</h1>
+      </div>
+      <!-- <p style="font-size:1em; font-weight:bold">
+        OOO 님 어서오세요. 오늘은 특별한 하루가 되어 보시겠습니까?
+      </p> -->
     </base-header>
 
-    <b-card class="border-0">
-      <!-- margin-top:1em -->
-      <div class="container" style="">
-        <div class="row">
-          <div class="col-12 col-sm-12 col-lg-12 col-xl-7">
-            <!-- <div id="map" class="map"></div> -->
-            <div id="mapwrap">
-              <!-- 지도가 표시될 div -->
-              <div id="map" class="map"></div>
-              <!-- 지도 위에 표시될 마커 카테고리 -->
-              <div class="category">
-                <ul>
-                  <li id="coffeeMenu" v-on:click="changeMarker(1)">
-                    <span class="ico_comm ico_coffee"></span>
-                    커피숍
-                  </li>
-                  <li id="storeMenu" v-on:click="changeMarker(2)">
-                    <span class="ico_comm ico_store"></span>
-                    편의점
-                  </li>
-                  <li id="carparkMenu" v-on:click="changeMarker('carpark')">
-                    <span class="ico_comm ico_carpark"></span>
-                    주차장
-                  </li>
+    <!-- 디자인 참고 -->
+    <!-- <b-container fluid class="mt--6">
+      <b-row>
+        <div>
+          <b-col xl="7" class="mb-5 mb-xl-0">
+            <card type="default" header-classes="bg-transparent">
+              <b-row align-v="center" slot="header">
+                asdfasdfdsaasfasfasdfsfasfafdfdsf
+              </b-row>
+            </card>
+          </b-col>
+        </div>
+      </b-row>
+    </b-container> -->
+
+    <b-container fluid class="mt--8">
+      <b-card class="border-0">
+        <!-- margin-top:1em -->
+        <div class="container" style="">
+          <div class="row">
+            <div class="col-12 col-sm-12 col-lg-12 col-xl-7">
+              <!-- <div id="map" class="map"></div> -->
+              <div id="mapwrap">
+                <!-- 지도가 표시될 div -->
+                <div id="map" class="map"></div>
+                <!-- 지도 위에 표시될 마커 카테고리 -->
+                <div class="category">
+                  <ul>
+                    <li id="coffeeMenu" v-on:click="changeMarker(1)">
+                      <span class="ico_comm ico_coffee"></span>
+                      커피숍
+                    </li>
+                    <li id="storeMenu" v-on:click="changeMarker(2)">
+                      <span class="ico_comm ico_store"></span>
+                      편의점
+                    </li>
+                    <li id="carparkMenu" v-on:click="changeMarker('carpark')">
+                      <span class="ico_comm ico_carpark"></span>
+                      주차장
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div
+                style="background-color: black; margin-top:1em; padding-left:1em; padding:1em 1em"
+                class="edgeradius"
+              >
+                <table>
+                  <tr>
+                    <td>이벤트유형 :</td>
+                    <td>선착순</td>
+                  </tr>
+                  <tr>
+                    <td>이벤트명 :</td>
+                    <td>구씨성을 가진 3명</td>
+                  </tr>
+                  <tr>
+                    <td>할인율 :</td>
+                    <td>50%</td>
+                  </tr>
+                  <tr>
+                    <td>선착순 :</td>
+                    <td>1 / 3 명</td>
+                  </tr>
+                  <tr>
+                    <td>가게업종 :</td>
+                    <td>음식점</td>
+                  </tr>
+                  <tr>
+                    <td>가게명 :</td>
+                    <td>샤브샤브 양평역점</td>
+                  </tr>
+                  <tr>
+                    <td>전화번호 :</td>
+                    <td>010-0000-0000</td>
+                  </tr>
+                  <tr>
+                    <td>주소 :</td>
+                    <td>양평역 2번출구</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <!-- 두번째 행 -->
+            <!-- 첫번째 drops down -->
+            <div class="col">
+              <div class="btn-group" style="padding-right:1em;">
+                <button
+                  class="btn btn-secondary btn-sm dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  style="width: 10em;"
+                >
+                  이름 정렬
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">오름차순</a></li>
+                  <li><a class="dropdown-item" href="#">내림차순</a></li>
                 </ul>
               </div>
-            </div>
-            <div
-              style="background-color: black; margin-top:1em; padding-left:1em; padding:1em 1em"
-              class="edgeradius"
-            >
-              <table>
-                <tr>
-                  <td>이벤트유형 :</td>
-                  <td>선착순</td>
-                </tr>
-                <tr>
-                  <td>이벤트명 :</td>
-                  <td>구씨성을 가진 3명</td>
-                </tr>
-                <tr>
-                  <td>할인율 :</td>
-                  <td>50%</td>
-                </tr>
-                <tr>
-                  <td>선착순 :</td>
-                  <td>1 / 3 명</td>
-                </tr>
-                <tr>
-                  <td>가게업종 :</td>
-                  <td>음식점</td>
-                </tr>
-                <tr>
-                  <td>가게명 :</td>
-                  <td>샤브샤브 양평역점</td>
-                </tr>
-                <tr>
-                  <td>전화번호 :</td>
-                  <td>010-0000-0000</td>
-                </tr>
-                <tr>
-                  <td>주소 :</td>
-                  <td>양평역 2번출구</td>
-                </tr>
-              </table>
-            </div>
-          </div>
-          <!-- 두번째 행 -->
-          <!-- 첫번째 drops down -->
-          <div class="col">
-            <div class="btn-group" style="padding-right:1em;">
-              <button
-                class="btn btn-secondary btn-sm dropdown-toggle"
-                type="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                style="width: 10em;"
+              <!-- 두번째 drops down -->
+              <div class="btn-group">
+                <button
+                  class="btn btn-secondary btn-sm dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  style="width: 10em"
+                >
+                  이벤트 정렬
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">추천순</a></li>
+                  <li><a class="dropdown-item" href="#">선착순</a></li>
+                </ul>
+              </div>
+              <br />
+              <br />
+              <div
+                style="overflow-y:scroll; width:100%; height:38em; background-color: black"
+                class="edgeradius"
               >
-                이름 정렬
-              </button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">오름차순</a></li>
-                <li><a class="dropdown-item" href="#">내림차순</a></li>
-              </ul>
-            </div>
-            <!-- 두번째 drops down -->
-            <div class="btn-group">
-              <button
-                class="btn btn-secondary btn-sm dropdown-toggle"
-                type="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                style="width: 10em"
-              >
-                이벤트 정렬
-              </button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">추천순</a></li>
-                <li><a class="dropdown-item" href="#">선착순</a></li>
-              </ul>
-            </div>
-            <br />
-            <br />
-            <div style="overflow-y:scroll; width:100%; height:38em;">
-              <div class="mouseimage">
-                <img
-                  src="img/listimage/cogi.jpg"
-                  style="width:6em; height:6em"
-                />
-                한경 샤브샤브 양평역점
+                <div class="mouseimage">
+                  <img
+                    src="img/listimage/cogi.jpg"
+                    style="width:6em; height:6em"
+                  />
+                  한경 샤브샤브 양평역점
+                </div>
               </div>
             </div>
-          </div>
-          <!-- 선 나누기 -->
-          <div class="row">
-            <div class=" col-12 col-sm-12 col-lg-12 col-xl-12">
-              <br />
-              <div style="border-top: solid 2px black; margin-top:1em"></div>
-            </div>
-          </div>
-          <!-- 새로운 div 시작 -->
-          <div
-            class="col-12 col-sm-12 col-lg-12 col-xl-7"
-            style="margin-top:3em"
-          >
-            <!-- border:1px solid black  -->
-            <div style="text-align:center; ">
-              <img
-                src="img/listimage/cogi.jpg"
-                style="width:auto; height:30em;"
-                class="edgeradius"
-              />
-            </div>
+            <!-- 선 나누기 -->
+            <!-- <div class="row">
+              <div class=" col-12 col-sm-12 col-lg-12 col-xl-12">
+                <br />
+                <div style="border-top: solid 2px black; margin-top:1em"></div>
+              </div>
+            </div> -->
+            <!-- 새로운 div 시작 -->
             <div
-              style="background-color: black; margin-top:1em; padding-left:1em; padding:1em 1em"
-              class="edgeradius"
+              class="col-12 col-sm-12 col-lg-12 col-xl-7"
+              style="margin-top:3em"
             >
-              <table>
-                <tr>
-                  <td>이벤트유형 :</td>
-                  <td>선착순</td>
-                </tr>
-                <tr>
-                  <td>이벤트명 :</td>
-                  <td>구씨성을 가진 3명</td>
-                </tr>
-                <tr>
-                  <td>할인율 :</td>
-                  <td>50%</td>
-                </tr>
-                <tr>
-                  <td>선착순 :</td>
-                  <td>1 / 3 명</td>
-                </tr>
-                <tr>
-                  <td>가게업종 :</td>
-                  <td>음식점</td>
-                </tr>
-                <tr>
-                  <td>가게명 :</td>
-                  <td>샤브샤브 양평역점</td>
-                </tr>
-                <tr>
-                  <td>전화번호 :</td>
-                  <td>010-0000-0000</td>
-                </tr>
-                <tr>
-                  <td>주소 :</td>
-                  <td>양평역 2번출구</td>
-                </tr>
-              </table>
-            </div>
-          </div>
-          <!-- 옆에 리스트 -->
-          <div class="col">
-            <!-- 첫번째 drops down -->
-            <div class="btn-group" style="margin-top:3em;">
-              <button
-                class="btn btn-secondary btn-sm dropdown-toggle"
-                type="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                style="width: 10em;"
+              <!-- border:1px solid black  -->
+              <div style="text-align:center; ">
+                <img
+                  src="img/listimage/cogi.jpg"
+                  style="width:40em; height:28em;"
+                  class="edgeradius"
+                />
+              </div>
+              <div
+                style="background-color: black; margin-top:1em; padding-left:1em; padding:1em 1em"
+                class="edgeradius"
               >
-                가게업종
-              </button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">음식점</a></li>
-                <li><a class="dropdown-item" href="#">의류매장</a></li>
-              </ul>
+                <table>
+                  <tr>
+                    <td>이벤트유형 :</td>
+                    <td>선착순</td>
+                  </tr>
+                  <tr>
+                    <td>이벤트명 :</td>
+                    <td>구씨성을 가진 3명</td>
+                  </tr>
+                  <tr>
+                    <td>할인율 :</td>
+                    <td>50%</td>
+                  </tr>
+                  <tr>
+                    <td>선착순 :</td>
+                    <td>1 / 3 명</td>
+                  </tr>
+                  <tr>
+                    <td>가게업종 :</td>
+                    <td>음식점</td>
+                  </tr>
+                  <tr>
+                    <td>가게명 :</td>
+                    <td>샤브샤브 양평역점</td>
+                  </tr>
+                  <tr>
+                    <td>전화번호 :</td>
+                    <td>010-0000-0000</td>
+                  </tr>
+                  <tr>
+                    <td>주소 :</td>
+                    <td>양평역 2번출구</td>
+                  </tr>
+                </table>
+              </div>
             </div>
-            <br />
-            <br />
-            <!-- overflow-y:scroll; -->
-            <div style="overflow-y:scroll; width:100%; height:43em;">
-              <img
-                src="img/listimage/cogi.jpg"
-                style="width:6em; height:6em; overflow:visible"
-                class="edgeradius mouseimage"
-              />
-              <img
-                src="img/listimage/cogi.jpg"
-                style="width:6em; height:6em; overflow:visible"
-                class="edgeradius mouseimage"
-              />
-              <img
-                src="img/listimage/cogi.jpg"
-                style="width:6em; height:6em; overflow:visible"
-                class="edgeradius mouseimage"
-              />
-              <img
-                src="img/listimage/cogi.jpg"
-                style="width:6em; height:6em; overflow:visible"
-                class="edgeradius mouseimage"
-              />
-              <img
-                src="img/listimage/cogi.jpg"
-                style="width:6em; height:6em; overflow:visible"
-                class="edgeradius mouseimage"
-              />
-              <img
-                src="img/listimage/cogi.jpg"
-                style="width:6em; height:6em; overflow:visible"
-                class="edgeradius mouseimage"
-              />
-              <img
-                src="img/listimage/cogi.jpg"
-                style="width:6em; height:6em; overflow:visible"
-                class="edgeradius mouseimage"
-              />
-              <img
-                src="img/listimage/cogi.jpg"
-                style="width:6em; height:6em; overflow:visible"
-                class="edgeradius mouseimage"
-              />
-              <img
-                src="img/listimage/cogi.jpg"
-                style="width:6em; height:6em; overflow:visible"
-                class="edgeradius mouseimage"
-              />
-              <img
-                src="img/listimage/cogi.jpg"
-                style="width:6em; height:6em; overflow:visible"
-                class="edgeradius mouseimage"
-              />
-              <img
-                src="img/listimage/cogi.jpg"
-                style="width:6em; height:6em; overflow:visible"
-                class="edgeradius mouseimage"
-              />
-              <img
-                src="img/listimage/cogi.jpg"
-                style="width:6em; height:6em; overflow:visible"
-                class="edgeradius mouseimage"
-              />
-              <img
-                src="img/listimage/cogi.jpg"
-                style="width:6em; height:6em; overflow:visible"
-                class="edgeradius mouseimage"
-              />
-              <img
-                src="img/listimage/cogi.jpg"
-                style="width:6em; height:6em; overflow:visible"
-                class="edgeradius mouseimage"
-              />
-              <img
-                src="img/listimage/cogi.jpg"
-                style="width:6em; height:6em; overflow:visible"
-                class="edgeradius mouseimage"
-              />
-              <img
-                src="img/listimage/cogi.jpg"
-                style="width:6em; height:6em; overflow:visible"
-                class="edgeradius mouseimage"
-              />
-              <img
-                src="img/listimage/cogi.jpg"
-                style="width:6em; height:6em; overflow:visible"
-                class="edgeradius mouseimage"
-              />
-              <img
-                src="img/listimage/cogi.jpg"
-                style="width:6em; height:6em; overflow:visible"
-                class="edgeradius mouseimage"
-              />
-              <img
-                src="img/listimage/cogi.jpg"
-                style="width:6em; height:6em; overflow:visible"
-                class="edgeradius mouseimage"
-              />
-              <img
-                src="img/listimage/cogi.jpg"
-                style="width:6em; height:6em; overflow:visible"
-                class="edgeradius mouseimage"
-              />
-              <img
-                src="img/listimage/cogi.jpg"
-                style="width:6em; height:6em; overflow:visible"
-                class="edgeradius mouseimage"
-              />
-              <img
-                src="img/listimage/cogi.jpg"
-                style="width:6em; height:6em; overflow:visible"
-                class="edgeradius mouseimage"
-              />
-              <img
-                src="img/listimage/cogi.jpg"
-                style="width:6em; height:6em; overflow:visible"
-                class="edgeradius mouseimage"
-              />
-              <img
-                src="img/listimage/cogi.jpg"
-                style="width:6em; height:6em; overflow:visible"
-                class="edgeradius mouseimage"
-              />
-              <img
-                src="img/listimage/cogi.jpg"
-                style="width:6em; height:6em; overflow:visible"
-                class="edgeradius mouseimage"
-              />
+            <!-- 옆에 리스트 -->
+            <div class="col">
+              <!-- 첫번째 drops down -->
+              <div class="btn-group" style="margin-top:3em;">
+                <button
+                  class="btn btn-secondary btn-sm dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  style="width: 10em;"
+                >
+                  가게업종
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">음식점</a></li>
+                  <li><a class="dropdown-item" href="#">의류매장</a></li>
+                </ul>
+              </div>
+              <br />
+              <br />
+              <!-- overflow-y:scroll; -->
+              <div style="overflow-y:scroll; width:100%; height:43em;">
+                <img
+                  src="img/listimage/cogi.jpg"
+                  style="width:6em; height:6em; overflow:visible"
+                  class="edgeradius mouseimage"
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </b-card>
+      </b-card>
+    </b-container>
   </div>
 </template>
 <script>
@@ -686,5 +592,27 @@ export default {
 }
 .category .ico_carpark {
   background-position: -10px -72px; /* 아이콘 이동 마이너스이므로 커질수록 왼쪽으로 간다 */
+}
+.a {
+  width: 600px;
+  padding: 2em 0em;
+  margin-bottom: 10em;
+  border: 1px solid #212121;
+  background-color: #212121;
+  text-align: center;
+  color: #ffffff;
+}
+.b {
+  position: fixed;
+  top: 3em;
+  left: 33em;
+  width: 600px;
+  padding: 50px 0px;
+  padding-bottom: 13em;
+  border: 1px solid #ff9800;
+  background-color: #ff9800;
+  text-align: center;
+  color: #ffffff;
+  opacity: 0.7;
 }
 </style>
