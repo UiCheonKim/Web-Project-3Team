@@ -44,8 +44,9 @@
           </li>
         </ul>
       </div>
-
-      <label>&nbsp;&nbsp;&nbsp;&nbsp;할인범위:&nbsp; </label>
+      <br />
+      <br />
+      <label>&nbsp;&nbsp;할인범위:&nbsp; </label>
       <!-- <select>
         <option selected>선택</option>
         <option value="0.1">10%</option>
