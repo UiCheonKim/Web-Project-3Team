@@ -16,7 +16,7 @@
       <input
         placeholder="입력해주세요"
         v-model="put"
-        style="width: 60%; float:none; margin:0 auto"
+        style="border:1px solid #ced4da;width: 60%; float:none; margin:0 auto"
       />
     </div>
 
@@ -110,7 +110,7 @@
 
       <input
         placeholder="0~999명"
-        style="margin: auto"
+        style="margin: auto; border:1px solid #ced4da;"
         size="17"
         type="text"
         v-model="number"
@@ -119,7 +119,10 @@
     </div>
     <div v-if="type == 'b'" class="text-center">
       <label>추첨경품:&nbsp;&nbsp; </label>
-      <input placeholder="입력하세요" />
+      <input
+        style="margin: auto; border:1px solid #ced4da;"
+        placeholder="입력하세요"
+      />
     </div>
 
     <br />
@@ -179,12 +182,12 @@ export default {
   unmounted() {},
   methods: {
     raffle() {
-      this.eventKinds = "선착순";
-      this.type = "a";
-    },
-    first() {
       this.eventKinds = "추첨";
       this.type = "b";
+    },
+    first() {
+      this.eventKinds = "선착순";
+      this.type = "a";
     },
 
     discountrangetclick(range) {
