@@ -148,7 +148,7 @@
     <br />
 
     <div style="text-align:center">
-      <button class="btn btn-secondary" type="submit">등록</button>
+      <button class="btn btn-success" type="submit">등록</button>
     </div>
   </div>
 </template>
