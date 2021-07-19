@@ -9,21 +9,23 @@
           0-9까지만 가능
           class="pb-6 pb-6 pt-5 pt-md-2 bg-gradient-success"
     -->
-    <base-header class="pb-9 pb-8 pt-5 pt-md-4 bg-gradient-success">
-      <!-- <base-header
+    <!-- <base-header
       class="pt-md-7 pb-2 bg-gradient-success"
       style="text-align:center"
     > -->
-      <div class="a">
-        <h1>OOO 님 어서오세요.</h1>
+    <base-header class="pb-9 pt-9 pt-md-9 bg-gradient-success">
+      <div class="container">
+        <div class="row" style="margin-top:9.5em">
+          <div class="b">
+            <img src="img/brand/oddicoupon_3.png" />
+          </div>
+        </div>
       </div>
-      <div class="b">
-        <h1>티켓</h1>
-      </div>
-      <!-- <p style="font-size:1em; font-weight:bold">
+    </base-header>
+
+    <!-- <p style="font-size:1em; font-weight:bold">
         OOO 님 어서오세요. 오늘은 특별한 하루가 되어 보시겠습니까?
       </p> -->
-    </base-header>
 
     <!-- 디자인 참고 -->
     <!-- <b-container fluid class="mt--6">
@@ -40,8 +42,8 @@
       </b-row>
     </b-container> -->
 
-    <b-container fluid class="mt--8">
-      <b-card class="border-0">
+    <b-container fluid class="mt--7 bg-gradient-success">
+      <b-card class="border-0 ">
         <!-- margin-top:1em -->
         <div class="container" style="">
           <div class="row">
@@ -165,11 +167,10 @@
               </div>
             </div> -->
             <!-- 새로운 div 시작 -->
-            <div
+            <!-- <div
               class="col-12 col-sm-12 col-lg-12 col-xl-7"
               style="margin-top:3em"
             >
-              <!-- border:1px solid black  -->
               <div style="text-align:center; ">
                 <img
                   src="img/listimage/cogi.jpg"
@@ -216,10 +217,10 @@
                   </tr>
                 </table>
               </div>
-            </div>
+            </div> -->
             <!-- 옆에 리스트 -->
-            <div class="col">
-              <!-- 첫번째 drops down -->
+            <!-- <div class="col">
+              첫번째 drops down
               <div class="btn-group" style="margin-top:3em;">
                 <button
                   class="btn btn-secondary btn-sm dropdown-toggle"
@@ -237,7 +238,6 @@
               </div>
               <br />
               <br />
-              <!-- overflow-y:scroll; -->
               <div style="overflow-y:scroll; width:100%; height:43em;">
                 <img
                   src="img/listimage/cogi.jpg"
@@ -245,7 +245,7 @@
                   class="edgeradius mouseimage"
                 />
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </b-card>
@@ -593,26 +593,16 @@ export default {
 .category .ico_carpark {
   background-position: -10px -72px; /* 아이콘 이동 마이너스이므로 커질수록 왼쪽으로 간다 */
 }
-.a {
-  width: 600px;
-  padding: 2em 0em;
-  margin-bottom: 10em;
-  border: 1px solid #212121;
-  background-color: #212121;
-  text-align: center;
-  color: #ffffff;
-}
+
 .b {
+  width: 40%;
   position: fixed;
-  top: 3em;
-  left: 33em;
-  width: 600px;
-  padding: 50px 0px;
-  padding-bottom: 13em;
-  border: 1px solid #ff9800;
-  background-color: #ff9800;
+  top: 2em;
+  left: 36%;
   text-align: center;
-  color: #ffffff;
-  opacity: 0.7;
+}
+.b img {
+  width: 70%;
+  height: 30%;
 }
 </style>

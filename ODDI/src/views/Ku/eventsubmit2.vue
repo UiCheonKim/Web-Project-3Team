@@ -12,20 +12,19 @@
       class="row g-3"
       style="background-color:hsla(162, 100%, 39%, 0.15); border-radius:60px; margin: 3%"
     >
-      <div class="text-center">
-        <br />
-        <br />
-        <label
-          for="validationDefault01"
-          class="form-label"
-          style="font-weight:bold; font-size: 0.9rem;"
-          >제목:&nbsp;&nbsp;
-        </label>
+      <div style="padding-top:3em; text-align:center">
+        <b-form-group
+          label="이벤트 명"
+          label-class="form-control-label"
+          class="mb-0"
+          label-for="about-form-textaria"
+        >
+        </b-form-group>
         <input
           type="text"
           class="form-control"
           id="validationDefault01"
-          placeholder="입력해주세요"
+          placeholder="이벤트 명을 입력해주세요"
           v-model="message"
           style="border:1px solid #ced4da;width: 60%; float:none; margin: 0 auto"
           required
@@ -45,7 +44,7 @@
         <!-- 부트스트랩 -->
         <div class="btn-group">
           <button
-            class="btn btn-secondary btn-sm dropdown-toggle bg-gradient-success"
+            class="btn btn-secondary btn-sm dropdown-toggle"
             type="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
@@ -65,14 +64,14 @@
             </li>
           </ul>
         </div>
-
+        <!-- 이거 뭐야ㅋㅋㅋㅋ nbsp로 도배해놨어ㅋㅋ -->
         <label style="font-weight:bold; font-size: 0.9rem;"
           >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;할인범위:&nbsp;
         </label>
 
         <div class="btn-group">
           <button
-            class="btn btn-secondary btn-sm dropdown-toggle bg-gradient-success"
+            class="btn btn-secondary btn-sm dropdown-toggle"
             type="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
