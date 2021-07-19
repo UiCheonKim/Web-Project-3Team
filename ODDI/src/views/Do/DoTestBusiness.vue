@@ -1,16 +1,16 @@
 <template>
   <div>
-    <base-header class="pb-3 pt-3 bg-white border-dark">
+    <base-header class="pb-9 pt-9 pt-md-9 bg-gradient-success">
       <!-- Card stats -->
-      <div border-style>
+      <b-card>
         <h1>등록한 이벤트 현황</h1>
 
         <!-- 셀렉트 된 행을 보여주는 기능입니다. -->
 
         <table
           class="table mt-3"
-          v-for="selectedItem in selected"
-          v-bind:key="selectedItem"
+          v-for="(selectedItem, i) in selected"
+          v-bind:key="i"
         >
           <tr>
             <th width="25%" aline="center">이벤트유형</th>
@@ -46,164 +46,178 @@
                   id="show-btn"
                   class="float-end"
                   @click="$bvModal.show('btnModal')"
-                  >수정하기</b-button
-                >
+                  >수정하기
+                </b-button>
               </span>
             </td>
           </tr>
         </table>
-      </div>
+
+        <!-- 응모한 이벤트 입니다 -->
+        <b-card class="border-0">
+          <b-card-header class="border-0">
+            <h3 class="float-start">현재 진행중인 이벤트</h3>
+          </b-card-header>
+
+          <b-table
+            hover
+            sticky-header
+            responsive
+            :items="eventList"
+            :fields="fields"
+            id="my-table"
+            :current-page="currentPage"
+            :per-page="perPage"
+            :select-mode="selectMode"
+            selectable
+            ref="selectableTable1"
+            @row-selected="onRowSelected"
+            sort-by="EventStartTime"
+            :sort-desc="true"
+            no-sort-reset
+          >
+            <!-- 테이블 행 셀렉트 기능입니다. -->
+            <template #cell(selected)="{ rowSelected }">
+              <template v-if="rowSelected">
+                <span aria-hidden="true">&check;</span>
+                <span class="sr-only">Selected</span>
+              </template>
+              <template v-else>
+                <span aria-hidden="true">&nbsp;</span>
+                <span class="sr-only">Not selected</span>
+              </template>
+            </template>
+          </b-table>
+
+          <b-card-footer>
+            <!-- 페이지네이션 기능입니다. -->
+            <b-pagination
+              class="mx-auto"
+              style="width: 300px;"
+              v-model="currentPage"
+              :total-rows="rows"
+              :per-page="perPage"
+              aria-controls="my-table"
+            >
+            </b-pagination>
+          </b-card-footer>
+        </b-card>
+
+        <!-- 종료된 이벤트 -->
+        <b-card class="border-0">
+          <b-card-header class="border-0">
+            <h3 class="float-start">마감된 이벤트</h3>
+          </b-card-header>
+
+          <b-table
+            hover
+            sticky-header
+            responsive
+            :items="eventList"
+            :fields="fields"
+            id="my-table2"
+            :current-page="EndcurrentPage"
+            :per-page="perPage"
+            :select-mode="selectMode"
+            selectable
+            ref="selectableTable2"
+            @row-selected="onRowSelected"
+            sort-by="EventStartTime"
+            :sort-desc="true"
+            no-sort-reset
+          >
+            <!-- 테이블 행 셀렉트 기능입니다. -->
+            <template #cell(selected)="{ rowSelected }">
+              <template v-if="rowSelected">
+                <span aria-hidden="true">&check;</span>
+                <span class="sr-only">Selected</span>
+              </template>
+              <template v-else>
+                <span aria-hidden="true">&nbsp;</span>
+                <span class="sr-only">Not selected</span>
+              </template>
+            </template>
+          </b-table>
+
+          <b-card-footer>
+            <!-- 페이지네이션 기능입니다. -->
+            <b-pagination
+              class="mx-auto"
+              style="width: 300px;"
+              v-model="EndcurrentPage"
+              :total-rows="rows"
+              :per-page="perPage"
+              aria-controls="my-table"
+            >
+            </b-pagination>
+          </b-card-footer>
+        </b-card>
+
+        <!-- 수정하기 팝업(modal)기능입니다. -->
+
+        <b-modal id="btnModal" hide-footer>
+          <template #modal-title>
+            <h1>이벤트 수정하기</h1>
+          </template>
+          <div class="d-block text-center">
+            <table
+              class="table mt-3"
+              v-for="(selectedItem, i) in selected"
+              v-bind:key="i"
+            >
+              <tr>
+                <th width="25%" aline="center">이벤트유형</th>
+                <td width="70%">{{ selectedItem.EventType }}</td>
+              </tr>
+              <tr>
+                <th>이벤트명</th>
+                <td v-bind="changeEventName1">
+                  <b-form-input></b-form-input>
+                </td>
+              </tr>
+              <tr>
+                <th>가게업종</th>
+                <td>{{ selectedItem.StoreType }}</td>
+              </tr>
+              <tr>
+                <th>가게명</th>
+                <td>{{ selectedItem.StoreName }}</td>
+              </tr>
+              <tr>
+                <th>가게전화번호</th>
+                <td>{{ selectedItem.StoreNum }}</td>
+              </tr>
+              <tr>
+                <th>가게주소</th>
+                <td>{{ selectedItem.EventPrise }}</td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <b-button
+              variant="primary"
+              class="mt-3 float-end"
+              @click="
+                $bvModal.hide('btnModal'),
+                  $bvModal.show('cheakModal'),
+                  changeEventName()
+              "
+              >수정하기</b-button
+            >
+            <b-button
+              class="mt-3 float-start"
+              @click="$bvModal.hide('btnModal')"
+              >취소하기</b-button
+            >
+          </div>
+        </b-modal>
+
+        <!-- 수정후 확인 모달 -->
+        <b-modal id="cheakModal" hide-header hide-footer>
+          <h4 class="float-center">수정이 정상적으로 반영되었습니다.</h4>
+        </b-modal>
+      </b-card>
     </base-header>
-
-    <!-- 응모한 이벤트 입니다 -->
-    <b-card class="border-0">
-      <b-card-header class="border-0">
-        <h3 class="float-start">현재 진행중인 이벤트</h3>
-      </b-card-header>
-
-      <b-table
-        hover
-        sticky-header
-        responsive
-        :items="eventList"
-        :fields="fields"
-        id="my-table"
-        :current-page="currentPage"
-        :per-page="perPage"
-        :select-mode="selectMode"
-        selectable
-        @row-selected="onRowSelected"
-        sort-by="EventStartTime"
-        sort-desc="true"
-        no-sort-reset
-      >
-        <!-- 테이블 행 셀렉트 기능입니다. -->
-        <template #cell(selected)="{ rowSelected }">
-          <template v-if="rowSelected">
-            <span aria-hidden="true">&check;</span>
-            <span class="sr-only">Selected</span>
-          </template>
-          <template v-else>
-            <span aria-hidden="true">&nbsp;</span>
-            <span class="sr-only">Not selected</span>
-          </template>
-        </template>
-      </b-table>
-
-      <b-card-footer>
-        <!-- 페이지네이션 기능입니다. -->
-        <b-pagination
-          class="mx-auto"
-          style="width: 300px;"
-          v-model="currentPage"
-          :total-rows="rows"
-          :per-page="perPage"
-          aria-controls="my-table"
-        >
-        </b-pagination>
-      </b-card-footer>
-    </b-card>
-
-    <!-- 종료된 이벤트 -->
-    <b-card class="border-0">
-      <b-card-header class="border-0">
-        <h3 class="float-start">마감된 이벤트</h3>
-      </b-card-header>
-
-      <b-table
-        hover
-        sticky-header
-        responsive
-        :items="eventList"
-        :fields="fields"
-        id="my-table"
-        :current-page="EndcurrentPage"
-        :per-page="perPage"
-        :select-mode="selectMode"
-        selectable
-        @row-selected="onRowSelected"
-        sort-by="EventStartTime"
-        sort-desc="true"
-        no-sort-reset
-      >
-        <!-- 테이블 행 셀렉트 기능입니다. -->
-        <template #cell(selected)="{ rowSelected }">
-          <template v-if="rowSelected">
-            <span aria-hidden="true">&check;</span>
-            <span class="sr-only">Selected</span>
-          </template>
-          <template v-else>
-            <span aria-hidden="true">&nbsp;</span>
-            <span class="sr-only">Not selected</span>
-          </template>
-        </template>
-      </b-table>
-
-      <b-card-footer>
-        <!-- 페이지네이션 기능입니다. -->
-        <b-pagination
-          class="mx-auto"
-          style="width: 300px;"
-          v-model="EndcurrentPage"
-          :total-rows="rows"
-          :per-page="perPage"
-          aria-controls="my-table"
-        >
-        </b-pagination>
-      </b-card-footer>
-    </b-card>
-
-    <!-- 수정하기 팝업(modal)기능입니다. -->
-
-    <b-modal id="btnModal" hide-footer>
-      <template #modal-title>
-        <h1>이벤트 수정하기</h1>
-      </template>
-      <div class="d-block text-center">
-        <table
-          class="table mt-3"
-          v-for="selectedItem in selected"
-          v-bind:key="selectedItem"
-        >
-          <tr>
-            <th width="25%" aline="center">이벤트유형</th>
-            <td width="70%">{{ selectedItem.EventType }}</td>
-          </tr>
-          <tr>
-            <th>이벤트명</th>
-            <td>{{ selectedItem.EventName }}</td>
-          </tr>
-          <tr>
-            <th>가게업종</th>
-            <td>{{ selectedItem.StoreType }}</td>
-          </tr>
-          <tr>
-            <th>가게명</th>
-            <td>{{ selectedItem.StoreName }}</td>
-          </tr>
-          <tr>
-            <th>가게전화번호</th>
-            <td>{{ selectedItem.StoreNum }}</td>
-          </tr>
-          <tr>
-            <th>가게주소</th>
-            <td>{{ selectedItem.EventPrise }}</td>
-          </tr>
-        </table>
-      </div>
-      <div>
-        <b-button
-          variant="primary"
-          class="mt-3"
-          block
-          @click="$bvModal.hide('btnModal')"
-          >수정하기</b-button
-        >
-        <b-button class="mt-3" block @click="$bvModal.hide('btnModal')"
-          >취소하기</b-button
-        >
-      </div>
-    </b-modal>
   </div>
 </template>
 
@@ -253,7 +267,7 @@ export default {
           StoreNum: "010-0000-0001",
           EventText:
             "mattis nibh ligula nec sem duis aliquam convallis nunc proin at",
-          EventStartTime: "2021.07.11",
+          EventStartTime: "2021.07.20",
           EventEndTime: "11/8/2020",
           EventType: "추첨",
           EventPersonNum: 22,
@@ -345,12 +359,13 @@ export default {
       //테이블 행 셀렉트 기능입니다.
       selectMode: "single",
       selected: [],
-      modalShow: false
+      modalShow: false,
+      changeEventName1: ""
     };
   },
   created() {
     //이벤트 리스트 테이블 기능입니다.
-    this.getList();
+    // this.getList();
   },
   computed: {
     //페이지 네이션 기능입니다.
@@ -370,8 +385,21 @@ export default {
     //   );
     // },
     // 테이블 행 셀렉트 기능입니다.
+    //중복체크를 없애는 기능입니다.
     onRowSelected(items) {
+      if (this.selected == "") {
+        this.selected = items;
+      } else this.clearSelected();
       this.selected = items;
+    },
+    clearSelected() {
+      this.$refs.selectableTable1.clearSelected();
+      this.$refs.selectableTable2.clearSelected();
+    },
+    changeEventName() {
+      console.log(this.changeEventName1);
+      console.log(this.selected.EventName);
+      this.$refs.selected.EventName = this.changeEventName1;
     }
   }
 };
