@@ -1,4 +1,5 @@
 <template>
+  <!-- 비번 다를 경우 알림창 뜨도록 만들어야 함. -->
   <div>
     <base-header class="pb-6 pt-md-5 bg-gradient-success"> </base-header>
     <br />
