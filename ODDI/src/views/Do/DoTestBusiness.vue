@@ -2,7 +2,7 @@
   <div>
     <base-header class="pb-1 pt-5 bg-white">
       <!-- Card stats -->
-      <h1>응모한 이벤트</h1>
+      <h1>등록한 이벤트 현황</h1>
       <b-row>
         <b-col>
           <!-- 셀렉트 된 행을 보여주는 기능입니다. -->
@@ -17,11 +17,10 @@
     <!-- 응모한 이벤트 입니다 -->
     <b-card class="border-0">
       <b-card-header class="border-0">
-        <h3 class="float-start">응모한 이벤트</h3>
-        <span
-          ><b-button class="float-end pb-1 mb-2" size="sm" variant="light"
-            >신고하기</b-button
-          ></span
+        <h3 class="float-start">현재 진행중인 이벤트</h3>
+
+        ><b-button class="float-end pb-1 mb-2" size="sm" variant="light"
+          >수정하기</b-button
         >
       </b-card-header>
 
@@ -68,12 +67,7 @@
     <!-- 종료된 이벤트 -->
     <b-card class="border-0">
       <b-card-header class="border-0">
-        <h3 class="float-start">종료된 이벤트</h3>
-        <span
-          ><b-button class="float-end pb-1 mb-2" size="sm" variant="light"
-            >신고하기</b-button
-          ></span
-        >
+        <h3 class="float-start">마감된 이벤트</h3>
       </b-card-header>
 
       <b-table
