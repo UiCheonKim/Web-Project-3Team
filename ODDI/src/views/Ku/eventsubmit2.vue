@@ -114,6 +114,7 @@
           >추첨경품:&nbsp;&nbsp;
         </label>
         <input
+          v-model="gift"
           style="margin: auto; border:1px solid #ced4da;"
           placeholder="입력하세요"
           id="validationDefault05"
@@ -212,13 +213,16 @@ export default {
 
       valid: false,
       valid2: false,
-      message: "",
+
       sampleData: "",
       eventKinds: "이벤트를 선택하세요",
       discountRanges: "할인율을 선택하세요",
 
       type: "",
-      number: ""
+
+      message: "",
+      number: "",
+      gift: ""
     };
   },
   watch: {
