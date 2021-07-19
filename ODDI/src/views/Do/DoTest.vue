@@ -13,7 +13,7 @@
             v-bind:key="selectedItem"
           >
             <tr>
-              <th width="25%">이벤트유형</th>
+              <th width="25%" aline="center">이벤트유형</th>
               <td width="70%">{{ selectedItem.EventType }}</td>
             </tr>
             <tr>
@@ -38,7 +38,18 @@
             </tr>
             <tr>
               <th></th>
-              <td></td>
+              <td>
+                <span>
+                  <!-- 신고하기 버튼입니다. -->
+                  <b-button
+                    variant="danger"
+                    id="show-btn"
+                    class="float-end"
+                    @click="$bvModal.show('btnModal')"
+                    >신고하기</b-button
+                  >
+                </span>
+              </td>
             </tr>
           </table>
         </b-col>
@@ -49,15 +60,6 @@
     <b-card class="border-0">
       <b-card-header class="border-0">
         <h3 class="float-start">응모한 이벤트</h3>
-        <span>
-          <b-button
-            class="float-end pb-1 mb-2"
-            size="sm"
-            variant="light"
-            @click="modalShow = !modalShow"
-            >신고하기
-          </b-button>
-        </span>
       </b-card-header>
 
       <b-table
@@ -72,6 +74,9 @@
         :select-mode="selectMode"
         selectable
         @row-selected="onRowSelected"
+        sort-by="EventStartTime"
+        sort-desc="true"
+        no-sort-reset
       >
         <!-- 테이블 행 셀렉트 기능입니다. -->
         <template #cell(selected)="{ rowSelected }">
@@ -104,15 +109,6 @@
     <b-card class="border-0">
       <b-card-header class="border-0">
         <h3 class="float-start">종료된 이벤트</h3>
-        <span>
-          <b-button
-            class="float-end pb-1 mb-2"
-            size="sm"
-            variant="light"
-            @click="modalShow = !modalShow"
-            >신고하기
-          </b-button>
-        </span>
       </b-card-header>
 
       <b-table
@@ -122,11 +118,14 @@
         :items="eventList"
         :fields="fields"
         id="my-table"
-        :current-page="currentPage"
+        :current-page="EndcurrentPage"
         :per-page="perPage"
         :select-mode="selectMode"
         selectable
         @row-selected="onRowSelected"
+        sort-by="EventStartTime"
+        sort-desc="true"
+        no-sort-reset
       >
         <!-- 테이블 행 셀렉트 기능입니다. -->
         <template #cell(selected)="{ rowSelected }">
@@ -146,7 +145,7 @@
         <b-pagination
           class="mx-auto"
           style="width: 300px;"
-          v-model="currentPage"
+          v-model="EndcurrentPage"
           :total-rows="rows"
           :per-page="perPage"
           aria-controls="my-table"
@@ -172,6 +171,54 @@
           <option value="3">개노잼/정말 재미없음</option>
         </select>
       </div>
+    </b-modal>
+
+    <b-modal id="btnModal" hide-footer>
+      <template #modal-title>
+        <h1>이벤트 신고하기</h1>
+      </template>
+      <div class="d-block text-center">
+        <table
+          class="table mt-3"
+          v-for="selectedItem in selected"
+          v-bind:key="selectedItem"
+        >
+          <tr>
+            <th width="25%" aline="center">이벤트유형</th>
+            <td width="70%">{{ selectedItem.EventType }}</td>
+          </tr>
+          <tr>
+            <th>이벤트명</th>
+            <td>{{ selectedItem.EventName }}</td>
+          </tr>
+          <tr>
+            <th>가게업종</th>
+            <td>{{ selectedItem.StoreType }}</td>
+          </tr>
+          <tr>
+            <th>가게명</th>
+            <td>{{ selectedItem.StoreName }}</td>
+          </tr>
+          <tr>
+            <th>가게전화번호</th>
+            <td>{{ selectedItem.StoreNum }}</td>
+          </tr>
+          <tr>
+            <th>가게주소</th>
+            <td>{{ selectedItem.EventPrise }}</td>
+          </tr>
+        </table>
+      </div>
+      <b-button
+        variant="danger"
+        class="mt-3"
+        block
+        @click="$bvModal.hide('btnModal')"
+        >신고하기</b-button
+      >
+      <b-button class="mt-3" block @click="$bvModal.hide('btnModal')"
+        >취소하기</b-button
+      >
     </b-modal>
   </div>
 </template>
@@ -212,6 +259,7 @@ export default {
       //페이지네이션 기능입니다.
       perPage: 5,
       currentPage: 1,
+      EndcurrentPage: 1,
       eventList: [
         {
           EventKey: "ES61 2470 3725 0787 7871 2672",
@@ -221,7 +269,7 @@ export default {
           StoreNum: "010-0000-0001",
           EventText:
             "mattis nibh ligula nec sem duis aliquam convallis nunc proin at",
-          EventStartTime: "7/10/2021",
+          EventStartTime: "2021.07.11",
           EventEndTime: "11/8/2020",
           EventType: "추첨",
           EventPersonNum: 22,
@@ -237,7 +285,7 @@ export default {
           StoreNum: "010-0000-0002",
           EventText:
             "viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat",
-          EventStartTime: "7/3/2021",
+          EventStartTime: "2021.07.10",
           EventEndTime: "3/20/2021",
           EventType: "추첨",
           EventPersonNum: 27,
@@ -253,7 +301,7 @@ export default {
           StoreNum: "010-0000-0003",
           EventText:
             "volutpat convallis morbi odio odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat",
-          EventStartTime: "5/13/2021",
+          EventStartTime: "2021.07.09",
           EventEndTime: "8/7/2020",
           EventType: "추첨",
           EventPersonNum: 40,
@@ -269,7 +317,7 @@ export default {
           StoreNum: "010-0000-0004",
           EventText:
             "ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy integer non velit donec",
-          EventStartTime: "1/16/2021",
+          EventStartTime: "2021.07.08",
           EventEndTime: "6/1/2021",
           EventType: "선착순",
           EventPersonNum: 22,
@@ -285,7 +333,7 @@ export default {
           StoreNum: "010-0000-0005",
           EventText:
             "felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl",
-          EventStartTime: "6/7/2021",
+          EventStartTime: "2021.07.07",
           EventEndTime: "6/12/2021",
           EventType: "선착순",
           EventPersonNum: 47,
@@ -301,7 +349,7 @@ export default {
           StoreNum: "010-0000-0006",
           EventText:
             "diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo",
-          EventStartTime: "1/30/2021",
+          EventStartTime: "2021.07.06",
           EventEndTime: "2/26/2021",
           EventType: "선착순",
           EventPersonNum: 8,
