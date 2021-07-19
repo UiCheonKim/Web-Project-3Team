@@ -8,12 +8,17 @@
     </h2>
     <br />
     <br />
-    <br />
-    <br />
-    <br />
-    <form class="row g-3">
+    <form
+      class="row g-3"
+      style="background-color:hsla(162, 100%, 39%, 0.15); border-radius:60px; margin: 3%"
+    >
       <div class="text-center">
-        <label for="validationDefault01" class="form-label"
+        <br />
+        <br />
+        <label
+          for="validationDefault01"
+          class="form-label"
+          style="font-weight:bold; font-size: 0.9rem;"
           >제목:&nbsp;&nbsp;
         </label>
         <input
@@ -29,7 +34,9 @@
 
       <br />
       <div class="text-center">
-        <label>이벤트 종류 선택:&nbsp;</label>
+        <label style="font-weight:bold; font-size: 0.9rem;"
+          >이벤트 종류 선택:&nbsp;</label
+        >
         <!-- <select>
           <option selected>선택</option>
           <option value="">추첨</option>
@@ -38,11 +45,11 @@
         <!-- 부트스트랩 -->
         <div class="btn-group">
           <button
-            class="btn btn-secondary btn-sm dropdown-toggle"
+            class="btn btn-secondary btn-sm dropdown-toggle bg-gradient-success"
             type="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
-            style="width: 14em"
+            style="width: 6em; font-size: 0.8rem"
           >
             {{ eventKinds }}
           </button>
@@ -58,17 +65,18 @@
             </li>
           </ul>
         </div>
-        <br />
-        <br />
-        <label>&nbsp;&nbsp;할인범위:&nbsp; </label>
+
+        <label style="font-weight:bold; font-size: 0.9rem;"
+          >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;할인범위:&nbsp;
+        </label>
 
         <div class="btn-group">
           <button
-            class="btn btn-secondary btn-sm dropdown-toggle"
+            class="btn btn-secondary btn-sm dropdown-toggle bg-gradient-success"
             type="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
-            style="width: 14em"
+            style="width: 6em; font-size: 0.8rem"
           >
             {{ discountRanges }}
           </button>
@@ -94,7 +102,10 @@
       <br />
 
       <div v-if="type == 'a'" class="text-center">
-        <label for="validationDefault04" class="form-label"
+        <label
+          style="font-weight:bold; font-size: 0.9rem;"
+          for="validationDefault04"
+          class="form-label"
           >선착순 인원:&nbsp;&nbsp;
         </label>
 
@@ -110,7 +121,10 @@
         />
       </div>
       <div v-if="type == 'b'" class="text-center">
-        <label for="validationDefault05" class="form-label"
+        <label
+          style="font-weight:bold; font-size: 0.9rem;"
+          for="validationDefault05"
+          class="form-label"
           >추첨경품:&nbsp;&nbsp;
         </label>
         <input
@@ -123,6 +137,7 @@
       </div>
 
       <br />
+      <br />
 
       <!-- <textarea
       v-bind:style="styleInput"
@@ -130,7 +145,7 @@
     ></textarea> -->
       <div class="pl-lg-4, text-center">
         <b-form-group
-          label="이벤트 내용입력"
+          label="이벤트 내용"
           label-class="form-control-label"
           class="mb-0"
           label-for="about-form-textaria"
@@ -153,14 +168,20 @@
         </button>
       </div> -->
       <div style="text-align:center">
+        <br />
         <button
           type="submit"
+          style="background-color:#19b083"
           class="btn btn-success"
           data-bs-toggle="modal"
           data-bs-target="#exampleModal"
         >
           확인
         </button>
+        <br />
+        <br />
+        <br />
+        <br />
       </div>
       <!-- Modal -->
       <div
@@ -215,8 +236,8 @@ export default {
       valid2: false,
 
       sampleData: "",
-      eventKinds: "이벤트를 선택하세요",
-      discountRanges: "할인율을 선택하세요",
+      eventKinds: "이벤트",
+      discountRanges: "할인율",
 
       type: "",
 
