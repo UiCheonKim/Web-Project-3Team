@@ -21,6 +21,7 @@
           class="form-control"
           id="validationDefault01"
           placeholder="입력해주세요"
+          v-model="message"
           style="border:1px solid #ced4da;width: 60%; float:none; margin: 0 auto"
           required
         />
@@ -48,17 +49,12 @@
 
           <ul class="dropdown-menu">
             <li>
-              <a
-                class="dropdown-item"
-                href="#"
-                disabled
-                value=""
-                @click="raffle()"
+              <a class="dropdown-item" disabled value="" @click="raffle()"
                 >추첨</a
               >
             </li>
             <li>
-              <a class="dropdown-item" href="#" @click="first()">선착순</a>
+              <a class="dropdown-item" @click="first()">선착순</a>
             </li>
           </ul>
         </div>
@@ -78,29 +74,19 @@
           </button>
           <ul class="dropdown-menu">
             <li>
-              <a class="dropdown-item" href="#" @click="discountrangetclick(10)"
-                >10%</a
-              >
+              <a class="dropdown-item" @click="discountrangetclick(10)">10%</a>
             </li>
             <li>
-              <a class="dropdown-item" href="#" @click="discountrangetclick(20)"
-                >20%</a
-              >
+              <a class="dropdown-item" @click="discountrangetclick(20)">20%</a>
             </li>
             <li>
-              <a class="dropdown-item" href="#" @click="discountrangetclick(30)"
-                >30%</a
-              >
+              <a class="dropdown-item" @click="discountrangetclick(30)">30%</a>
             </li>
             <li>
-              <a class="dropdown-item" href="#" @click="discountrangetclick(40)"
-                >40%</a
-              >
+              <a class="dropdown-item" @click="discountrangetclick(40)">40%</a>
             </li>
             <li>
-              <a class="dropdown-item" href="#" @click="discountrangetclick(50)"
-                >50%</a
-              >
+              <a class="dropdown-item" @click="discountrangetclick(50)">50%</a>
             </li>
           </ul>
         </div>
@@ -177,13 +163,14 @@
       </div>
       <!-- Modal -->
       <div
+        v-if="valid && valid2 == true"
         class="modal fade"
         id="exampleModal"
         tabindex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
-        <div class="modal-dialog" v-if="valid && valid2 == true">
+        <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">등록 확인</h5>
@@ -225,6 +212,7 @@ export default {
 
       valid: false,
       valid2: false,
+      message: "",
       sampleData: "",
       eventKinds: "이벤트를 선택하세요",
       discountRanges: "할인율을 선택하세요",
