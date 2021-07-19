@@ -19,6 +19,10 @@ import DashboardPlugin from "./plugins/dashboard-plugin";
 import App from "./App.vue";
 import mixins from "./mixins";
 
+//modal
+import VModal from "vue-js-modal";
+Vue.use(VModal, { dynamic: true });
+
 // router setup
 import router from "./routes/router";
 // plugin setup
