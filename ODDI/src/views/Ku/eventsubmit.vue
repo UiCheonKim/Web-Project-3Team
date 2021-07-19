@@ -17,7 +17,7 @@
     <br />
     <div class="container" style=" width: 400px; height: 350px;">
       <p
-        class="bg-success center-block, text-center"
+        class="bg-gradient-success center-block, text-center"
         style="width: 400px;padding:15px; border-radius:20px;"
       >
         <br />
