@@ -9,6 +9,7 @@ import eventsubmit from "@/views/Ku/eventsubmit.vue";
 import eventsubmit2 from "@/views/Ku/eventsubmit2.vue";
 import SongTest from "@/views/Song/SongTest.vue";
 import DoTest from "@/views/Do/DoTest.vue";
+import DoTestBusiness from "@/views/Do/DoTestBusiness.vue";
 
 const routes = [
   {
@@ -55,6 +56,11 @@ const routes = [
         path: "/DoTest",
         name: "DoTest",
         component: DoTest
+      },
+      {
+        path: "/DoTestBusiness",
+        name: "DoTestBusiness",
+        component: DoTestBusiness
       },
       {
         path: "/KimTest",
