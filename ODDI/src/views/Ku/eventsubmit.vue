@@ -1,12 +1,13 @@
 <template>
   <div>
-    <base-header class="pb-6 pb-8 pt-5 pt-md-8 bg-gradient-success">
-    </base-header>
+    <base-header class="pb-6 pt-md-5 bg-gradient-success"> </base-header>
     <br />
 
     <br />
 
-    <h3 class="float-start" style="padding:1px 50px">이벤트 등록</h3>
+    <h2 class="float-start" style="color:#328c73;padding:1px 50px">
+      &nbsp;&nbsp; 이벤트 등록
+    </h2>
 
     <br />
     <br />
@@ -17,8 +18,8 @@
     <br />
     <div class="container" style=" width: 400px; height: 350px;">
       <p
-        class="bg-success center-block, text-center"
-        style="width: 400px;padding:15px;"
+        class="bg-gradient-success center-block, text-center"
+        style="width: 400px;padding:15px; border-radius:20px;"
       >
         <br />
         <i class="fas fa-user-shield"></i>
@@ -27,6 +28,7 @@
         >
         <br />
         <br />
+        &nbsp; &nbsp;
         <input type="password" />
         &nbsp;
         <button

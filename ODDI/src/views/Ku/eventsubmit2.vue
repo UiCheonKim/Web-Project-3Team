@@ -1,6 +1,11 @@
 <template>
   <div>
-    <h2 class="float-start">&nbsp;&nbsp;이벤트 등록</h2>
+    <base-header class="pb-6 pt-md-5 bg-gradient-success"> </base-header>
+    <br />
+    <br />
+    <h2 class="float-start" style="color:#328c73;padding:1px 50px">
+      &nbsp;&nbsp;이벤트 등록
+    </h2>
     <br />
     <br />
     <br />
@@ -11,7 +16,7 @@
       <input
         placeholder="입력해주세요"
         v-model="put"
-        style="width: 60%; float:none; margin:0 auto"
+        style="border:1px solid #ced4da;width: 60%; float:none; margin:0 auto"
       />
     </div>
 
@@ -44,8 +49,9 @@
           </li>
         </ul>
       </div>
-
-      <label>&nbsp;&nbsp;&nbsp;&nbsp;할인범위:&nbsp; </label>
+      <br />
+      <br />
+      <label>&nbsp;&nbsp;할인범위:&nbsp; </label>
       <!-- <select>
         <option selected>선택</option>
         <option value="0.1">10%</option>
@@ -104,7 +110,7 @@
 
       <input
         placeholder="0~999명"
-        style="margin: auto"
+        style="margin: auto; border:1px solid #ced4da;"
         size="17"
         type="text"
         v-model="number"
@@ -113,7 +119,10 @@
     </div>
     <div v-if="type == 'b'" class="text-center">
       <label>추첨경품:&nbsp;&nbsp; </label>
-      <input placeholder="입력하세요" />
+      <input
+        style="margin: auto; border:1px solid #ced4da;"
+        placeholder="입력하세요"
+      />
     </div>
 
     <br />
@@ -142,7 +151,7 @@
     <br />
 
     <div style="text-align:center">
-      <button class="btn btn-secondary" type="submit">등록</button>
+      <button class="btn btn-success" type="submit">등록</button>
     </div>
   </div>
 </template>
@@ -173,12 +182,12 @@ export default {
   unmounted() {},
   methods: {
     raffle() {
-      this.eventKinds = "선착순";
-      this.type = "a";
-    },
-    first() {
       this.eventKinds = "추첨";
       this.type = "b";
+    },
+    first() {
+      this.eventKinds = "선착순";
+      this.type = "a";
     },
 
     discountrangetclick(range) {
