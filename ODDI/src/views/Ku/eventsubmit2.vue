@@ -3,7 +3,7 @@
     <base-header class="pb-6 pt-md-5 bg-gradient-success"> </base-header>
     <br />
     <br />
-    <h2 class="float-start" style="padding:1px 50px">
+    <h2 class="float-start" style="color:#328c73;padding:1px 50px">
       &nbsp;&nbsp;이벤트 등록
     </h2>
     <br />

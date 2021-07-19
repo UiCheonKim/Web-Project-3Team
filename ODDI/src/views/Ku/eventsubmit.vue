@@ -5,7 +5,9 @@
 
     <br />
 
-    <h3 class="float-start" style="padding:1px 50px">이벤트 등록</h3>
+    <h2 class="float-start" style="color:#328c73;padding:1px 50px">
+      &nbsp;&nbsp; 이벤트 등록
+    </h2>
 
     <br />
     <br />
@@ -26,6 +28,7 @@
         >
         <br />
         <br />
+        &nbsp; &nbsp;
         <input type="password" />
         &nbsp;
         <button
