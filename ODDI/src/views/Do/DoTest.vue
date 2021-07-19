@@ -13,12 +13,24 @@
             v-bind:key="selectedItem"
           >
             <tr>
+              <th width="25%">이벤트유형</th>
+              <td width="70%">{{ selectedItem.EventType }}</td>
+            </tr>
+            <tr>
+              <th>이벤트명</th>
+              <td>{{ selectedItem.EventName }}</td>
+            </tr>
+            <tr>
+              <th>가게업종</th>
+              <td>{{ selectedItem.StoreType }}</td>
+            </tr>
+            <tr>
               <th>가게명</th>
               <td>{{ selectedItem.StoreName }}</td>
             </tr>
             <tr>
-              <th>가게업종</th>
-              <td>{{ selectedItem.EventName }}</td>
+              <th>가게전화번호</th>
+              <td>{{ selectedItem.StoreNum }}</td>
             </tr>
             <tr>
               <th>가게주소</th>
@@ -203,8 +215,10 @@ export default {
       eventList: [
         {
           EventKey: "ES61 2470 3725 0787 7871 2672",
-          EventName: "이열치열",
+          EventName: "더울때는 아~아!",
           StoreName: "가게1",
+          StoreType: "카페",
+          StoreNum: "010-0000-0001",
           EventText:
             "mattis nibh ligula nec sem duis aliquam convallis nunc proin at",
           EventStartTime: "7/10/2021",
@@ -219,6 +233,8 @@ export default {
           EventKey: "SM62 H871 3958 899C PRCE EOH7 CPS",
           EventName: "오늘도 치킨이닭",
           StoreName: "가게2",
+          StoreType: "음식점",
+          StoreNum: "010-0000-0002",
           EventText:
             "viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat",
           EventStartTime: "7/3/2021",
@@ -233,6 +249,8 @@ export default {
           EventKey: "CH83 0566 5JL0 CXC0 JK8Y Y",
           EventName: "돈까스를 먹으면 냉모밀이 공짜?",
           StoreName: "가게3",
+          StoreType: "음식점",
+          StoreNum: "010-0000-0003",
           EventText:
             "volutpat convallis morbi odio odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat",
           EventStartTime: "5/13/2021",
@@ -245,8 +263,10 @@ export default {
         },
         {
           EventKey: "SE25 4746 0199 3718 5219 5231",
-          EventName: "돈까스 먹고싶은 날",
+          EventName: "반팔 무조건 5000원",
           StoreName: "가게4",
+          StoreType: "옷가게",
+          StoreNum: "010-0000-0004",
           EventText:
             "ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy integer non velit donec",
           EventStartTime: "1/16/2021",
@@ -261,6 +281,8 @@ export default {
           EventKey: "GT42 KVGR 18PR E0WW UFYW 7YLB E5GF",
           EventName: "치즈돈까스 포장이요~",
           StoreName: "가게5",
+          StoreType: "음식점",
+          StoreNum: "010-0000-0005",
           EventText:
             "felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl",
           EventStartTime: "6/7/2021",
@@ -275,6 +297,8 @@ export default {
           EventKey: "BA43 2890 8569 1557 0733",
           EventName: "★파★ 검은옷은 소주 무료 ★격★",
           StoreName: "가게6",
+          StoreType: "음식점",
+          StoreNum: "010-0000-0006",
           EventText:
             "diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo",
           EventStartTime: "1/30/2021",
