@@ -76,7 +76,7 @@
               </div>
               <div
                 style="  
-    box-shadow: 0px 0px 10px 6px hsla(260, 100%, 55%, 0.2)
+    box-shadow: 0px 0px 15px 8px hsla(260, 100%, 55%, 0.4)
   background-color:white; margin-top:1em; padding-left:1em; padding:1em 1em; color:black"
                 class="edgeradius"
               >
@@ -115,7 +115,9 @@
                   </tr>
                 </table>
               </div>
+              <br />
             </div>
+
             <!-- 두번째 행 -->
             <!-- 첫번째 drops down -->
             <div class="col">
@@ -153,7 +155,8 @@
               <br />
               <br />
               <div
-                style="overflow-y:scroll; width:100%; height:38em; background-color: white"
+                style=" box-shadow: 0px 0px 20px 10px hsla(233, 100%, 46%, 0.4)
+  background-color:white; padding-left:1em; padding:1em 1em; overflow-y:scroll; width:100%; height:37.8em; background-color: white"
                 class="edgeradius"
               >
                 <div class="mouseimage">
