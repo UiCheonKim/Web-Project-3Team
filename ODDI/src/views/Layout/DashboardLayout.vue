@@ -193,18 +193,38 @@ export default {
     },
     eventboard1() {
       this.test1 = !this.test1;
+      this.test2 = false;
+      this.test3 = false;
+      this.test4 = false;
+      this.test5 = false;
     },
     eventboard2() {
       this.test2 = !this.test2;
+      this.test1 = false;
+      this.test3 = false;
+      this.test4 = false;
+      this.test5 = false;
     },
     eventboard3() {
       this.test3 = !this.test3;
+      this.test1 = false;
+      this.test2 = false;
+      this.test4 = false;
+      this.test5 = false;
     },
     eventboard4() {
       this.test4 = !this.test4;
+      this.test1 = false;
+      this.test2 = false;
+      this.test3 = false;
+      this.test5 = false;
     },
     eventboard5() {
       this.test5 = !this.test5;
+      this.test1 = false;
+      this.test2 = false;
+      this.test3 = false;
+      this.test4 = false;
     }
   },
   mounted() {
