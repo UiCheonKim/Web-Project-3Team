@@ -3,14 +3,14 @@
     <base-header class="pb-6 pt-md-5 bg-gradient-success"> </base-header>
     <br />
     <br />
-    <h2 class="float-start" style="color:#328c73;padding:1px 50px">
+    <h2 class="float-start" style="color:#4d199c;padding:1px 50px">
       &nbsp;&nbsp;이벤트 등록
     </h2>
     <br />
     <br />
     <form
       class="row g-3"
-      style="background-color:hsla(162, 100%, 39%, 0.15); border-radius:60px; margin: 3%"
+      style="background-color:hsla(260, 100%, 55%, 0.2); border-radius:60px; margin: 3%"
     >
       <div style="padding-top:3em; text-align:center">
         <b-form-group
@@ -44,7 +44,7 @@
         <!-- 부트스트랩 -->
         <div class="btn-group">
           <button
-            class="btn btn-secondary btn-sm dropdown-toggle"
+            class="btn btn-success btn-sm dropdown-toggle"
             type="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
@@ -71,7 +71,7 @@
 
         <div class="btn-group">
           <button
-            class="btn btn-secondary btn-sm dropdown-toggle"
+            class="btn btn-success btn-sm dropdown-toggle"
             type="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
@@ -170,7 +170,7 @@
         <br />
         <button
           type="submit"
-          style="background-color:#19b083"
+          style="background-color:hsl(278, 100%, 60%)"
           class="btn btn-success"
           data-bs-toggle="modal"
           data-bs-target="#exampleModal"

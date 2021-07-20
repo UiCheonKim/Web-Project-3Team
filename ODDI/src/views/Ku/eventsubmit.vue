@@ -6,7 +6,7 @@
 
     <br />
 
-    <h2 class="float-start" style="color:#328c73;padding:1px 50px">
+    <h2 class="float-start" style="color:#4d199c;padding:1px 50px">
       &nbsp;&nbsp; 이벤트 등록
     </h2>
 
@@ -23,8 +23,8 @@
         style="width: 400px;padding:15px; border-radius:20px;"
       >
         <br />
-        <i class="fas fa-user-shield"></i>
-        <span style="color:black"
+        <i class="fas fa-user-shield" style="color:white"></i>
+        <span style="color:white"
           >&nbsp;&nbsp;보안을 위해 비밀번호 재입력 부탁드립니다.</span
         >
         <br />
