@@ -34,28 +34,31 @@
           }"
         >
         </sidebar-item>
-        <b-button>이벤트 게시물</b-button>
-        <sidebar-item
-          :link="{
-            name: '응모한 이벤트',
-            path: '/DoTest'
-          }"
-        >
-        </sidebar-item>
-        <sidebar-item
-          :link="{
-            name: '등록한 이벤트 현황',
-            path: '/DoTestBusiness'
-          }"
-        >
-        </sidebar-item>
-        <sidebar-item
-          :link="{
-            name: '이벤트 상세통계',
-            path: '/DoTestEventDetail'
-          }"
-        >
-        </sidebar-item>
+        <b-button @click="eventboard">이벤트 게시물</b-button>
+        <div v-if="test" class="fade-in-box">
+          <sidebar-item
+            :link="{
+              name: '응모한 이벤트',
+              path: '/DoTest'
+            }"
+          >
+          </sidebar-item>
+
+          <sidebar-item
+            :link="{
+              name: '등록한 이벤트 현황',
+              path: '/DoTestBusiness'
+            }"
+          >
+          </sidebar-item>
+          <sidebar-item
+            :link="{
+              name: '이벤트 상세통계',
+              path: '/DoTestEventDetail'
+            }"
+          >
+          </sidebar-item>
+        </div>
         <b-button>커뮤니티</b-button>
         <sidebar-item
           :link="{
@@ -126,12 +129,20 @@ export default {
     DashboardContent,
     FadeTransition
   },
+  data() {
+    return {
+      test: true
+    };
+  },
   methods: {
     initScrollbar() {
       let isWindows = navigator.platform.startsWith("Win");
       if (isWindows) {
         initScrollbar("sidenav");
       }
+    },
+    eventboard() {
+      this.test = !this.test;
     }
   },
   mounted() {
@@ -140,3 +151,50 @@ export default {
 };
 </script>
 <style lang="scss"></style>
+<style scoped>
+.fade-in-box {
+  /* display: inline-block; */
+  /* padding: 10px; */
+
+  background-color: black;
+  animation: fadein 2s;
+  -moz-animation: fadein 2s; /* Firefox */
+  -webkit-animation: fadein 2s; /* Safari and Chrome */
+  -o-animation: fadein 2s; /* Opera */
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadein {
+  /* Firefox */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadein {
+  /* Safari and Chrome */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadein {
+  /* Opera */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+</style>
