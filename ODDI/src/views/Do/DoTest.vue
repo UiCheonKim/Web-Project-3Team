@@ -91,7 +91,7 @@
             <!-- 페이지네이션 기능입니다. -->
             <b-pagination
               class="mx-auto"
-              style="width: 300px;"
+              style="width: 200px;"
               v-model="currentPage"
               :total-rows="rows"
               :per-page="perPage"
@@ -139,7 +139,7 @@
             <!-- 페이지네이션 기능입니다. -->
             <b-pagination
               class="mx-auto"
-              style="width: 300px;"
+              style="width: 200px;"
               v-model="EndcurrentPage"
               :total-rows="rows"
               :per-page="perPage"

@@ -17,7 +17,7 @@
           <sidebar-item
             :link="{
               name: '마이페이지',
-              path: '/SongTest'
+              path: '/SorryPage'
             }"
           ></sidebar-item>
         </div>
@@ -41,14 +41,14 @@
           <sidebar-item
             :link="{
               name: '진행중인 이벤트',
-              path: '/eventsubmit2'
+              path: '/SorryPage'
             }"
           >
           </sidebar-item>
           <sidebar-item
             :link="{
               name: '당첨자발표',
-              path: '/eventsubmit2'
+              path: '/SorryPage'
             }"
           >
           </sidebar-item>
@@ -99,7 +99,7 @@
           <sidebar-item
             :link="{
               name: '후기게시판',
-              path: '/SongTest'
+              path: '/SorryPage'
             }"
           >
           </sidebar-item>
@@ -116,14 +116,14 @@
           <sidebar-item
             :link="{
               name: '고객센터',
-              path: '/SongTest'
+              path: '/SorryPage'
             }"
           >
           </sidebar-item>
           <sidebar-item
             :link="{
               name: '공지사항',
-              path: '/SongTest'
+              path: '/SorryPage'
             }"
           >
           </sidebar-item>
