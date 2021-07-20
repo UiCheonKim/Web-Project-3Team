@@ -57,15 +57,15 @@
                   <ul>
                     <li id="coffeeMenu" v-on:click="changeMarker(1)">
                       <span class="ico_comm ico_coffee"></span>
-                      커피숍
+                      음식점
                     </li>
                     <li id="storeMenu" v-on:click="changeMarker(2)">
                       <span class="ico_comm ico_store"></span>
-                      편의점
+                      옷가게
                     </li>
                     <li id="carparkMenu" v-on:click="changeMarker('carpark')">
                       <span class="ico_comm ico_carpark"></span>
-                      주차장
+                      기타
                     </li>
                   </ul>
                 </div>
@@ -267,8 +267,7 @@ export default {
       imageSize: [],
       imageOptions: [],
       marker: [],
-      markerImageSrc:
-        "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/category.png",
+      markerImageSrc: "/img/brand/navlogo.png",
       coffeeMarkers: [],
       storeMarkers: [],
       //커피숍
@@ -388,7 +387,7 @@ export default {
       for (var i = 0; i < this.coffeePositions.length; i++) {
         this.imageSize = new window.kakao.maps.Size(22, 26);
         this.imageOptions = {
-          spriteOrigin: new window.kakao.maps.Point(10, 0),
+          spriteOrigin: new window.kakao.maps.Point(9, 0),
           spriteSize: new window.kakao.maps.Size(36, 98)
         };
 
@@ -431,7 +430,7 @@ export default {
       for (var i = 0; i < this.storePositions.length; i++) {
         this.imageSize = new window.kakao.maps.Size(22, 26);
         this.imageOptions = {
-          spriteOrigin: new window.kakao.maps.Point(10, 36),
+          spriteOrigin: new window.kakao.maps.Point(9, 36),
           spriteSize: new window.kakao.maps.Size(36, 98)
         };
 
@@ -552,7 +551,7 @@ export default {
   overflow: hidden;
   top: 10px;
   left: 10px;
-  width: 160px; /* 커피숍 편의점 주자창 흰 배경 */
+  width: 155px; /* 커피숍 편의점 주자창 흰 배경 */
   height: 50px;
   z-index: 10;
   border: 1px solid black;
@@ -578,20 +577,19 @@ export default {
 }
 .category .ico_comm {
   display: block;
-  margin: 0 auto 2px;
-  width: 22px;
+  margin: 0 auto 0px;
+  width: 23px;
   height: 26px;
-  background: url("https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/category.png")
-    no-repeat;
+  background: url("/img/brand/navlogo.png") no-repeat;
 }
 .category .ico_coffee {
-  background-position: -10px 0;
+  background-position: -7px 0;
 }
 .category .ico_store {
-  background-position: -10px -36px;
+  background-position: -7px -36px;
 }
 .category .ico_carpark {
-  background-position: -10px -72px; /* 아이콘 이동 마이너스이므로 커질수록 왼쪽으로 간다 */
+  background-position: -7px -72px; /* 아이콘 이동 마이너스이므로 커질수록 왼쪽으로 간다 */
 }
 
 .b {
