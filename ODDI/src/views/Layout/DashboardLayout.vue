@@ -1,41 +1,68 @@
 <template>
   <div class="wrapper">
     <notifications></notifications>
-    <side-bar>
+    <side-bar class="border border-dark bg-gradient-dark">
       <template slot="links">
         <!-- 네비 -->
         <!-- 계정관리, 이벤트게시물, 이벤트관리, 커뮤니티, 부가서비스 -->
-        <b-button>계정관리</b-button>
-        <sidebar-item
-          :link="{
-            name: '마이페이지',
-            path: '/SongTest'
-          }"
-        ></sidebar-item>
-        <b-button>이벤트 게시물</b-button>
-        <sidebar-item
-          :link="{
-            name: '이벤트 등록',
-            path: '/eventsubmit2'
-          }"
+        <b-button
+          class="mx-3 my-1"
+          pill
+          size="lg"
+          variant="outline-light"
+          @click="eventboard1"
+          >계정관리</b-button
         >
-        </sidebar-item>
-        <sidebar-item
-          :link="{
-            name: '진행중인 이벤트',
-            path: '/eventsubmit2'
-          }"
+        <div v-if="test1" class="fade-in-box">
+          <sidebar-item
+            :link="{
+              name: '마이페이지',
+              path: '/SongTest'
+            }"
+          ></sidebar-item>
+        </div>
+
+        <b-button
+          class="mx-3 my-1"
+          pill
+          size="lg"
+          variant="outline-light"
+          @click="eventboard2"
+          >이벤트 게시물</b-button
         >
-        </sidebar-item>
-        <sidebar-item
-          :link="{
-            name: '당첨자발표',
-            path: '/eventsubmit2'
-          }"
+        <div v-if="test2" class="fade-in-box">
+          <sidebar-item
+            :link="{
+              name: '이벤트 등록',
+              path: '/eventsubmit2'
+            }"
+          >
+          </sidebar-item>
+          <sidebar-item
+            :link="{
+              name: '진행중인 이벤트',
+              path: '/eventsubmit2'
+            }"
+          >
+          </sidebar-item>
+          <sidebar-item
+            :link="{
+              name: '당첨자발표',
+              path: '/eventsubmit2'
+            }"
+          >
+          </sidebar-item>
+        </div>
+
+        <b-button
+          class="mx-3 my-1"
+          pill
+          size="lg"
+          variant="outline-light"
+          @click="eventboard3"
+          >이벤트 관리</b-button
         >
-        </sidebar-item>
-        <b-button @click="eventboard">이벤트 게시물</b-button>
-        <div v-if="test" class="fade-in-box">
+        <div v-if="test3" class="fade-in-box">
           <sidebar-item
             :link="{
               name: '응모한 이벤트',
@@ -59,29 +86,48 @@
           >
           </sidebar-item>
         </div>
-        <b-button>커뮤니티</b-button>
-        <sidebar-item
-          :link="{
-            name: '후기게시판',
-            path: '/SongTest'
-          }"
+
+        <b-button
+          class="mx-3 my-1"
+          pill
+          size="lg"
+          variant="outline-light"
+          @click="eventboard4"
+          >커뮤니티</b-button
         >
-        </sidebar-item>
-        <b-button>부가서비스</b-button>
-        <sidebar-item
-          :link="{
-            name: '고객센터',
-            path: '/SongTest'
-          }"
+        <div v-if="test4" class="fade-in-box">
+          <sidebar-item
+            :link="{
+              name: '후기게시판',
+              path: '/SongTest'
+            }"
+          >
+          </sidebar-item>
+        </div>
+        <b-button
+          class="mx-3 my-1"
+          pill
+          size="lg"
+          variant="outline-light"
+          @click="eventboard5"
+          >부가서비스</b-button
         >
-        </sidebar-item>
-        <sidebar-item
-          :link="{
-            name: '공지사항',
-            path: '/SongTest'
-          }"
-        >
-        </sidebar-item>
+        <div v-if="test5" class="fade-in-box">
+          <sidebar-item
+            :link="{
+              name: '고객센터',
+              path: '/SongTest'
+            }"
+          >
+          </sidebar-item>
+          <sidebar-item
+            :link="{
+              name: '공지사항',
+              path: '/SongTest'
+            }"
+          >
+          </sidebar-item>
+        </div>
       </template>
     </side-bar>
     <div class="main-content">
@@ -131,7 +177,11 @@ export default {
   },
   data() {
     return {
-      test: true
+      test1: false,
+      test2: false,
+      test3: false,
+      test4: false,
+      test5: false
     };
   },
   methods: {
@@ -141,8 +191,20 @@ export default {
         initScrollbar("sidenav");
       }
     },
-    eventboard() {
-      this.test = !this.test;
+    eventboard1() {
+      this.test1 = !this.test1;
+    },
+    eventboard2() {
+      this.test2 = !this.test2;
+    },
+    eventboard3() {
+      this.test3 = !this.test3;
+    },
+    eventboard4() {
+      this.test4 = !this.test4;
+    },
+    eventboard5() {
+      this.test5 = !this.test5;
     }
   },
   mounted() {
@@ -156,43 +218,53 @@ export default {
   /* display: inline-block; */
   /* padding: 10px; */
 
-  background-color: black;
   animation: fadein 2s;
-  -moz-animation: fadein 2s; /* Firefox */
-  -webkit-animation: fadein 2s; /* Safari and Chrome */
-  -o-animation: fadein 2s; /* Opera */
+  -moz-animation: fadein 2s;
+  /* Firefox */
+  -webkit-animation: fadein 2s;
+  /* Safari and Chrome */
+  -o-animation: fadein 2s;
+  /* Opera */
 }
+
 @keyframes fadein {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
 }
+
 @-moz-keyframes fadein {
   /* Firefox */
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
 }
+
 @-webkit-keyframes fadein {
   /* Safari and Chrome */
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
 }
+
 @-o-keyframes fadein {
   /* Opera */
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }

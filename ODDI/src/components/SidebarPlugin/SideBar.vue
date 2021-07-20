@@ -123,7 +123,7 @@ export default {
   props: {
     logo: {
       type: String,
-      default: "img/brand/oddi.png",
+      default: "img/brand/oddiGlow.png",
       description: "Sidebar app logo"
     },
     autoClose: {

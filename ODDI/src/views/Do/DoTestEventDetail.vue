@@ -1,9 +1,9 @@
 <template>
   <div>
-    <base-header class="pb-9 pt-9 pt-md-9 bg-gradient-success">
+    <base-header class="pb-9 pt-9 pt-md-9 bg-gradient-span-1-bg">
       <!-- Card stats -->
       <b-card>
-        <h1>등록한 이벤트 현황</h1>
+        <h1>이벤트 상세통계</h1>
 
         <!-- 셀렉트 된 행을 보여주는 기능입니다. -->
 
@@ -56,7 +56,7 @@
         <!-- 응모한 이벤트 입니다 -->
         <b-card class="border-0">
           <b-card-header class="border-0">
-            <h3 class="float-start">현재 진행중인 이벤트</h3>
+            <h3 class="float-start">마감된 이벤트</h3>
           </b-card-header>
 
           <b-table
@@ -100,58 +100,67 @@
               aria-controls="my-table"
             >
             </b-pagination>
+
+            <!-- 상세통계보기 기능입니다 -->
+            <b-row>
+              <b-button
+                class="mx-auto"
+                style="width: 150px;"
+                variant="secondary"
+                id="show-btn"
+                @click="$bvModal.show('btnModal')"
+                >상세통계보기
+              </b-button>
+            </b-row>
           </b-card-footer>
         </b-card>
 
-        <!-- 종료된 이벤트 -->
-        <b-card class="border-0">
-          <b-card-header class="border-0">
-            <h3 class="float-start">마감된 이벤트</h3>
-          </b-card-header>
-
-          <b-table
-            hover
-            sticky-header
-            responsive
-            :items="eventList"
-            :fields="fields"
-            id="my-table2"
-            :current-page="EndcurrentPage"
-            :per-page="perPage"
-            :select-mode="selectMode"
-            selectable
-            ref="selectableTable2"
-            @row-selected="onRowSelected"
-            sort-by="EventStartTime"
-            :sort-desc="true"
-            no-sort-reset
-          >
-            <!-- 테이블 행 셀렉트 기능입니다. -->
-            <template #cell(selected)="{ rowSelected }">
-              <template v-if="rowSelected">
-                <span aria-hidden="true">&check;</span>
-                <span class="sr-only">Selected</span>
-              </template>
-              <template v-else>
-                <span aria-hidden="true">&nbsp;</span>
-                <span class="sr-only">Not selected</span>
-              </template>
-            </template>
-          </b-table>
-
-          <b-card-footer>
-            <!-- 페이지네이션 기능입니다. -->
-            <b-pagination
-              class="mx-auto"
-              style="width: 300px;"
-              v-model="EndcurrentPage"
-              :total-rows="rows"
-              :per-page="perPage"
-              aria-controls="my-table"
-            >
-            </b-pagination>
-          </b-card-footer>
-        </b-card>
+        <!-- 상세통계보기 창입니다. -->
+        <table
+          class="table mt-3"
+          v-for="(selectedItem, i) in selected"
+          v-bind:key="i"
+        >
+          <tr>
+            <th width="25%" aline="center">이벤트유형</th>
+            <td width="70%">{{ selectedItem.EventType }}</td>
+          </tr>
+          <tr>
+            <th>이벤트명</th>
+            <td>{{ selectedItem.EventName }}</td>
+          </tr>
+          <tr>
+            <th>가게업종</th>
+            <td>{{ selectedItem.StoreType }}</td>
+          </tr>
+          <tr>
+            <th>가게명</th>
+            <td>{{ selectedItem.StoreName }}</td>
+          </tr>
+          <tr>
+            <th>가게전화번호</th>
+            <td>{{ selectedItem.StoreNum }}</td>
+          </tr>
+          <tr>
+            <th>가게주소</th>
+            <td>{{ selectedItem.EventPrise }}</td>
+          </tr>
+          <tr>
+            <th></th>
+            <td>
+              <!-- 수정하기 버튼입니다. -->
+              <span>
+                <b-button
+                  variant="primary"
+                  id="show-btn"
+                  class="float-end"
+                  @click="$bvModal.show('btnModal')"
+                  >수정하기
+                </b-button>
+              </span>
+            </td>
+          </tr>
+        </table>
 
         <!-- 수정하기 팝업(modal)기능입니다. -->
 
@@ -210,11 +219,6 @@
               >취소하기</b-button
             >
           </div>
-        </b-modal>
-
-        <!-- 수정후 확인 모달 -->
-        <b-modal id="cheakModal" hide-header hide-footer>
-          <h4 class="float-center">수정이 정상적으로 반영되었습니다.</h4>
         </b-modal>
       </b-card>
     </base-header>
@@ -386,21 +390,6 @@ export default {
     // },
     // 테이블 행 셀렉트 기능입니다.
     //중복체크를 없애는 기능입니다.
-    onRowSelected(items) {
-      if (this.selected == "") {
-        this.selected = items;
-      } else this.clearSelected();
-      this.selected = items;
-    },
-    clearSelected() {
-      this.$refs.selectableTable1.clearSelected();
-      this.$refs.selectableTable2.clearSelected();
-    },
-    changeEventName() {
-      console.log(this.changeEventName1);
-      console.log(this.selected.EventName);
-      this.$refs.selected.EventName = this.changeEventName1;
-    }
   }
 };
 </script>
