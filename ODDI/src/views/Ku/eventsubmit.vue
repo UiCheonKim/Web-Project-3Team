@@ -6,9 +6,9 @@
 
     <br />
 
-    <h2 class="float-start" style="color:#4d199c;padding:1px 50px">
+    <h1 class="float-start" style="color:#4d199c;padding:1px 50px">
       &nbsp;&nbsp; 이벤트 등록
-    </h2>
+    </h1>
 
     <br />
     <br />
