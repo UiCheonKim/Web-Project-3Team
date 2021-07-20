@@ -75,7 +75,9 @@
                 </div>
               </div>
               <div
-                style="background-color: black; margin-top:1em; padding-left:1em; padding:1em 1em"
+                style="  
+    box-shadow: 5px 5px 5px 5px grey;
+  background-color:white; margin-top:1em; padding-left:1em; padding:1em 1em; color:black"
                 class="edgeradius"
               >
                 <table>
@@ -151,7 +153,7 @@
               <br />
               <br />
               <div
-                style="overflow-y:scroll; width:100%; height:38em; background-color: black"
+                style="overflow-y:scroll; width:100%; height:38em; background-color: white"
                 class="edgeradius"
               >
                 <div class="mouseimage">
