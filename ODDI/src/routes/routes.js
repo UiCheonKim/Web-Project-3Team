@@ -11,6 +11,7 @@ import SongTest from "@/views/Song/SongTest.vue";
 import DoTest from "@/views/Do/DoTest.vue";
 import DoTestBusiness from "@/views/Do/DoTestBusiness.vue";
 import DoTestEventDetail from "@/views/Do/DoTestEventDetail.vue";
+import SorryPage from "@/views/Do/SorryPage.vue";
 
 const routes = [
   {
@@ -67,6 +68,11 @@ const routes = [
         path: "/DoTestEventDetail",
         name: "DoTestEventDetail",
         component: DoTestEventDetail
+      },
+      {
+        path: "/SorryPage",
+        name: "SorryPage",
+        component: SorryPage
       },
       {
         path: "/KimTest",
