@@ -13,28 +13,11 @@
           class="row g-3"
           style="background-color:hsla(260, 100%, 55%, 0.2); border-radius:60px; margin: 3%"
         >
-          <div style="padding-top:3em; text-align:center">
-            <b-form-group
-              label="이벤트 명"
-              label-class="form-control-label"
-              class="mb-0"
-              label-for="about-form-textaria"
-            >
-            </b-form-group>
-            <input
-              type="text"
-              class="form-control"
-              id="validationDefault01"
-              placeholder="이벤트 명을 입력해주세요"
-              v-model="message"
-              style="border:1px solid #ced4da;width: 60%; float:none; margin: 0 auto"
-              required
-            />
-          </div>
-
           <br />
-          <div class="text-center">
-            <label style="font-weight:bold; font-size: 0.9rem;"
+          <div>
+            <br />
+            <br />
+            <label class="pl-8" style="font-weight:bold; font-size: 0.9rem;"
               >이벤트 종류 선택:&nbsp;</label
             >
             <!-- <select>
@@ -109,14 +92,13 @@
               </ul>
             </div>
           </div>
-          <br />
 
-          <div v-if="type == 'a'" class="text-center">
+          <div v-if="type == 'a'" class="pl-8">
             <label
               style="font-weight:bold; font-size: 0.9rem;"
               for="validationDefault04"
               class="form-label"
-              >선착순 인원:&nbsp;&nbsp;
+              >&nbsp;&nbsp;선착순 인원:&nbsp;&nbsp;
             </label>
 
             <input
@@ -130,12 +112,13 @@
               required
             />
           </div>
-          <div v-if="type == 'b'" class="text-center">
+          <br />
+          <div v-if="type == 'b'" class=" pl-8">
             <label
               style="font-weight:bold; font-size: 0.9rem;"
               for="validationDefault05"
               class="form-label"
-              >추첨경품:&nbsp;&nbsp;
+              >&nbsp;&nbsp;추첨경품:&nbsp;&nbsp;
             </label>
             <input
               v-model="gift"
@@ -146,9 +129,26 @@
             />
           </div>
 
-          <br />
-          <br />
+          <div style=" text-align:center">
+            <br />
 
+            <b-form-group
+              label="이벤트 명"
+              label-class="form-control-label"
+              class="mb-0"
+              label-for="about-form-textaria"
+            >
+            </b-form-group>
+            <input
+              type="text"
+              class="form-control"
+              id="validationDefault01"
+              placeholder="이벤트 명을 입력해주세요"
+              v-model="message"
+              style="border:1px solid #ced4da;width: 80%; float:none; margin: 0 auto"
+              required
+            />
+          </div>
           <!-- <textarea
       v-bind:style="styleInput"
       placeholder="이벤트 내용을 입력해보세요"
@@ -163,7 +163,7 @@
               <!--  <label class="form-control-label">About Me</label> -->
               <b-form-textarea
                 rows="10"
-                style="width: 70%; float:none; margin:0 auto"
+                style="width: 80%; float:none; margin:0 auto"
                 id="about-form-textaria"
                 placeholder="이벤트 설명을 적어주세요"
               ></b-form-textarea>
