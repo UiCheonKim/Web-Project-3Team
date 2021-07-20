@@ -238,12 +238,12 @@ export default {
   /* display: inline-block; */
   /* padding: 10px; */
 
-  animation: fadein 2s;
-  -moz-animation: fadein 2s;
+  animation: fadein 0.5s;
+  -moz-animation: fadein 1s;
   /* Firefox */
-  -webkit-animation: fadein 2s;
+  -webkit-animation: fadein 1s;
   /* Safari and Chrome */
-  -o-animation: fadein 2s;
+  -o-animation: fadein 1s;
   /* Opera */
 }
 

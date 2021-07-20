@@ -1,7 +1,7 @@
 <template>
-  <footer class="footer px-4" style="margin-top">
-    <div class="copyright text-muted" style="text-align:center">
-      © {{ year }} 4조 : 김의천, 구자영, 도경구, 송태준
+  <footer class="footer px-4 bg-gradient-success">
+    <div class="copyright text-muted" style="text-align:center;">
+      <b>© {{ year }} Create4Team : 김의천, 구자영, 도경구, 송태준</b>
     </div>
   </footer>
 </template>
