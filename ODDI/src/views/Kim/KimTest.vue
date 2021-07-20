@@ -76,7 +76,7 @@
               </div>
               <div
                 style="  
-    box-shadow: 5px 5px 5px 5px grey;
+    box-shadow: 0px 0px 10px 6px hsla(260, 100%, 55%, 0.2)
   background-color:white; margin-top:1em; padding-left:1em; padding:1em 1em; color:black"
                 class="edgeradius"
               >
