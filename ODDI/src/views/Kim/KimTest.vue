@@ -387,7 +387,7 @@ export default {
       for (var i = 0; i < this.coffeePositions.length; i++) {
         this.imageSize = new window.kakao.maps.Size(22, 26);
         this.imageOptions = {
-          spriteOrigin: new window.kakao.maps.Point(9, 0),
+          spriteOrigin: new window.kakao.maps.Point(8, 0),
           spriteSize: new window.kakao.maps.Size(36, 98)
         };
 
