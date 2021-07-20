@@ -261,7 +261,7 @@ export default {
       lat: 0, // 위도
       lon: 0, // 경도
       locPosition: 0,
-      message: '<div style="padding:5px;">이것이 나 김의천</div>',
+      message: '<div style="padding:0.2em; padding-left:2.2em">현재 위치</div>',
       map: null,
 
       imageSize: [],
