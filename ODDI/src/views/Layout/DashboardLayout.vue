@@ -4,35 +4,71 @@
     <side-bar>
       <template slot="links">
         <!-- 네비 -->
+        <!-- 계정관리, 이벤트게시물, 이벤트관리, 커뮤니티, 부가서비스 -->
+        <b-button>계정관리</b-button>
         <sidebar-item
           :link="{
-            name: 'Do',
-            path: '/DoTest',
-            icon: 'ni ni-circle-08 text-pink'
+            name: '마이페이지',
+            path: '/SongTest'
+          }"
+        ></sidebar-item>
+        <b-button>이벤트 게시물</b-button>
+        <sidebar-item
+          :link="{
+            name: '이벤트 등록',
+            path: '/eventsubmit2'
           }"
         >
         </sidebar-item>
         <sidebar-item
           :link="{
-            name: 'Kim',
-            path: '/KimTest',
-            icon: 'ni ni-key-25 text-info'
+            name: '진행중인 이벤트',
+            path: '/eventsubmit2'
           }"
         >
         </sidebar-item>
         <sidebar-item
           :link="{
-            name: 'Song',
-            path: '/SongTest',
-            icon: 'ni ni-pin-3 text-orange'
+            name: '당첨자발표',
+            path: '/eventsubmit2'
+          }"
+        >
+        </sidebar-item>
+        <b-button>이벤트 게시물</b-button>
+        <sidebar-item
+          :link="{
+            name: '응모한 이벤트',
+            path: '/DoTest'
           }"
         >
         </sidebar-item>
         <sidebar-item
           :link="{
-            name: 'Ku',
-            path: '/KuTest',
-            icon: 'ni ni-circle-08 text-pink'
+            name: '등록한 이벤트 현황',
+            path: '/DoTestBusiness'
+          }"
+        >
+        </sidebar-item>
+        <b-button>커뮤니티</b-button>
+        <sidebar-item
+          :link="{
+            name: '후기게시판',
+            path: '/SongTest'
+          }"
+        >
+        </sidebar-item>
+        <b-button>부가서비스</b-button>
+        <sidebar-item
+          :link="{
+            name: '고객센터',
+            path: '/SongTest'
+          }"
+        >
+        </sidebar-item>
+        <sidebar-item
+          :link="{
+            name: '공지사항',
+            path: '/SongTest'
           }"
         >
         </sidebar-item>
