@@ -39,7 +39,7 @@
               <div class="text-muted text-center mt-2 mb-3">
                 <small>로그인</small>
               </div>
-              <div class="btn-wrapper text-center">
+              <!-- <div class="btn-wrapper text-center">
                 <a href="#" class="btn btn-neutral btn-icon">
                   <span class="btn-inner--icon"
                     ><img src="img/icons/common/github.svg"
@@ -52,7 +52,7 @@
                   /></span>
                   <span class="btn-inner--text">Google</span>
                 </a>
-              </div>
+              </div> -->
               <br />
               <div class="btn-wrapper text-center">
                 <a href="#" class="btn btn-neutral btn-icon">
