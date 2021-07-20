@@ -6,7 +6,7 @@
         <!-- 네비 -->
         <!-- 계정관리, 이벤트게시물, 이벤트관리, 커뮤니티, 부가서비스 -->
         <b-button
-          class="mx-3 my-1"
+          class="mx-3 my-2"
           pill
           size="lg"
           variant="outline-light"
@@ -23,7 +23,7 @@
         </div>
 
         <b-button
-          class="mx-3 my-1"
+          class="mx-3 my-2"
           pill
           size="lg"
           variant="outline-light"
@@ -55,7 +55,7 @@
         </div>
 
         <b-button
-          class="mx-3 my-1"
+          class="mx-3 my-2"
           pill
           size="lg"
           variant="outline-light"
@@ -88,7 +88,7 @@
         </div>
 
         <b-button
-          class="mx-3 my-1"
+          class="mx-3 my-2"
           pill
           size="lg"
           variant="outline-light"
@@ -105,7 +105,7 @@
           </sidebar-item>
         </div>
         <b-button
-          class="mx-3 my-1"
+          class="mx-3 my-2"
           pill
           size="lg"
           variant="outline-light"
