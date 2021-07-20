@@ -47,13 +47,19 @@
       class="mt--7 bg-gradient-success"
       style="padding-bottom:2em"
     >
-      <b-card class="border-0 " style="border-radius:2em;">
+      <b-card
+        class="border-0 "
+        style="border-radius:2em;box-shadow: 0px 0px 30px 3px brown"
+      >
         <!-- margin-top:1em -->
         <div class="container" style="">
           <div class="row">
-            <div class="col-12 col-sm-12 col-lg-12 col-xl-7">
+            <div class="col-12 col-sm-12 col-lg-12 col-xl-7" style="">
               <!-- <div id="map" class="map"></div> -->
-              <div id="mapwrap">
+              <div
+                id="mapwrap"
+                style="box-shadow: 0px 0px 8px 4px hsla(225, 100%, 51%, 0.3)"
+              >
                 <!-- 지도가 표시될 div -->
                 <div id="map" class="map"></div>
                 <!-- 지도 위에 표시될 마커 카테고리 -->
@@ -76,7 +82,7 @@
               </div>
               <div
                 style="  
-    box-shadow: 0px 0px 15px 8px hsla(233, 100%, 46%, 0.4)
+    box-shadow: 0px 0px 8px 3px hsla(233, 100%, 46%, 0.4)
   background-color:white; margin-top:1em; padding-left:1em; padding:1em 1em; color:black"
                 class="edgeradius"
               >
@@ -155,7 +161,7 @@
               <br />
               <br />
               <div
-                style=" box-shadow: 0px 0px 20px 10px hsla(260, 100%, 55%, 0.4)
+                style=" box-shadow: 0px 0px 8px 3px hsla(260, 100%, 55%, 0.4)
   background-color:white; padding-left:1em; padding:1em 1em; overflow-y:scroll; width:100%; height:37.8em; background-color: white"
                 class="edgeradius"
               >
