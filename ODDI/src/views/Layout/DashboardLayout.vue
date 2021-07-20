@@ -123,7 +123,7 @@
           <sidebar-item
             :link="{
               name: '공지사항',
-              path: '/SongTest'
+              path: '/SorryPage'
             }"
           >
           </sidebar-item>
