@@ -58,7 +58,7 @@
               <!-- <div id="map" class="map"></div> -->
               <div
                 id="mapwrap"
-                style="box-shadow: 0px 0px 8px 4px hsla(225, 100%, 51%, 0.3)"
+                style="box-shadow: 0px 0px 8px 4px hsla(225, 100%, 51%, 0.4)"
               >
                 <!-- 지도가 표시될 div -->
                 <div id="map" class="map"></div>
