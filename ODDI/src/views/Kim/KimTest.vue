@@ -76,7 +76,7 @@
               </div>
               <div
                 style="  
-    box-shadow: 0px 0px 15px 8px hsla(260, 100%, 55%, 0.4)
+    box-shadow: 0px 0px 15px 8px hsla(233, 100%, 46%, 0.4)
   background-color:white; margin-top:1em; padding-left:1em; padding:1em 1em; color:black"
                 class="edgeradius"
               >
@@ -123,11 +123,11 @@
             <div class="col">
               <div class="btn-group" style="padding-right:1em;">
                 <button
-                  class="btn  btn-secondary btn-sm dropdown-toggle"
+                  class="btn btn-secondary btn-sm dropdown-toggle"
                   type="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
-                  style="width: 10em; color:white;  background-color:#5803ad"
+                  style="width: 10em; "
                 >
                   이름 정렬
                 </button>
@@ -139,11 +139,11 @@
               <!-- 두번째 drops down -->
               <div class="btn-group">
                 <button
-                  class="btn bg-gradient-success btn-secondary btn-sm dropdown-toggle"
+                  class="btn btn-secondary btn-sm dropdown-toggle"
                   type="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
-                  style="width: 10em; color:white;"
+                  style="width: 10em"
                 >
                   이벤트 정렬
                 </button>
@@ -155,7 +155,7 @@
               <br />
               <br />
               <div
-                style=" box-shadow: 0px 0px 20px 10px hsla(233, 100%, 46%, 0.4)
+                style=" box-shadow: 0px 0px 20px 10px hsla(260, 100%, 55%, 0.4)
   background-color:white; padding-left:1em; padding:1em 1em; overflow-y:scroll; width:100%; height:37.8em; background-color: white"
                 class="edgeradius"
               >
