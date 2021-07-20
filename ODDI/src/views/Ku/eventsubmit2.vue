@@ -170,8 +170,8 @@
         <br />
         <button
           type="submit"
-          style="background-color:hsl(278, 100%, 60%)"
-          class="btn btn-success"
+          style="background-color:hsl(278, 100%, 60%); color:white"
+          class="btn bg-gradient-success"
           data-bs-toggle="modal"
           data-bs-target="#exampleModal"
         >
