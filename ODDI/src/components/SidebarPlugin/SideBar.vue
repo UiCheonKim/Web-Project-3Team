@@ -6,7 +6,7 @@
     <div class="container-fluid">
       <!--Toggler-->
       <navbar-toggle-button @click.native="showSidebar"> </navbar-toggle-button>
-      <router-link class="navbar-brand" to="/">
+      <router-link class="navbar-brand" to="/KimTest">
         <img :src="logo" class="navbar-brand-img" alt="..." />
       </router-link>
 
@@ -62,7 +62,7 @@
         <div class="navbar-collapse-header d-md-none">
           <div class="row">
             <div class="col-6 collapse-brand">
-              <router-link to="/">
+              <router-link to="/KimTest">
                 <img :src="logo" />
               </router-link>
             </div>
