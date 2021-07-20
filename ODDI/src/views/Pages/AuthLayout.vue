@@ -9,7 +9,7 @@
     >
       <div slot="brand" class="navbar-wrapper">
         <b-navbar-brand to="/KimTest">
-          <img src="img/brand/oddi.png" />
+          <img src="img/brand/oddiGlow.png" />
         </b-navbar-brand>
       </div>
 
@@ -18,7 +18,7 @@
           <b-row>
             <b-col cols="6" class="collapse-brand">
               <router-link to="/KimTest">
-                <img src="img/brand/oddi.png" />
+                <img src="img/brand/oddiGlow.png" />
               </router-link>
             </b-col>
             <b-col cols="6" class="collapse-close">
