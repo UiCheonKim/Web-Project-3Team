@@ -123,11 +123,11 @@
             <div class="col">
               <div class="btn-group" style="padding-right:1em;">
                 <button
-                  class="btn btn-secondary btn-sm dropdown-toggle"
+                  class="btn  btn-secondary btn-sm dropdown-toggle"
                   type="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
-                  style="width: 10em;"
+                  style="width: 10em; color:white;  background-color:#5803ad"
                 >
                   이름 정렬
                 </button>
@@ -139,11 +139,11 @@
               <!-- 두번째 drops down -->
               <div class="btn-group">
                 <button
-                  class="btn btn-secondary btn-sm dropdown-toggle"
+                  class="btn bg-gradient-success btn-secondary btn-sm dropdown-toggle"
                   type="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
-                  style="width: 10em"
+                  style="width: 10em; color:white;"
                 >
                   이벤트 정렬
                 </button>
