@@ -14,7 +14,7 @@ import DoTestBusiness from "@/views/Do/DoTestBusiness.vue";
 const routes = [
   {
     path: "/",
-    redirect: "dashboard",
+    redirect: "KimTest",
     component: DashboardLayout,
     children: [
       {
