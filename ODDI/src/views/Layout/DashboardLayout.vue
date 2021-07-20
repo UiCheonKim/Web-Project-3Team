@@ -49,6 +49,13 @@
           }"
         >
         </sidebar-item>
+        <sidebar-item
+          :link="{
+            name: '이벤트 상세통계',
+            path: '/DoTestEventDetail'
+          }"
+        >
+        </sidebar-item>
         <b-button>커뮤니티</b-button>
         <sidebar-item
           :link="{
