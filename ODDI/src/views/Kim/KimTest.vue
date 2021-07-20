@@ -72,8 +72,7 @@
               </div>
               <div
                 style="  
-  border: 5px solid; 
-  border-image: repeating-linear-gradient(45deg, #8fd2ff, #5603ad,#8fd2ff 200px) 60;
+    box-shadow: 5px 5px 5px 5px grey;
   background-color:white; margin-top:1em; padding-left:1em; padding:1em 1em; color:black"
                 class="edgeradius"
               >
@@ -150,7 +149,7 @@
               <br />
               <br />
               <div
-                style="overflow-y:scroll; width:100%; height:38em; background-color: black"
+                style="overflow-y:scroll; width:100%; height:38em; background-color: white"
                 class="edgeradius"
               >
                 <div class="mouseimage">
