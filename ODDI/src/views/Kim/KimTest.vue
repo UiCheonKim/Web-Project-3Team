@@ -42,8 +42,12 @@
       </b-row>
     </b-container> -->
 
-    <b-container fluid class="mt--7 bg-gradient-success">
-      <b-card class="border-0 ">
+    <b-container
+      fluid
+      class="mt--7 bg-gradient-success"
+      style="padding-bottom:2em"
+    >
+      <b-card class="border-0 " style="border-radius:2em;">
         <!-- margin-top:1em -->
         <div class="container" style="">
           <div class="row">
