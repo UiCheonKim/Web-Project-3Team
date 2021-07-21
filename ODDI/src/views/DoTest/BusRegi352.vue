@@ -225,8 +225,9 @@
                                 type="file"
                                 accept=".jpg, .jpeg, .png, .pdf"
                                 id="formFile"
-                              /></div
-                          ></span>
+                              />
+                            </div>
+                          </span>
                         </div>
                       </div>
                       <ul
@@ -252,55 +253,58 @@
                   <br />
                   <label for="id">가게사진(3개)</label>
                 </h3>
-                <div class="box int_id" style="height:initial;">
-                  <div class="uploader-wrapper single">
-                    <div class="mb-3">
-                      <input
-                        class="form-control"
-                        type="file"
-                        accept=".jpg, .jpeg, .png, .pdf"
-                        id="formFile"
-                      />
-                    </div>
-                  </div>
-                </div>
+                <!-- 가게 이미지 1-->
 
                 <div class="box int_id" style="height:initial;">
                   <div class="uploader-wrapper single">
-                    <span
-                      ><input
-                        type="file"
-                        accept=".jpg, .jpeg, .png, .pdf"
-                        style="position: absolute; left: -1000px; visibility: hidden;"
-                      /><span
-                        ><button
-                          type="button"
-                          class="button uploader-btn single small text"
-                        >
-                          <i class="icon icon-plus"></i>
-                          <div>이미지 추가</div>
-                        </button></span
-                      ></span
-                    >
+                    <span>
+                      <div class="mb-3">
+                        <input
+                          class="form-control"
+                          type="file"
+                          accept=".jpg, .jpeg, .png, .pdf"
+                          id="formFile"
+                          @change="onFileChange1"
+                        />
+                      </div>
+                    </span>
+                    <img width="100%" v-if="url1" :src="url1" />
                   </div>
                 </div>
+
+                <!-- 가게 이미지 2 -->
                 <div class="box int_id" style="height:initial;">
                   <div class="uploader-wrapper single">
-                    <span
-                      ><input
-                        type="file"
-                        accept=".jpg, .jpeg, .png, .pdf"
-                        style="position: absolute; left: -1000px; visibility: hidden;"
-                      /><span
-                        ><button
-                          type="button"
-                          class="button uploader-btn single small text"
-                        >
-                          <i class="icon icon-plus"></i>
-                          <div>이미지 추가</div>
-                        </button></span
-                      ></span
-                    >
+                    <span>
+                      <div class="mb-3">
+                        <input
+                          class="form-control"
+                          type="file"
+                          accept=".jpg, .jpeg, .png, .pdf"
+                          id="formFile"
+                          @change="onFileChange2"
+                        />
+                      </div>
+                    </span>
+                    <img width="100%" v-if="url2" :src="url2" />
+                  </div>
+                </div>
+
+                <!-- 가게 이미지 3 -->
+                <div class="box int_id" style="height:initial;">
+                  <div class="uploader-wrapper single">
+                    <span>
+                      <div class="mb-3">
+                        <input
+                          class="form-control"
+                          type="file"
+                          accept=".jpg, .jpeg, .png, .pdf"
+                          id="formFile"
+                          @change="onFileChange3"
+                        />
+                      </div>
+                    </span>
+                    <img width="100%" v-if="url3" :src="url3" />
                   </div>
                 </div>
 
@@ -334,7 +338,12 @@ export default {
         email: "",
         password: "",
         agree: false
-      }
+      },
+
+      // 사진 미리보기 기능입니다.
+      url1: null,
+      url2: null,
+      url3: null
     };
   },
   methods: {
@@ -353,6 +362,25 @@ export default {
           }
         }
       }).open();
+    },
+
+    // 사진 미리보기 기능입니다.
+    onFileChange1(e) {
+      const file = e.target.files[0];
+      this.url1 = URL.createObjectURL(file);
+      console.log(this.url1);
+    },
+
+    onFileChange2(e) {
+      const file = e.target.files[0];
+      this.url2 = URL.createObjectURL(file);
+      console.log(this.url2);
+    },
+
+    onFileChange3(e) {
+      const file = e.target.files[0];
+      this.url3 = URL.createObjectURL(file);
+      console.log(this.url3);
     }
   }
 };
@@ -500,6 +528,7 @@ ul {
 :before {
   box-sizing: border-box;
 }
+
 /* 이미지 CSS2 - 여기까지 */
 
 /* 소재지 주소 여기부터 */
@@ -565,5 +594,6 @@ ul {
 button {
   -webkit-appearance: button;
 }
+
 /* 여기까지 */
 </style>

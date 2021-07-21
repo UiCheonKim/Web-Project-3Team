@@ -50,6 +50,7 @@
                     class="int"
                     maxlength="100"
                     placeholder="선택입력"
+                    v-model="userId"
                   />
                 </span>
                 <span class="error_next_box"
@@ -61,7 +62,13 @@
               <div>
                 <h3 class="join_title"><label for="pswd1">비밀번호</label></h3>
                 <span class="box int_pass">
-                  <input type="text" id="pswd1" class="int" maxlength="20" />
+                  <input
+                    type="text"
+                    id="pswd1"
+                    class="int"
+                    maxlength="20"
+                    v-model="userPw"
+                  />
                   <span id="alertTxt">사용불가</span>
                   <img src="m_icon_pass.png" id="pswd1_img1" class="pswdImg" />
                 </span>
@@ -88,7 +95,13 @@
               <div>
                 <h3 class="join_title"><label for="name">이름</label></h3>
                 <span class="box int_name">
-                  <input type="text" id="name" class="int" maxlength="20" />
+                  <input
+                    type="text"
+                    id="name"
+                    class="int"
+                    maxlength="20"
+                    v-model="userName"
+                  />
                 </span>
                 <span class="error_next_box"></span>
               </div>
@@ -107,6 +120,7 @@
                         class="int"
                         maxlength="4"
                         placeholder="년(4자)"
+                        v-model="userbirth_year"
                       />
                     </span>
                   </div>
@@ -114,7 +128,7 @@
                   <!-- BIRTH_MM -->
                   <div id="bir_mm">
                     <span class="box">
-                      <select id="mm">
+                      <select id="mm" v-model="userbirth_mon">
                         <option>월</option>
                         <option value="01">1</option>
                         <option value="02">2</option>
@@ -141,6 +155,7 @@
                         class="int"
                         maxlength="2"
                         placeholder="일"
+                        v-model="userbirth_day"
                       />
                     </span>
                   </div>
@@ -152,10 +167,10 @@
               <div>
                 <h3 class="join_title"><label for="gender">성별</label></h3>
                 <span class="box gender_code">
-                  <select id="gender" class="sel">
+                  <select id="gender" v-model="usersex" class="sel">
                     <option>성별</option>
-                    <option value="M">남자</option>
-                    <option value="F">여자</option>
+                    <option value="1">남자</option>
+                    <option value="2">여자</option>
                   </select>
                 </span>
                 <span class="error_next_box">필수 정보입니다.</span>
@@ -173,6 +188,7 @@
                     name="nationNo"
                     class="sel"
                     aria-label="전화번호 입력"
+                    v-model="userphone"
                   >
                     <option value="233">
                       가나 +233
@@ -905,21 +921,33 @@ export default {
       userbirth_day: "",
       usersex: 1, // default 남자
       usertype: 1, // default 일반회원
-      userphone: ""
+      userphone: "",
+      bp_key: 1 // 기본적으로 일반회원
     };
   },
   setup() {},
   created() {},
-  mounted() {},
+  mounted() {
+    // this.createUser();
+  },
   unmounted() {},
   methods: {
     async createUser() {
       const r = await this.$api("/api/createUser", "post", {
         param: [
           {
-            first_name: this.firstName,
-            last_name: this.lastName,
-            email: this.email
+            user_id: this.userId,
+            user_type: this.usertype,
+            user_password: this.userPw,
+            bp_key: this.bp_key,
+            user_sex: this.usersex,
+            user_phone: this.userphone,
+            user_birth:
+              this.userbirth_year +
+              "." +
+              this.userbirth_mon +
+              "." +
+              this.userbirth_day
           }
         ]
       });

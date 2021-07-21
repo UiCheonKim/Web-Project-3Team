@@ -2,6 +2,12 @@
   <div class="wrapper">
     <notifications></notifications>
     <side-bar class="border border-dark bg-gradient-dark">
+      <br />
+      <div class="mx-auto my-3">
+        <a class="" href="/UserLogin34">로그인</a>
+        <a>|</a>
+        <a class="" href="/BusRegi352">입점신청하기</a>
+      </div>
       <template slot="links">
         <!-- 네비 -->
         <!-- 계정관리, 이벤트게시물, 이벤트관리, 커뮤니티, 부가서비스 -->
@@ -130,13 +136,6 @@
         </div>
 
         <!-- 로그인/회원가입 -->
-        <div class="mx-auto my-3">
-          <a class="" href="/UserLogin34">로그인</a>
-          <a>|</a>
-          <a class="" href="/UserRegi34">회원가입</a>
-          <a>|</a>
-          <a class="" href="/BusRegi352">입점신청하기</a>
-        </div>
       </template>
     </side-bar>
     <div class="main-content">
