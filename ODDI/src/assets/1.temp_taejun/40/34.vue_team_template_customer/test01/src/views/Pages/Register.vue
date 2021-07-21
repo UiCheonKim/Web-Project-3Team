@@ -36,15 +36,25 @@
         <b-col lg="6" md="8">
           <b-card no-body class="bg-secondary border-0">
             <b-card-header class="bg-transparent pb-5">
+              <!-- EMAIL -->
               <div>
-                <!-- 아이디 -->
-                <h3>
-                  <label for="id">아이디</label>
+                <h3 class="join_title">
+                  <label for="email"
+                    >본인확인 이메일<span class="optional">(선택)</span></label
+                  >
                 </h3>
-                <span class="box int_id">
-                  <input type="text" id="id" class="int" maxlength="20" />
+                <span class="box int_email">
+                  <input
+                    type="text"
+                    id="email"
+                    class="int"
+                    maxlength="100"
+                    placeholder="선택입력"
+                  />
                 </span>
-                <span class="error_next_box"></span>
+                <span class="error_next_box"
+                  >이메일 주소를 다시 확인해주세요.</span
+                >
               </div>
 
               <!-- PW1 -->
@@ -149,27 +159,6 @@
                   </select>
                 </span>
                 <span class="error_next_box">필수 정보입니다.</span>
-              </div>
-
-              <!-- EMAIL -->
-              <div>
-                <h3 class="join_title">
-                  <label for="email"
-                    >본인확인 이메일<span class="optional">(선택)</span></label
-                  >
-                </h3>
-                <span class="box int_email">
-                  <input
-                    type="text"
-                    id="email"
-                    class="int"
-                    maxlength="100"
-                    placeholder="선택입력"
-                  />
-                </span>
-                <span class="error_next_box"
-                  >이메일 주소를 다시 확인해주세요.</span
-                >
               </div>
 
               <!-- 여기부터 -->
