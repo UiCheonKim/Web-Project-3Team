@@ -32,6 +32,9 @@ Vue.mixin(mixins);
 /* eslint-disable no-new */
 new Vue({
   el: "#app",
-  render: h => h(App),
-  router
+  render: (h) => h(App),
+  router,
 });
+
+window.Kakao.init("79f723e81004fe5d9f07164b2ec4fac9");
+window.Kakao.isInitialized();
