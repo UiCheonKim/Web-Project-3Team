@@ -20,6 +20,8 @@ import Regi36 from "@/views/DoTest/Regi36.vue";
 import UserLogin34 from "@/views/DoTest/UserLogin34.vue";
 import UserRegi34 from "@/views/DoTest/UserRegi34.vue";
 
+import test from "@/views/Kim/test.vue";
+
 const routes = [
   {
     path: "/",
@@ -106,6 +108,11 @@ const routes = [
         path: "/SongTest",
         name: "SongTest",
         component: SongTest
+      },
+      {
+        path: "/test",
+        name: "test",
+        component: test
       },
       // 테스트-------------------------------
       {
