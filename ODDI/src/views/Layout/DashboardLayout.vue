@@ -128,6 +128,15 @@
           >
           </sidebar-item>
         </div>
+
+        <!-- 로그인/회원가입 -->
+        <div>
+          <b-button class="" href="#/UserLogin34">로그인</b-button>
+          <br />
+          <b-link class="" href="#/UserRegi34">회원가입</b-link>
+          <br />
+          <b-link class="" href="#/BusRegi352">입점신청하기</b-link>
+        </div>
       </template>
     </side-bar>
     <div class="main-content">
