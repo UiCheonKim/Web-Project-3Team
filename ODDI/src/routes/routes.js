@@ -12,6 +12,13 @@ import DoTest from "@/views/Do/DoTest.vue";
 import DoTestBusiness from "@/views/Do/DoTestBusiness.vue";
 import DoTestEventDetail from "@/views/Do/DoTestEventDetail.vue";
 import SorryPage from "@/views/Do/SorryPage.vue";
+//테스트 -----
+import BusPost352 from "@/views/DoTest/BusPost352.vue";
+import BusRegi351 from "@/views/DoTest/BusRegi351.vue";
+import BusRegi352 from "@/views/DoTest/BusRegi352.vue";
+import Regi36 from "@/views/DoTest/Regi36.vue";
+import UserLogin34 from "@/views/DoTest/UserLogin34.vue";
+import UserRegi34 from "@/views/DoTest/UserRegi34.vue";
 
 const routes = [
   {
@@ -99,6 +106,37 @@ const routes = [
         path: "/SongTest",
         name: "SongTest",
         component: SongTest
+      },
+      // 테스트-------------------------------
+      {
+        path: "/BusPost352",
+        name: "BusPost352",
+        component: BusPost352
+      },
+      {
+        path: "/BusRegi351",
+        name: "BusRegi351",
+        component: BusRegi351
+      },
+      {
+        path: "/BusRegi352",
+        name: "BusRegi352",
+        component: BusRegi352
+      },
+      {
+        path: "/Regi36",
+        name: "Regi36",
+        component: Regi36
+      },
+      {
+        path: "/UserLogin34",
+        name: "UserLogin34",
+        component: UserLogin34
+      },
+      {
+        path: "/UserRegi34",
+        name: "UserRegi34",
+        component: UserRegi34
       }
     ]
   },

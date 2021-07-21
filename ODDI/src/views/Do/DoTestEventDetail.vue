@@ -4,9 +4,7 @@
       <!-- Card stats -->
       <b-card>
         <h1>이벤트 상세통계</h1>
-
-        <!-- 셀렉트 된 행을 보여주는 기능입니다. -->
-
+        <!-- 응모한 이벤트 입니다 -->
         <table
           class="table mt-3"
           v-for="(selectedItem, i) in selected"
@@ -38,22 +36,10 @@
           </tr>
           <tr>
             <th></th>
-            <td>
-              <!-- 수정하기 버튼입니다. -->
-              <span>
-                <b-button
-                  variant="primary"
-                  id="show-btn"
-                  class="float-end"
-                  @click="$bvModal.show('btnModal')"
-                  >수정하기
-                </b-button>
-              </span>
-            </td>
+            <td></td>
           </tr>
         </table>
 
-        <!-- 응모한 이벤트 입니다 -->
         <b-card class="border-0">
           <b-card-header class="border-0">
             <h3 class="float-start">마감된 이벤트</h3>
@@ -93,7 +79,7 @@
             <!-- 페이지네이션 기능입니다. -->
             <b-pagination
               class="mx-auto"
-              style="width: 300px;"
+              style="width: 200px;"
               v-model="currentPage"
               :total-rows="rows"
               :per-page="perPage"
@@ -101,125 +87,57 @@
             >
             </b-pagination>
 
-            <!-- 상세통계보기 기능입니다 -->
+            <!-- 상세통계보기 버튼입니다 -->
             <b-row>
               <b-button
                 class="mx-auto"
                 style="width: 150px;"
                 variant="secondary"
                 id="show-btn"
-                @click="$bvModal.show('btnModal')"
+                @click="showTable"
                 >상세통계보기
               </b-button>
             </b-row>
           </b-card-footer>
         </b-card>
 
-        <!-- 상세통계보기 창입니다. -->
-        <table
-          class="table mt-3"
-          v-for="(selectedItem, i) in selected"
-          v-bind:key="i"
-        >
-          <tr>
-            <th width="25%" aline="center">이벤트유형</th>
-            <td width="70%">{{ selectedItem.EventType }}</td>
-          </tr>
-          <tr>
-            <th>이벤트명</th>
-            <td>{{ selectedItem.EventName }}</td>
-          </tr>
-          <tr>
-            <th>가게업종</th>
-            <td>{{ selectedItem.StoreType }}</td>
-          </tr>
-          <tr>
-            <th>가게명</th>
-            <td>{{ selectedItem.StoreName }}</td>
-          </tr>
-          <tr>
-            <th>가게전화번호</th>
-            <td>{{ selectedItem.StoreNum }}</td>
-          </tr>
-          <tr>
-            <th>가게주소</th>
-            <td>{{ selectedItem.EventPrise }}</td>
-          </tr>
-          <tr>
-            <th></th>
-            <td>
-              <!-- 수정하기 버튼입니다. -->
-              <span>
-                <b-button
-                  variant="primary"
-                  id="show-btn"
-                  class="float-end"
-                  @click="$bvModal.show('btnModal')"
-                  >수정하기
-                </b-button>
-              </span>
-            </td>
-          </tr>
-        </table>
-
         <!-- 수정하기 팝업(modal)기능입니다. -->
-
-        <b-modal id="btnModal" hide-footer>
-          <template #modal-title>
-            <h1>이벤트 수정하기</h1>
-          </template>
-          <div class="d-block text-center">
-            <table
-              class="table mt-3"
-              v-for="(selectedItem, i) in selected"
-              v-bind:key="i"
-            >
-              <tr>
-                <th width="25%" aline="center">이벤트유형</th>
-                <td width="70%">{{ selectedItem.EventType }}</td>
-              </tr>
-              <tr>
-                <th>이벤트명</th>
-                <td v-bind="changeEventName1">
-                  <b-form-input></b-form-input>
-                </td>
-              </tr>
-              <tr>
-                <th>가게업종</th>
-                <td>{{ selectedItem.StoreType }}</td>
-              </tr>
-              <tr>
-                <th>가게명</th>
-                <td>{{ selectedItem.StoreName }}</td>
-              </tr>
-              <tr>
-                <th>가게전화번호</th>
-                <td>{{ selectedItem.StoreNum }}</td>
-              </tr>
-              <tr>
-                <th>가게주소</th>
-                <td>{{ selectedItem.EventPrise }}</td>
-              </tr>
-            </table>
-          </div>
-          <div>
-            <b-button
-              variant="primary"
-              class="mt-3 float-end"
-              @click="
-                $bvModal.hide('btnModal'),
-                  $bvModal.show('cheakModal'),
-                  changeEventName()
-              "
-              >수정하기</b-button
-            >
-            <b-button
-              class="mt-3 float-start"
-              @click="$bvModal.hide('btnModal')"
-              >취소하기</b-button
-            >
-          </div>
-        </b-modal>
+        <b-card v-if="showTableValue">
+          <table
+            class="table mt-3"
+            v-for="(selectedItem, i) in selected"
+            v-bind:key="i"
+          >
+            <tr>
+              <th width="25%" aline="center">이벤트유형</th>
+              <td width="70%">{{ selectedItem.EventType }}</td>
+            </tr>
+            <tr>
+              <th>이벤트명</th>
+              <td>{{ selectedItem.EventName }}</td>
+            </tr>
+            <tr>
+              <th>가게업종</th>
+              <td>{{ selectedItem.StoreType }}</td>
+            </tr>
+            <tr>
+              <th>가게명</th>
+              <td>{{ selectedItem.StoreName }}</td>
+            </tr>
+            <tr>
+              <th>가게전화번호</th>
+              <td>{{ selectedItem.StoreNum }}</td>
+            </tr>
+            <tr>
+              <th>가게주소</th>
+              <td>{{ selectedItem.EventPrise }}</td>
+            </tr>
+            <tr>
+              <th></th>
+              <td></td>
+            </tr>
+          </table>
+        </b-card>
       </b-card>
     </base-header>
   </div>
@@ -364,7 +282,8 @@ export default {
       selectMode: "single",
       selected: [],
       modalShow: false,
-      changeEventName1: ""
+      changeEventName1: "",
+      showTableValue: false
     };
   },
   created() {
@@ -390,6 +309,10 @@ export default {
     // },
     // 테이블 행 셀렉트 기능입니다.
     //중복체크를 없애는 기능입니다.
+
+    ShowTable() {
+      this.showTableValue != this.showTableValue;
+    }
   }
 };
 </script>
