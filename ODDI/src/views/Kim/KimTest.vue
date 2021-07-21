@@ -23,25 +23,7 @@
       </div>
     </base-header>
 
-    <!-- <p style="font-size:1em; font-weight:bold">
-        OOO 님 어서오세요. 오늘은 특별한 하루가 되어 보시겠습니까?
-      </p> -->
-
-    <!-- 디자인 참고 -->
-    <!-- <b-container fluid class="mt--6">
-      <b-row>
-        <div>
-          <b-col xl="7" class="mb-5 mb-xl-0">
-            <card type="default" header-classes="bg-transparent">
-              <b-row align-v="center" slot="header">
-                asdfasdfdsaasfasfasdfsfasfafdfdsf
-              </b-row>
-            </card>
-          </b-col>
-        </div>
-      </b-row>
-    </b-container> -->
-
+    <!-- 메인 시작 -->
     <b-container
       fluid
       class="mt--7 bg-gradient-success"
@@ -51,7 +33,6 @@
         class="border-0 "
         style="border-radius:2em;box-shadow: 0px 0px 30px 3px brown"
       >
-        <!-- margin-top:1em -->
         <div class="container" style="">
           <div class="row">
             <div class="col-12 col-sm-12 col-lg-12 col-xl-7" style="">
@@ -81,7 +62,7 @@
                 </div>
               </div>
               <div
-                style="  
+                style="
     box-shadow: 0px 0px 8px 3px hsla(233, 100%, 46%, 0.4)
   background-color:white; margin-top:1em; padding-left:1em; padding:1em 1em; color:black"
                 class="edgeradius"
@@ -165,102 +146,27 @@
   background-color:white; padding-left:1em; padding:1em 1em; overflow-y:scroll; width:100%; height:37.8em; background-color: white"
                 class="edgeradius"
               >
-                <div class="mouseimage">
-                  <img
-                    src="img/listimage/cogi.jpg"
-                    style="width:6em; height:6em"
-                  />
-                  한경 샤브샤브 양평역점
+                <div>
+                  <!-- <div class="mouseimage"> -->
+                  <table style="width:100%">
+                    <tr>
+                      <td rowspan="2" style="text-align:center; width:30%">
+                        <img
+                          src="img/listimage/cogi.jpg"
+                          style="width:6em; height:6em"
+                        />
+                      </td>
+                      <td style="width:35%">샤브샤브 양평역점</td>
+                      <td>30%</td>
+                    </tr>
+                    <tr>
+                      <td>성이 '구' 씨 인분</td>
+                      <td>선착순</td>
+                    </tr>
+                  </table>
                 </div>
               </div>
             </div>
-            <!-- 선 나누기 -->
-            <!-- <div class="row">
-              <div class=" col-12 col-sm-12 col-lg-12 col-xl-12">
-                <br />
-                <div style="border-top: solid 2px black; margin-top:1em"></div>
-              </div>
-            </div> -->
-            <!-- 새로운 div 시작 -->
-            <!-- <div
-              class="col-12 col-sm-12 col-lg-12 col-xl-7"
-              style="margin-top:3em"
-            >
-              <div style="text-align:center; ">
-                <img
-                  src="img/listimage/cogi.jpg"
-                  style="width:40em; height:28em;"
-                  class="edgeradius"
-                />
-              </div>
-              <div
-                style="background-color: black; margin-top:1em; padding-left:1em; padding:1em 1em"
-                class="edgeradius"
-              >
-                <table>
-                  <tr>
-                    <td>이벤트유형 :</td>
-                    <td>선착순</td>
-                  </tr>
-                  <tr>
-                    <td>이벤트명 :</td>
-                    <td>구씨성을 가진 3명</td>
-                  </tr>
-                  <tr>
-                    <td>할인율 :</td>
-                    <td>50%</td>
-                  </tr>
-                  <tr>
-                    <td>선착순 :</td>
-                    <td>1 / 3 명</td>
-                  </tr>
-                  <tr>
-                    <td>가게업종 :</td>
-                    <td>음식점</td>
-                  </tr>
-                  <tr>
-                    <td>가게명 :</td>
-                    <td>샤브샤브 양평역점</td>
-                  </tr>
-                  <tr>
-                    <td>전화번호 :</td>
-                    <td>010-0000-0000</td>
-                  </tr>
-                  <tr>
-                    <td>주소 :</td>
-                    <td>양평역 2번출구</td>
-                  </tr>
-                </table>
-              </div>
-            </div> -->
-            <!-- 옆에 리스트 -->
-            <!-- <div class="col">
-              첫번째 drops down
-              <div class="btn-group" style="margin-top:3em;">
-                <button
-                  class="btn btn-secondary btn-sm dropdown-toggle"
-                  type="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                  style="width: 10em;"
-                >
-                  가게업종
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">음식점</a></li>
-                  <li><a class="dropdown-item" href="#">의류매장</a></li>
-                </ul>
-              </div>
-              <br />
-              <br />
-              <div style="overflow-y:scroll; width:100%; height:43em;">
-                <img
-                  src="img/listimage/cogi.jpg"
-                  style="width:6em; height:6em; overflow:visible"
-                  class="edgeradius mouseimage"
-                />
-              </div>
-            </div> -->
           </div>
         </div>
       </b-card>
@@ -617,5 +523,9 @@ export default {
 .b img {
   width: 70%;
   height: 30%;
+}
+
+table {
+  border-bottom: 1px solid black;
 }
 </style>
