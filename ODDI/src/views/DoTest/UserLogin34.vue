@@ -53,9 +53,17 @@
                   <span class="btn-inner--text">Google</span>
                 </a>
               </div> -->
+              <div class="btn-wrapper text-center">
+                <a id="custom-login-btn" @click="kakaologin()">
+                  <img
+                    src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg"
+                    width="222"
+                  />
+                </a>
+              </div>
               <br />
               <div class="btn-wrapper text-center">
-                <a href="#" class="btn btn-neutral btn-icon">
+                <!-- <a href="#" class="btn btn-neutral btn-icon">
                   <span
                     class="btn-inner--icon"
                     id="custom-login-btn"
@@ -63,7 +71,7 @@
                     ><img src="img/icons/common/kakaologo.jpg"
                   /></span>
                   <span class="btn-inner--text">KaKao</span>
-                </a>
+                </a> -->
                 <a href="#" class="btn btn-neutral btn-icon">
                   <span class="btn-inner--icon" id="naverIdLogin">
                     <img src="img/icons/common/naverlogo.png" />
@@ -120,12 +128,12 @@
           </b-card>
           <b-row class="mt-3">
             <b-col cols="6">
-              <router-link to="/dashboard" class="text-light"
+              <router-link to="/SorryPage" class="text-light"
                 ><small>비밀번호 찾기</small></router-link
               >
             </b-col>
             <b-col cols="6" class="text-right">
-              <router-link to="/register" class="text-light"
+              <router-link to="/UserRegi34" class="text-light"
                 ><small>회원가입</small></router-link
               >
             </b-col>
@@ -143,14 +151,40 @@ export default {
         firstName: "Songtaejun",
         email: "",
         password: "",
-        rememberMe: false
-      }
+        rememberMe: false,
+      },
     };
   },
   methods: {
     onSubmit() {
       // this will be called only after form is valid. You can do api call here to login
-    }
-  }
+    },
+    kakaologin() {
+      window.Kakao.Auth.login({
+        scope: "profile_nickname, account_email, gender",
+        success: this.getKakaoAccount,
+      });
+    },
+    getKakaoAccount() {
+      window.Kakao.API.request({
+        url: "/v2/user/me",
+        success: (res) => {
+          const kakaoAccount = res.kakao_account;
+          const nickname = kakao_account.profile_nickname;
+          const email = kakao_account.account_email;
+          const gender = kakao_account.gender;
+
+          console.log("kakaoAccount", kakaoAccount);
+          console.log("nickname", nickname);
+          console.log("gender", gender);
+
+          alert("로그인 성공!");
+        },
+        fail: (error) => {
+          console.log(error);
+        },
+      });
+    },
+  },
 };
 </script>

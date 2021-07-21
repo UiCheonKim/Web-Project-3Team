@@ -1,13 +1,13 @@
 <template>
   <div>
-    <!-- Header : 이거 맞음 -->
+    <!-- BusRegi351 -> BusRegi352 -->
     <div class="header bg-gradient-success py-7 py-lg-8 pt-lg-9">
       <b-container class="container">
         <div class="header-body text-center mb-7">
           <b-row class="justify-content-center">
             <b-col xl="5" lg="6" md="8" class="px-5">
               <h1 class="text-white">
-                사업자 등록증에 있는 정보를 <br />그대로 옯겨주세요
+                사업자 등록증에 있는 정보를 <br />기입해주세요!
               </h1>
             </b-col>
           </b-row>

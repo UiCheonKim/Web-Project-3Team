@@ -15,9 +15,11 @@
 
 */
 import Vue from "vue";
+import VueX from "vuex";
 import DashboardPlugin from "./plugins/dashboard-plugin";
 import App from "./App.vue";
 import mixins from "./mixins";
+import store from "./store/store";
 
 //modal
 import VModal from "vue-js-modal";
@@ -27,11 +29,16 @@ Vue.use(VModal, { dynamic: true });
 import router from "./routes/router";
 // plugin setup
 Vue.use(DashboardPlugin);
+Vue.use(VueX);
 Vue.mixin(mixins);
 
 /* eslint-disable no-new */
 new Vue({
   el: "#app",
   render: h => h(App),
-  router
+  router,
+  store
 });
+
+window.Kakao.init("79f723e81004fe5d9f07164b2ec4fac9");
+window.Kakao.isInitialized();
