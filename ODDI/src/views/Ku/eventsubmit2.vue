@@ -1,7 +1,7 @@
 <template>
   <div>
     <base-header class="pb-9 pt-9 pt-md-9 bg-gradient-success">
-      <b-card>
+      <b-card style="box-shadow: 0px 0px 60px 20px darkgrey">
         <br />
         <br />
         <h1 class="float-start" style="color:#4d199c;padding:1px 50px">
@@ -11,10 +11,10 @@
         <br />
         <form
           class="row g-3"
-          style="background-color:hsla(260, 100%, 55%, 0.2); border-radius:60px; margin: 3%"
+          style="background-color:white; border:2px solid #e0e0e0; border-radius:10px ; margin: 3%"
         >
           <br />
-          <div <div>
+          <div>
             <br />
             <br />
             <label class="pl-8" style="font-weight:bold; font-size: 0.9rem;"
