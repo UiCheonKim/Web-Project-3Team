@@ -165,42 +165,44 @@
                 </h3>
                 <!-- <span class="box int_id"> -->
                 <!-- 여기부터 -->
-                <div>
-                  <div class="form-control-wrap">
-                    <div class="form-control  Address-module__3wr8">
-                      <div
-                        class="input-label-container fullWidth"
-                        style="width: inherit;"
-                      >
-                        <div id="postcodify"></div>
 
-                        <div
-                          class="daummap, addr1"
-                          id="address"
-                          placeholder="주소찾기 버튼을 누르세요"
-                          style="color:black"
-                        >
-                          {{ addr1 }}
-                          <!-- <button @click="showApi">주소API 호출</button> -->
-                        </div>
-                      </div>
-
-                      <button
-                        @click="showApi()"
-                        name="findAddress"
-                        type="button"
-                        class="btn btn-primary"
-                      >
-                        주소찾기
-                      </button>
+                <!-- <div class="form-control-wrap"> -->
+                <div class="form-control  Address-module__3wr8">
+                  <div
+                    class="input-label-container fullWidth "
+                    style="width: inherit;"
+                  >
+                    <div
+                      id="address"
+                      placeholder="주소찾기 버튼을 누르세요"
+                      style="color:black"
+                    >
+                      {{ addr1 }}
                     </div>
                   </div>
+
+                  <button
+                    @click="showApi()"
+                    name="findAddress"
+                    type="button"
+                    class="btn btn-success btn-sm"
+                  >
+                    주소찾기
+                  </button>
                 </div>
-                <!-- 여기까지 -->
-                <!-- <input type="text" id="id" class="int" maxlength="20" /> -->
-                <!-- </span> -->
-                <!-- <span class="error_next_box"></span> -->
               </div>
+
+              <!-- 상세주소입력 -->
+              <span class="box int_id">
+                <input
+                  type="text"
+                  class="int"
+                  placeholder="상세주소를 입력해주세요"
+                  required=""
+                  inputmode="text"
+                  value=""
+                />
+              </span>
 
               <div>
                 <h3>
@@ -263,6 +265,7 @@
                     ></span>
                   </div>
                 </div>
+
                 <div class="box int_id" style="height:initial;">
                   <div class="uploader-wrapper single">
                     <span
