@@ -6,7 +6,7 @@
         <div class="header-body text-center mb-7">
           <b-row class="justify-content-center">
             <b-col xl="5" lg="6" md="8" class="px-5">
-              <h1 class="text-white">Welcome!</h1>
+              <h1 class="text-white">반갑습니다!</h1>
               <p class="text-lead text-white">
                 오늘 하루는 이상하고 특별하고 재밌는 날!!
               </p>
@@ -151,8 +151,8 @@ export default {
         firstName: "Songtaejun",
         email: "",
         password: "",
-        rememberMe: false,
-      },
+        rememberMe: false
+      }
     };
   },
   methods: {
@@ -162,13 +162,13 @@ export default {
     kakaologin() {
       window.Kakao.Auth.login({
         scope: "profile_nickname, account_email, gender",
-        success: this.getKakaoAccount,
+        success: this.getKakaoAccount
       });
     },
     getKakaoAccount() {
       window.Kakao.API.request({
         url: "/v2/user/me",
-        success: (res) => {
+        success: res => {
           const kakaoAccount = res.kakao_account;
           const nickname = kakao_account.profile_nickname;
           const email = kakao_account.account_email;
@@ -180,11 +180,11 @@ export default {
 
           alert("로그인 성공!");
         },
-        fail: (error) => {
+        fail: error => {
           console.log(error);
-        },
+        }
       });
-    },
-  },
+    }
+  }
 };
 </script>
