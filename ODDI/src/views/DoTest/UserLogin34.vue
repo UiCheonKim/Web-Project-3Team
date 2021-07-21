@@ -63,7 +63,10 @@
               </div>
               <br />
               <div class="btn-wrapper text-center">
-                <!-- <a href="#" class="btn btn-neutral btn-icon">
+                <a id="naverIdLogin"> </a>
+              </div>
+              <!-- <div class="btn-wrapper text-center">
+                <a href="#" class="btn btn-neutral btn-icon">
                   <span
                     class="btn-inner--icon"
                     id="custom-login-btn"
@@ -71,14 +74,14 @@
                     ><img src="img/icons/common/kakaologo.jpg"
                   /></span>
                   <span class="btn-inner--text">KaKao</span>
-                </a> -->
+                </a>
                 <a href="#" class="btn btn-neutral btn-icon">
                   <span class="btn-inner--icon" id="naverIdLogin">
                     <img src="img/icons/common/naverlogo.png" />
                   </span>
                   <span class="btn-inner--text">Naver</span>
                 </a>
-              </div>
+              </div> -->
             </b-card-header>
             <b-card-body class="px-lg-5 py-lg-5">
               <div class="text-center text-muted mb-4">
@@ -151,9 +154,36 @@ export default {
         firstName: "Songtaejun",
         email: "",
         password: "",
-        rememberMe: false
-      }
+        rememberMe: false,
+      },
+      naverLogin: null,
     };
+  },
+  mounted() {
+    this.naverLogin = new window.naver.LoginWithNaverId({
+      clientId: "G3x4jYE0zDXPC9PKiYqF", //개발자센터에 등록된 ClientID
+      callbackUrl: "http://localhost:8080/login", //개발자센터에 등록한 callback url
+      isPopup: false,
+      loginButton: { color: "green", type: 3, height: 60 },
+    });
+
+    this.naverLogin.init();
+
+    this.naverLogin.getLoginStatus((status) => {
+      if (status) {
+        console.log(status);
+        console.log(this.naverLogin.user);
+
+        var email = this.naverLogin.user.getEmail();
+        if (email == undefined || email == null) {
+          alert("이메일은 필수 정보입니다. 정보 제공을 동의해주세요.");
+          this.naverLogin.reprompt();
+          return;
+        }
+      } else {
+        console.log("callback 처리에 실패하였습니다.");
+      }
+    });
   },
   methods: {
     onSubmit() {
@@ -162,13 +192,13 @@ export default {
     kakaologin() {
       window.Kakao.Auth.login({
         scope: "profile_nickname, account_email, gender",
-        success: this.getKakaoAccount
+        success: this.getKakaoAccount,
       });
     },
     getKakaoAccount() {
       window.Kakao.API.request({
         url: "/v2/user/me",
-        success: res => {
+        success: (res) => {
           const kakaoAccount = res.kakao_account;
           const nickname = kakao_account.profile_nickname;
           const email = kakao_account.account_email;
@@ -180,11 +210,11 @@ export default {
 
           alert("로그인 성공!");
         },
-        fail: error => {
+        fail: (error) => {
           console.log(error);
-        }
+        },
       });
-    }
-  }
+    },
+  },
 };
 </script>
