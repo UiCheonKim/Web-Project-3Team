@@ -876,7 +876,11 @@
             </b-card-header>
             <b-card-body class="px-lg-5 py-lg-5">
               <div class="text-center">
-                <b-button type="submit" variant="primary" class="mt-4" herf=""
+                <b-button
+                  type="submit"
+                  variant="primary"
+                  class="mt-4"
+                  @click="createUser"
                   >가입하기</b-button
                 >
               </div>
@@ -892,13 +896,37 @@ export default {
   name: "",
   components: {},
   data() {
-    return {};
+    return {
+      userId: "",
+      userPw: "",
+      userName: "",
+      userbirth_year: "",
+      userbirth_mon: "",
+      userbirth_day: "",
+      usersex: 1, // default 남자
+      usertype: 1, // default 일반회원
+      userphone: ""
+    };
   },
   setup() {},
   created() {},
   mounted() {},
   unmounted() {},
-  methods: {}
+  methods: {
+    async createUser() {
+      const r = await this.$api("/api/createUser", "post", {
+        param: [
+          {
+            first_name: this.firstName,
+            last_name: this.lastName,
+            email: this.email
+          }
+        ]
+      });
+      console.log(r);
+      console.table(this.list);
+    }
+  }
 };
 </script>
 

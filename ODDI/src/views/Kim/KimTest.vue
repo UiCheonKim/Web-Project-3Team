@@ -270,6 +270,8 @@ export default {
       var markerPosition = new window.kakao.maps.LatLng(lat, lon),
         message = this.message;
 
+      console.log(message);
+
       var marker = new window.kakao.maps.Marker({
         map: this.map,
         position: markerPosition
@@ -283,6 +285,17 @@ export default {
         removable: iwRemoveable
       });
 
+      window.kakao.maps.event.addListener(
+        marker,
+        "mouseover",
+        this.makeOverListener(this.map, marker, infowindow)
+      );
+      window.kakao.maps.event.addListener(
+        marker,
+        "mouseout",
+        this.makeOutListener(infowindow)
+      );
+
       /*
         infowindow.open(map, marker)
         map.setCenter(markerPosition)
@@ -294,12 +307,23 @@ export default {
       */
 
       // 인포윈도우를 마커위에 표시합니다
-      infowindow.open(this.map, marker);
+      // infowindow.open(this.map, marker);
 
       // 지도 중심좌표를 접속위치로 변경합니다
       this.map.setCenter(markerPosition);
 
       //marker.setMap(this.map, this.message) - 없어도 됨
+    },
+
+    makeOverListener(map, marker, infowindow) {
+      return function() {
+        infowindow.open(map, marker);
+      };
+    },
+    makeOutListener(infowindow) {
+      return function() {
+        infowindow.close();
+      };
     },
 
     //__________________________________________________________________________________________커피점 마커 표시
@@ -318,11 +342,34 @@ export default {
           this.imageSize,
           this.imageOptions
         );
-        this.marker = this.createMarker(this.coffeePositions[i], markerImage);
+        const marker = this.createMarker(this.coffeePositions[i], markerImage);
 
         // 생성된 마커를 커피숍 마커 배열에 추가합니다
-        this.coffeeMarkers.push(this.marker);
+        this.coffeeMarkers.push(marker);
+
+        var infowindow = new kakao.maps.InfoWindow({
+          content: this.coffeeEvents[i],
+          removable: true
+        });
+
+        window.kakao.maps.event.addListener(
+          marker,
+          "mouseover",
+          this.makeOverListener(this.map, marker, infowindow)
+        );
+        window.kakao.maps.event.addListener(
+          marker,
+          "mouseout",
+          this.makeOutListener(infowindow)
+        );
+        window.kakao.maps.event.addListener(marker, "click", this.aaa());
       }
+    },
+
+    aaa() {
+      return () => {
+        console.log("adfefe");
+      };
     },
     // 마커이미지의 주소와, 크기, 옵션으로 마커 이미지를 생성하여 리턴하는 함수입니다
     createMarkerImage(src, size, options) {
