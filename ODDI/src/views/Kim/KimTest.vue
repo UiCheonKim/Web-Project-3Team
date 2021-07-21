@@ -270,8 +270,6 @@ export default {
       var markerPosition = new window.kakao.maps.LatLng(lat, lon),
         message = this.message;
 
-      console.log(message);
-
       var marker = new window.kakao.maps.Marker({
         map: this.map,
         position: markerPosition
