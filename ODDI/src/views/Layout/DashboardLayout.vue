@@ -130,12 +130,27 @@
         </div>
 
         <!-- 로그인/회원가입 -->
-        <div>
-          <b-button class="" href="#/UserLogin34">로그인</b-button>
-          <br />
-          <b-link class="" href="#/UserRegi34">회원가입</b-link>
-          <br />
-          <b-link class="" href="#/BusRegi352">입점신청하기</b-link>
+
+        <div class="mx-auto my-2">
+          <a
+            size="sm"
+            class="float-start"
+            variant="outline-light"
+            pill
+            href="#/UserLogin34"
+            >로그인 |</a
+          >
+          <a class="" variant="outline-light" size="sm" pill href="#/UserRegi34"
+            >회원가입 |</a
+          >
+          <a
+            class="float-end"
+            variant="outline-light"
+            size="sm"
+            pill
+            href="#/BusRegi352"
+            >입점 신청하기</a
+          >
         </div>
       </template>
     </side-bar>

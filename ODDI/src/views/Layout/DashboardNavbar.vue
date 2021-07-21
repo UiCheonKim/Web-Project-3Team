@@ -74,17 +74,17 @@
 
         <template>
           <b-dropdown-header class="noti-title">
-            <h6 class="text-overflow m-0">Welcome!</h6>
+            <h6 class="text-overflow m-0">반갑습니다!</h6>
           </b-dropdown-header>
-          <b-dropdown-item href="#!">
+          <b-dropdown-item href="#/SorryPage">
             <i class="ni ni-single-02"></i>
-            <span>My profile</span>
+            <span>내 프로필</span>
           </b-dropdown-item>
 
           <div class="dropdown-divider"></div>
           <b-dropdown-item href="#!">
             <i class="ni ni-user-run"></i>
-            <span>Logout</span>
+            <span>로그아웃</span>
           </b-dropdown-item>
         </template>
       </base-dropdown>
