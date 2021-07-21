@@ -258,104 +258,104 @@ export default {
       perPage: 5,
       currentPage: 1,
       EndcurrentPage: 1,
-      eventList: [
-        {
-          EventKey: "ES61 2470 3725 0787 7871 2672",
-          EventName: "더울때는 아~아!",
-          StoreName: "가게1",
-          StoreType: "카페",
-          StoreNum: "010-0000-0001",
-          EventText:
-            "mattis nibh ligula nec sem duis aliquam convallis nunc proin at",
-          EventStartTime: "2021.07.20",
-          EventEndTime: "11/8/2020",
-          EventType: "추첨",
-          EventPersonNum: 22,
-          EventPrise: "서울시 00구",
-          EventDiscount: 14,
-          EventEndFact: true
-        },
-        {
-          EventKey: "SM62 H871 3958 899C PRCE EOH7 CPS",
-          EventName: "오늘도 치킨이닭",
-          StoreName: "가게2",
-          StoreType: "음식점",
-          StoreNum: "010-0000-0002",
-          EventText:
-            "viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat",
-          EventStartTime: "2021.07.10",
-          EventEndTime: "3/20/2021",
-          EventType: "추첨",
-          EventPersonNum: 27,
-          EventPrise: "서울시 00구",
-          EventDiscount: 77,
-          EventEndFact: false
-        },
-        {
-          EventKey: "CH83 0566 5JL0 CXC0 JK8Y Y",
-          EventName: "돈까스를 먹으면 냉모밀이 공짜?",
-          StoreName: "가게3",
-          StoreType: "음식점",
-          StoreNum: "010-0000-0003",
-          EventText:
-            "volutpat convallis morbi odio odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat",
-          EventStartTime: "2021.07.09",
-          EventEndTime: "8/7/2020",
-          EventType: "추첨",
-          EventPersonNum: 40,
-          EventPrise: "서울시 00구",
-          EventDiscount: 59,
-          EventEndFact: true
-        },
-        {
-          EventKey: "SE25 4746 0199 3718 5219 5231",
-          EventName: "반팔 무조건 5000원",
-          StoreName: "가게4",
-          StoreType: "옷가게",
-          StoreNum: "010-0000-0004",
-          EventText:
-            "ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy integer non velit donec",
-          EventStartTime: "2021.07.08",
-          EventEndTime: "6/1/2021",
-          EventType: "선착순",
-          EventPersonNum: 22,
-          EventPrise: "서울시 00구",
-          EventDiscount: 30,
-          EventEndFact: false
-        },
-        {
-          EventKey: "GT42 KVGR 18PR E0WW UFYW 7YLB E5GF",
-          EventName: "치즈돈까스 포장이요~",
-          StoreName: "가게5",
-          StoreType: "음식점",
-          StoreNum: "010-0000-0005",
-          EventText:
-            "felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl",
-          EventStartTime: "2021.07.07",
-          EventEndTime: "6/12/2021",
-          EventType: "선착순",
-          EventPersonNum: 47,
-          EventPrise: "서울시 00구",
-          EventDiscount: 45,
-          EventEndFact: true
-        },
-        {
-          EventKey: "BA43 2890 8569 1557 0733",
-          EventName: "★파★ 검은옷은 소주 무료 ★격★",
-          StoreName: "가게6",
-          StoreType: "음식점",
-          StoreNum: "010-0000-0006",
-          EventText:
-            "diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo",
-          EventStartTime: "2021.07.06",
-          EventEndTime: "2/26/2021",
-          EventType: "선착순",
-          EventPersonNum: 8,
-          EventPrise: "서울시 00구",
-          EventDiscount: 58,
-          EventEndFact: true
-        }
-      ],
+      eventList: [],
+      //   {
+      //     EventKey: "ES61 2470 3725 0787 7871 2672",
+      //     EventName: "더울때는 아~아!",
+      //     StoreName: "가게1",
+      //     StoreType: "카페",
+      //     StoreNum: "010-0000-0001",
+      //     EventText:
+      //       "mattis nibh ligula nec sem duis aliquam convallis nunc proin at",
+      //     EventStartTime: "2021.07.20",
+      //     EventEndTime: "11/8/2020",
+      //     EventType: "추첨",
+      //     EventPersonNum: 22,
+      //     EventPrise: "서울시 00구",
+      //     EventDiscount: 14,
+      //     EventEndFact: true
+      //   },
+      //   {
+      //     EventKey: "SM62 H871 3958 899C PRCE EOH7 CPS",
+      //     EventName: "오늘도 치킨이닭",
+      //     StoreName: "가게2",
+      //     StoreType: "음식점",
+      //     StoreNum: "010-0000-0002",
+      //     EventText:
+      //       "viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat",
+      //     EventStartTime: "2021.07.10",
+      //     EventEndTime: "3/20/2021",
+      //     EventType: "추첨",
+      //     EventPersonNum: 27,
+      //     EventPrise: "서울시 00구",
+      //     EventDiscount: 77,
+      //     EventEndFact: false
+      //   },
+      //   {
+      //     EventKey: "CH83 0566 5JL0 CXC0 JK8Y Y",
+      //     EventName: "돈까스를 먹으면 냉모밀이 공짜?",
+      //     StoreName: "가게3",
+      //     StoreType: "음식점",
+      //     StoreNum: "010-0000-0003",
+      //     EventText:
+      //       "volutpat convallis morbi odio odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat",
+      //     EventStartTime: "2021.07.09",
+      //     EventEndTime: "8/7/2020",
+      //     EventType: "추첨",
+      //     EventPersonNum: 40,
+      //     EventPrise: "서울시 00구",
+      //     EventDiscount: 59,
+      //     EventEndFact: true
+      //   },
+      //   {
+      //     EventKey: "SE25 4746 0199 3718 5219 5231",
+      //     EventName: "반팔 무조건 5000원",
+      //     StoreName: "가게4",
+      //     StoreType: "옷가게",
+      //     StoreNum: "010-0000-0004",
+      //     EventText:
+      //       "ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy integer non velit donec",
+      //     EventStartTime: "2021.07.08",
+      //     EventEndTime: "6/1/2021",
+      //     EventType: "선착순",
+      //     EventPersonNum: 22,
+      //     EventPrise: "서울시 00구",
+      //     EventDiscount: 30,
+      //     EventEndFact: false
+      //   },
+      //   {
+      //     EventKey: "GT42 KVGR 18PR E0WW UFYW 7YLB E5GF",
+      //     EventName: "치즈돈까스 포장이요~",
+      //     StoreName: "가게5",
+      //     StoreType: "음식점",
+      //     StoreNum: "010-0000-0005",
+      //     EventText:
+      //       "felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl",
+      //     EventStartTime: "2021.07.07",
+      //     EventEndTime: "6/12/2021",
+      //     EventType: "선착순",
+      //     EventPersonNum: 47,
+      //     EventPrise: "서울시 00구",
+      //     EventDiscount: 45,
+      //     EventEndFact: true
+      //   },
+      //   {
+      //     EventKey: "BA43 2890 8569 1557 0733",
+      //     EventName: "★파★ 검은옷은 소주 무료 ★격★",
+      //     StoreName: "가게6",
+      //     StoreType: "음식점",
+      //     StoreNum: "010-0000-0006",
+      //     EventText:
+      //       "diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo",
+      //     EventStartTime: "2021.07.06",
+      //     EventEndTime: "2/26/2021",
+      //     EventType: "선착순",
+      //     EventPersonNum: 8,
+      //     EventPrise: "서울시 00구",
+      //     EventDiscount: 58,
+      //     EventEndFact: true
+      //   }
+      // ],
       //테이블 행 셀렉트 기능입니다.
       selectMode: "single",
       selected: [],
@@ -365,7 +365,7 @@ export default {
   },
   created() {
     //이벤트 리스트 테이블 기능입니다.
-    // this.getList();
+    this.getList();
   },
   computed: {
     //페이지 네이션 기능입니다.
@@ -378,12 +378,12 @@ export default {
   unmounted() {},
   methods: {
     //이벤트 리스트 Mock 랜더링 기능입니다.
-    // async getList() {
-    //   this.eventList = await this.$api(
-    //     "https://4d20c04e-97aa-4c1c-b612-4fe31a4b811c.mock.pstmn.io/eventlist",
-    //     "get"
-    //   );
-    // },
+    async getList() {
+      this.eventList = await this.$api(
+        "https://4d20c04e-97aa-4c1c-b612-4fe31a4b811c.mock.pstmn.io/eventlist",
+        "get"
+      );
+    },
     // 테이블 행 셀렉트 기능입니다.
     //중복체크를 없애는 기능입니다.
     onRowSelected(items) {
