@@ -89,9 +89,14 @@
                     v-model="userRePw"
                     @blur="checkpw2"
                   />
+
+                  <!-- @blur="checkpw2" -->
                 </span>
                 <span v-show="!pw2Valid" id="error_next_box"
                   >필수 정보입니다.</span
+                >
+                <span v-show="!pw3Valid" id="error_next_box"
+                  >비밀번호가 일치하지 않습니다.</span
                 >
               </div>
 
@@ -933,6 +938,7 @@ export default {
       idValid: true,
       pw1Valid: true,
       pw2Valid: true,
+      pw3Valid: true,
       nameValid: true
     };
   },
@@ -965,6 +971,11 @@ export default {
         this.pw2Valid = false;
       } else {
         this.pw2Valid = true;
+        if (this.userRePw != this.userPw) {
+          this.pw3Valid = false;
+        } else {
+          this.pw3Valid = true;
+        }
       }
     },
     checkname() {
