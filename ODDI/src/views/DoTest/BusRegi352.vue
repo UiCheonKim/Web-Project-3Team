@@ -59,6 +59,8 @@
               </div>
               <div>
                 <h3>
+                  <br />
+
                   <label for="id">업태</label>
                 </h3>
                 <span class="box int_id">
@@ -78,6 +80,7 @@
               </div>
               <div>
                 <h3>
+                  <br />
                   <label for="id">종목</label>
                 </h3>
                 <span class="box int_id">
@@ -97,6 +100,7 @@
               </div>
               <div>
                 <h3>
+                  <br />
                   <label for="id">상호</label>
                 </h3>
                 <span class="box int_id">
@@ -115,6 +119,7 @@
               </div>
               <div>
                 <h3>
+                  <br />
                   <label for="id">대표자 성명</label>
                 </h3>
                 <span class="box int_id">
@@ -134,6 +139,7 @@
               </div>
               <div>
                 <h3>
+                  <br />
                   <label for="id">대표자 생년월일</label>
                 </h3>
                 <span class="box int_id">
@@ -154,6 +160,7 @@
               </div>
               <div>
                 <h3>
+                  <br />
                   <label for="id">사업자 소재지</label>
                 </h3>
                 <!-- <span class="box int_id"> -->
@@ -165,23 +172,26 @@
                         class="input-label-container fullWidth"
                         style="width: inherit;"
                       >
-                        <div class="input-container left">
-                          <input
-                            type="text"
-                            name="zipCode"
-                            required=""
-                            placeholder="주소 찾기를 눌러주세요."
-                            inputmode="text"
-                            value=""
-                          />
+                        <div id="postcodify"></div>
+
+                        <div
+                          class="daummap, addr1"
+                          id="address"
+                          placeholder="주소찾기 버튼을 누르세요"
+                          style="color:black"
+                        >
+                          {{ addr1 }}
+                          <!-- <button @click="showApi">주소API 호출</button> -->
                         </div>
                       </div>
+
                       <button
+                        @click="showApi()"
                         name="findAddress"
                         type="button"
-                        class="button Address-module__1Jym small secondary"
+                        class="btn btn-primary"
                       >
-                        주소 찾기
+                        주소찾기
                       </button>
                     </div>
                   </div>
@@ -194,6 +204,7 @@
 
               <div>
                 <h3>
+                  <br />
                   <label for="id">사업자등록증 첨부</label>
                 </h3>
                 <div class="box int_id" style="height:initial;">
@@ -205,21 +216,15 @@
                         class="file-upload-column BizCertUpload-module__3pPr"
                       >
                         <div class="uploader-wrapper single">
-                          <span
-                            ><input
-                              type="file"
-                              accept=".jpg, .jpeg, .png, .pdf"
-                              style="position: absolute; left: -1000px; visibility: hidden;"
-                            /><span
-                              ><button
-                                type="button"
-                                class="button uploader-btn single small text"
-                              >
-                                <i class="icon icon-plus"></i>
-                                <div>이미지 추가</div>
-                              </button></span
-                            ></span
-                          >
+                          <span>
+                            <div class="mb-3">
+                              <input
+                                class="form-control"
+                                type="file"
+                                accept=".jpg, .jpeg, .png, .pdf"
+                                id="formFile"
+                              /></div
+                          ></span>
                         </div>
                       </div>
                       <ul
@@ -242,25 +247,20 @@
               </div>
               <div>
                 <h3>
+                  <br />
                   <label for="id">가게사진(3개)</label>
                 </h3>
                 <div class="box int_id" style="height:initial;">
                   <div class="uploader-wrapper single">
-                    <span
-                      ><input
-                        type="file"
-                        accept=".jpg, .jpeg, .png, .pdf"
-                        style="position: absolute; left: -1000px; visibility: hidden;"
-                      /><span
-                        ><button
-                          type="button"
-                          class="button uploader-btn single small text"
-                        >
-                          <i class="icon icon-plus"></i>
-                          <div>이미지 추가</div>
-                        </button></span
-                      ></span
-                    >
+                    <span>
+                      <div class="mb-3">
+                        <input
+                          class="form-control"
+                          type="file"
+                          accept=".jpg, .jpeg, .png, .pdf"
+                          id="formFile"
+                        /></div
+                    ></span>
                   </div>
                 </div>
                 <div class="box int_id" style="height:initial;">
@@ -320,10 +320,13 @@
 </template>
 <script>
 export default {
-  name: "register",
   data() {
     return {
       // BusinessRegistration: "사업자등록번호를 입력하세요.",
+      zip: "",
+      addr1: "",
+      addr2: "",
+
       model: {
         name: "",
         email: "",
@@ -335,6 +338,19 @@ export default {
   methods: {
     onSubmit() {
       // this will be called only after form is valid. You can do an api call here to register users
+    },
+    showApi() {
+      new window.daum.Postcode({
+        oncomplete: data => {
+          console.log(data);
+          this.addr1 = data.roadAddress;
+        },
+        onclose: state => {
+          if (state === "FORCE_CLOSE") {
+          } else if (state === "COMPLETE_CLOSE") {
+          }
+        }
+      }).open();
     }
   }
 };
