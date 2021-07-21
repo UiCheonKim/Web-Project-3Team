@@ -193,13 +193,21 @@ export default {
       storeMarkers: [],
       //커피숍
       coffeePositions: [
-        new window.kakao.maps.LatLng(37.499590490909185, 127.0263723554437),
-        new window.kakao.maps.LatLng(37.499427948430814, 127.02794423197847),
-        new window.kakao.maps.LatLng(37.498553760499505, 127.02882598822454),
-        new window.kakao.maps.LatLng(37.497625593121384, 127.02935713582038),
-        new window.kakao.maps.LatLng(37.49646391248451, 127.02675574250912),
-        new window.kakao.maps.LatLng(37.49629291770947, 127.02587362608637),
-        new window.kakao.maps.LatLng(37.49754540521486, 127.02546694890695)
+        new window.kakao.maps.LatLng(37.525161040599585, 126.88869378096824),
+        new window.kakao.maps.LatLng(37.52512874051384, 126.88788496742713),
+        new window.kakao.maps.LatLng(37.524860060129626, 126.8896049011449),
+        new window.kakao.maps.LatLng(37.52563308042188, 126.88765229976035),
+        new window.kakao.maps.LatLng(37.52521776125144, 126.88675355800514),
+        new window.kakao.maps.LatLng(37.52451198913181, 126.88834405293592),
+        new window.kakao.maps.LatLng(37.52448018639941, 126.88806128406483),
+
+        new window.kakao.maps.LatLng(37.52592475750701, 126.8912380418146),
+        new window.kakao.maps.LatLng(37.52630087549428, 126.8887656214675),
+        new window.kakao.maps.LatLng(37.52650673826706, 126.88732291381386),
+        new window.kakao.maps.LatLng(37.526832636049726, 126.8889458399861),
+        new window.kakao.maps.LatLng(37.52476215369032, 126.8909003488201),
+        new window.kakao.maps.LatLng(37.52408083188674, 126.8897531130222),
+        new window.kakao.maps.LatLng(37.52675285151404, 126.89034311302801)
       ],
       coffeeEvents: [
         '<div style="padding:5px;">첫번째 이벤트</div>',
@@ -208,17 +216,34 @@ export default {
         '<div style="padding:5px;">네번째 이벤트</div>',
         '<div style="padding:5px;">다섯번째 이벤트</div>',
         '<div style="padding:5px;">여섯번째 이벤트</div>',
-        '<div style="padding:5px;">일곱번째 이벤트</div>'
+        '<div style="padding:5px;">일곱번째 이벤트</div>',
+
+        '<div style="padding:5px;">여덟번째 이벤트</div>',
+        '<div style="padding:5px;">아홈번째 이벤트</div>',
+        '<div style="padding:5px;">열번째 이벤트</div>',
+        '<div style="padding:5px;">열한번째 이벤트</div>',
+        '<div style="padding:5px;">열두번째 이벤트</div>',
+        '<div style="padding:5px;">열세번째 이벤트</div>',
+        '<div style="padding:5px;">열네번째 이벤트</div>'
       ],
       //편의점
       storePositions: [
-        new kakao.maps.LatLng(37.497535461505684, 127.02948149502778),
-        new kakao.maps.LatLng(37.49671536281186, 127.03020491448352),
-        new kakao.maps.LatLng(37.496201943633714, 127.02959405469642),
-        new kakao.maps.LatLng(37.49640072567703, 127.02726459882308),
-        new kakao.maps.LatLng(37.49640098874988, 127.02609983175294),
-        new kakao.maps.LatLng(37.49932849491523, 127.02935780247945),
-        new kakao.maps.LatLng(37.49996818951873, 127.02943721562295)
+        new kakao.maps.LatLng(37.52517826734245, 126.88320706875832),
+        new kakao.maps.LatLng(37.527637622516366, 126.89228767587413),
+        new kakao.maps.LatLng(37.52612323773352, 126.89152057613941),
+        new kakao.maps.LatLng(37.52717334887139, 126.88718615446912),
+        new kakao.maps.LatLng(37.52315523195179, 126.8923902760996),
+        new kakao.maps.LatLng(37.52681811374291, 126.89273006136318),
+        new kakao.maps.LatLng(37.52361588835941, 126.8887639516581)
+      ],
+      testEvents: [
+        '<div style="padding:5px;">첫번째 이벤트</div>',
+        '<div style="padding:5px;">두번째 이벤트</div>',
+        '<div style="padding:5px;">세번째 이벤트</div>',
+        '<div style="padding:5px;">네번째 이벤트</div>',
+        '<div style="padding:5px;">다섯번째 이벤트</div>',
+        '<div style="padding:5px;">여섯번째 이벤트</div>',
+        '<div style="padding:5px;">일곱번째 이벤트</div>'
       ],
       //주차장
       carparkPositions: [
@@ -255,11 +280,11 @@ export default {
       if (navigator.geolocation) {
         // GeoLocation을 이용해서 접속 위치를 얻어옵니다
         navigator.geolocation.getCurrentPosition(position => {
-          this.lat = 37.498004414546934; // 위도
-          this.lon = 127.02770621963765; // 경도
+          //this.lat = 37.52558; // 위도
+          //this.lon = 126.88887; // 경도
 
-          //this.lat = position.coords.latitude // 위도
-          //this.lon = position.coords.longitude // 경도
+          this.lat = position.coords.latitude; // 위도
+          this.lon = position.coords.longitude; // 경도
           this.initMap();
         });
       } else {
@@ -406,10 +431,27 @@ export default {
           this.imageSize,
           this.imageOptions
         );
-        this.marker = this.createMarker(this.storePositions[i], markerImage);
+        const marker = this.createMarker(this.storePositions[i], markerImage);
 
         // 생성된 마커를 커피숍 마커 배열에 추가합니다
-        this.storeMarkers.push(this.marker);
+        this.storeMarkers.push(marker);
+
+        var infowindow = new kakao.maps.InfoWindow({
+          content: this.testEvents[i],
+          removable: true
+        });
+
+        window.kakao.maps.event.addListener(
+          marker,
+          "mouseover",
+          this.makeOverListener(this.map, marker, infowindow)
+        );
+        window.kakao.maps.event.addListener(
+          marker,
+          "mouseout",
+          this.makeOutListener(infowindow)
+        );
+        window.kakao.maps.event.addListener(marker, "click", this.aaa());
       }
     },
     // // 마커이미지의 주소와, 크기, 옵션으로 마커 이미지를 생성하여 리턴하는 함수입니다
