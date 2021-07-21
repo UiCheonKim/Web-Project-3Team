@@ -92,21 +92,32 @@ app.delete("/api/deleteFile", async (req, res) => {
 
 //______________________________________________________________________________________
 
-app.get("/api/getUserList", async (req, res) => {
-  const userList = { data: [{ name: "UiCheon Kim", gender: "Male" }] };
-  res.send(userList);
-});
+// app.get("/api/getUserList", async (req, res) => {
+//   const userList = { data: [{ name: "UiCheon Kim", gender: "Male" }] };
+//   res.send(userList);
+// });
 
 //sys.db 맨밑에 코드 추가 (async db)
-app.get("/api/getList", async (req, res) => {
-  try {
-    res.send(await sys.db("list"));
-  } catch (err) {
-    res.status(500).send({
-      error: err,
-    });
-  }
-});
+// app.get("/api/:alias", async (req, res) => {
+//   try {
+//     res.send(await sys.db("list"));
+//   } catch (err) {
+//     res.status(500).send({
+//       error: err,
+//     });
+//   }
+// });
+
+// app.get("/api/:alias", async (req, res) => {
+//   try {
+//     console.log(req.body.param);
+//     res.send(await sys.db(req.params.alias, req.body.param, req.body.where));
+//   } catch (err) {
+//     res.status(500).send({
+//       error: err,
+//     });
+//   }
+// });
 
 let sql = require("./sql.js");
 
@@ -118,6 +129,7 @@ fs.watchFile(__dirname + "/sql.js", (curr, prev) => {
 
 // req.body.param ->
 //alias가 아니라 다른 이름도 가능하다
+//post일때만  req.body.param이 들어온다
 //param이란 키가 들어감 -> req.body.param 에 들어감(배열 등등) where은 아직 안쓰고
 app.post("/api/:alias", async (req, res) => {
   try {

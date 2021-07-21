@@ -4,9 +4,9 @@
     <side-bar class="border border-dark bg-gradient-dark">
       <br />
       <div class="mx-auto my-3">
-        <a class="" href="/UserLogin34">로그인</a>
-        <a>|</a>
-        <a class="" href="/BusRegi352">입점신청하기</a>
+        <!-- <a class="" href="/UserLogin34" @click="loginprocess">{{ login }}</a> -->
+        <!-- <a>|</a> -->
+        <a class="please" href="/BusRegi352">입점신청하기</a>
       </div>
       <template slot="links">
         <!-- 네비 -->
@@ -190,9 +190,15 @@ export default {
       test3: false,
       test4: false,
       test5: false
+      // login: "로그인"
     };
   },
+
   methods: {
+    // loginprocess() {
+    //   if (this.login == "로그아웃") this.$store.state.user.loginaccess = 0;
+    // },
+
     initScrollbar() {
       let isWindows = navigator.platform.startsWith("Win");
       if (isWindows) {
@@ -200,6 +206,7 @@ export default {
       }
     },
     eventboard1() {
+      console.log(this.$store.state.loginaccess);
       this.test1 = !this.test1;
       this.test2 = false;
       this.test3 = false;
@@ -242,6 +249,15 @@ export default {
 </script>
 <style lang="scss"></style>
 <style scoped>
+.please {
+  font-size: 0.9em;
+  color: white;
+  font-weight: bold;
+  padding-right: 1em;
+}
+.please:hover {
+  color: black;
+}
 .fade-in-box {
   /* display: inline-block; */
   /* padding: 10px; */

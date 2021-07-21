@@ -99,18 +99,18 @@
                     :rules="{ required: true, email: true }"
                     prepend-icon="ni ni-email-83"
                     placeholder="Email"
-                    v-model="model.email"
+                    v-model="loginId"
                   >
                   </base-input>
                   <base-input
                     alternative
                     class="mb-3"
                     name="Password"
-                    :rules="{ required: true, min: 6 }"
+                    :rules="{ required: true, min: 3 }"
                     prepend-icon="ni ni-lock-circle-open"
                     type="password"
                     placeholder="Password"
-                    v-model="model.password"
+                    v-model="loginPassword"
                   >
                   </base-input>
 
@@ -122,6 +122,7 @@
                       type="primary"
                       native-type="submit"
                       class="my-4"
+                      @click="login"
                       >로그인</base-button
                     >
                   </div>
@@ -154,9 +155,14 @@ export default {
         firstName: "Songtaejun",
         email: "",
         password: "",
-        rememberMe: false
+        rememberMe: false,
+        loginsuccess: false,
+        test: "/UserRegi34"
       },
-      naverLogin: null
+      naverLogin: null,
+      loginInfo: [],
+      loginId: "",
+      loginPassword: ""
     };
   },
   mounted() {
@@ -186,6 +192,36 @@ export default {
     });
   },
   methods: {
+    async getUser() {
+      this.loginInfo = await this.$api("/api/getUser", "post", {
+        param: [this.loginId, this.loginPassword]
+      });
+
+      // for (var id of this.loginInfo) {
+      //   if (id.user_password == this.loginPassword) {
+      //     window.location = "http://localhost:8080/KimTest";
+      //   }
+      if (this.loginInfo.length == 1) {
+        window.location = "http://localhost:8080/KimTest";
+        this.$store.state.loginaccess = "로그아웃";
+        console.log(this.$store.state.loginaccess);
+        //this.goToPages();
+      } else if (this.loginId == "" || this.loginPassword == "") {
+        alert("아이디와 비밀번호 입력해주세요.");
+      } else {
+        alert("아이디 혹은 비밀번호 다릅니다.");
+      }
+
+      //console.table(this.loginInfo);
+    },
+    login() {
+      this.getUser();
+    },
+    goToPages() {
+      this.$router.push({
+        name: "KimTest"
+      });
+    },
     onSubmit() {
       // this will be called only after form is valid. You can do api call here to login
     },

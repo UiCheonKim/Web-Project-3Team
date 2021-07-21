@@ -17,6 +17,11 @@
           <i class="ni ni-zoom-split-in"></i>
         </a>
       </li> -->
+      <div style="margin-bottom:40%">
+        <a class="" href="/UserLogin34" @click="loginprocess">
+          {{ login }}
+        </a>
+      </div>
     </b-navbar-nav>
 
     <!-- 우측상단에 검색기능있던 것입니다. -->
@@ -102,6 +107,11 @@ export default {
     BaseNav,
     Modal
   },
+  mounted() {
+    //this.getstart();
+    console.log("asdfasfd");
+    console.log(this.$store.getters["loginaccess"]);
+  },
   props: {
     type: {
       type: String,
@@ -121,10 +131,19 @@ export default {
       activeNotifications: false,
       showMenu: false,
       searchModalVisible: false,
-      searchQuery: ""
+      searchQuery: "",
+      login: "로그인"
     };
   },
   methods: {
+    loginprocess() {
+      if (this.$store.state.user.loginaccess == "로그아웃") {
+        this.$store.state.user.loginaccess = "로그인";
+      }
+    },
+    getstart() {
+      this.login = this.$store.state.loginaccess;
+    },
     capitalizeFirstLetter(string) {
       return string.charAt(0).toUpperCase() + string.slice(1);
     },
@@ -141,5 +160,16 @@ export default {
 .setprofile {
   display: inline;
   padding-bottom: 1em;
+}
+</style>
+<style scoped>
+a {
+  font-size: 0.9em;
+  color: white;
+  font-weight: bold;
+  padding-right: 1em;
+}
+a:hover {
+  color: black;
 }
 </style>

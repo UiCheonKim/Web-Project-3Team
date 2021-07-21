@@ -6,6 +6,9 @@ module.exports = {
     query: "insert into userTable set ?", // insert into t_person set first_name='Kim', last_name='Uicheon', email='drooom@naver.com'
     // 물음표 2개는 값 2개를 준다
   },
+  getUser: {
+    query: "select * from userTable where user_id = ? and user_password = ?",
+  },
   deletePerson: {
     query: "delete from t_person where id=?",
   },

@@ -951,8 +951,6 @@ export default {
           }
         ]
       });
-      console.log(r);
-      console.table(this.list);
     }
   }
 };

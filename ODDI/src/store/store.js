@@ -7,8 +7,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     user: {},
-    count: 0,
-    cart: []
+    loginaccess: "로그인"
   },
   mutations: {
     increment(state) {
@@ -27,7 +26,7 @@ export default new Vuex.Store({
     persistedstate({
       // 재시작 시에도 유지시킬 state
       //paths: ["user"]
-      paths: ["cart"]
+      paths: "loginaccess"
     })
   ]
 });
