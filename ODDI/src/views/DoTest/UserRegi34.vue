@@ -39,9 +39,7 @@
               <!-- EMAIL -->
               <div>
                 <h3 class="join_title">
-                  <label for="email"
-                    >본인확인 이메일<span class="optional">(선택)</span></label
-                  >
+                  <label for="email">이메일 아이디</label>
                 </h3>
                 <span class="box int_email">
                   <input
@@ -49,12 +47,13 @@
                     id="email"
                     class="int"
                     maxlength="100"
-                    placeholder="선택입력"
+                    placeholder="Email 아이디"
                     v-model="userId"
+                    @blur="checkId"
                   />
                 </span>
-                <span class="error_next_box"
-                  >이메일 주소를 다시 확인해주세요.</span
+                <span v-show="!idValid" id="error_next_box"
+                  >필수 정보입니다.</span
                 >
               </div>
 
@@ -63,16 +62,17 @@
                 <h3 class="join_title"><label for="pswd1">비밀번호</label></h3>
                 <span class="box int_pass">
                   <input
-                    type="text"
+                    type="password"
                     id="pswd1"
                     class="int"
                     maxlength="20"
                     v-model="userPw"
+                    @blur="checkpw1"
                   />
-                  <span id="alertTxt">사용불가</span>
-                  <img src="m_icon_pass.png" id="pswd1_img1" class="pswdImg" />
                 </span>
-                <span class="error_next_box"></span>
+                <span v-show="!pw1Valid" id="error_next_box"
+                  >필수 정보입니다.</span
+                >
               </div>
 
               <!-- PW2 -->
@@ -81,14 +81,18 @@
                   <label for="pswd2">비밀번호 재확인</label>
                 </h3>
                 <span class="box int_pass_check">
-                  <input type="text" id="pswd2" class="int" maxlength="20" />
-                  <img
-                    src="m_icon_check_disable.png"
-                    id="pswd2_img1"
-                    class="pswdImg"
+                  <input
+                    type="password"
+                    id="pswd2"
+                    class="int"
+                    maxlength="20"
+                    v-model="userRePw"
+                    @blur="checkpw2"
                   />
                 </span>
-                <span class="error_next_box"></span>
+                <span v-show="!pw2Valid" id="error_next_box"
+                  >필수 정보입니다.</span
+                >
               </div>
 
               <!-- NAME -->
@@ -99,11 +103,14 @@
                     type="text"
                     id="name"
                     class="int"
-                    maxlength="20"
+                    maxlength="40"
                     v-model="userName"
+                    @blur="checkname"
                   />
                 </span>
-                <span class="error_next_box"></span>
+                <span v-show="!nameValid" id="error_next_box"
+                  >필수 정보입니다.</span
+                >
               </div>
 
               <!-- BIRTH -->
@@ -915,6 +922,7 @@ export default {
     return {
       userId: "",
       userPw: "",
+      userRePw: "",
       userName: "",
       userbirth_year: "",
       userbirth_mon: "",
@@ -922,7 +930,11 @@ export default {
       usersex: 1, // default 남자
       usertype: 1, // default 일반회원
       userphone: "",
-      bp_key: 1 // 기본적으로 일반회원
+      bp_key: 1, // 기본적으로 일반회원
+      idValid: true,
+      pw1Valid: true,
+      pw2Valid: true,
+      nameValid: true
     };
   },
   setup() {},
@@ -932,6 +944,38 @@ export default {
   },
   unmounted() {},
   methods: {
+    checkId() {
+      console.log(this.userId);
+      if (this.userId == "") {
+        this.idValid = false;
+      } else {
+        this.idValid = true;
+      }
+    },
+    checkpw1() {
+      console.log(this.userPw);
+      if (this.userPw == "") {
+        this.pw1Valid = false;
+      } else {
+        this.pw1Valid = true;
+      }
+    },
+    checkpw2() {
+      console.log(this.userRePw);
+      if (this.userRePw == "") {
+        this.pw2Valid = false;
+      } else {
+        this.pw2Valid = true;
+      }
+    },
+    checkname() {
+      console.log(this.userName);
+      if (this.userName == "") {
+        this.nameValid = false;
+      } else {
+        this.nameValid = true;
+      }
+    },
     async createUser() {
       const r = await this.$api("/api/createUser", "post", {
         param: [
@@ -1090,11 +1134,12 @@ select {
 
 /* 에러메세지 */
 
-.error_next_box {
-  margin-top: 9px;
+#error_next_box {
+  display: block;
+  margin: 9px 0 -2px;
   font-size: 12px;
+  line-height: 14px;
   color: red;
-  display: none;
 }
 
 #alertTxt {
