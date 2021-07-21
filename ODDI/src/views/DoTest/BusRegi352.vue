@@ -254,15 +254,14 @@
                 </h3>
                 <div class="box int_id" style="height:initial;">
                   <div class="uploader-wrapper single">
-                    <span>
-                      <div class="mb-3">
-                        <input
-                          class="form-control"
-                          type="file"
-                          accept=".jpg, .jpeg, .png, .pdf"
-                          id="formFile"
-                        /></div
-                    ></span>
+                    <div class="mb-3">
+                      <input
+                        class="form-control"
+                        type="file"
+                        accept=".jpg, .jpeg, .png, .pdf"
+                        id="formFile"
+                      />
+                    </div>
                   </div>
                 </div>
 

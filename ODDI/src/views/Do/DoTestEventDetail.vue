@@ -1,10 +1,12 @@
 <template>
   <div>
-    <base-header class="pb-9 pt-9 pt-md-9 bg-gradient-span-1-bg">
+    <base-header class="pb-9 pt-9 pt-md-9 bg-gradient-success">
       <!-- Card stats -->
       <b-card>
-        <h1>이벤트 상세통계</h1>
-        <!-- 응모한 이벤트 입니다 -->
+        <h1>등록한 이벤트 현황</h1>
+
+        <!-- 셀렉트 된 행을 보여주는 기능입니다. -->
+
         <table
           class="table mt-3"
           v-for="(selectedItem, i) in selected"
@@ -35,11 +37,28 @@
             <td>{{ selectedItem.EventPrise }}</td>
           </tr>
           <tr>
-            <th></th>
-            <td></td>
+            <td colspan="2">
+              <!-- 상세정보보기 버튼입니다. -->
+              <b-col>
+                <b-button
+                  block
+                  variant="primary"
+                  id="show-btn"
+                  @click="showTable"
+                  >상세정보보기
+                </b-button>
+              </b-col>
+            </td>
+          </tr>
+          <tr v-if="showTableValue" class="border">
+            <!-- 그래프입니다. -->
+            <td colspan="2">
+              <img center class="col-6" src="img/sorry.png" alt="" />
+            </td>
           </tr>
         </table>
 
+        <!-- 종료된 이벤트 -->
         <b-card class="border-0">
           <b-card-header class="border-0">
             <h3 class="float-start">마감된 이벤트</h3>
@@ -51,12 +70,12 @@
             responsive
             :items="eventList"
             :fields="fields"
-            id="my-table"
-            :current-page="currentPage"
+            id="my-table2"
+            :current-page="EndcurrentPage"
             :per-page="perPage"
             :select-mode="selectMode"
             selectable
-            ref="selectableTable1"
+            ref="selectableTable2"
             @row-selected="onRowSelected"
             sort-by="EventStartTime"
             :sort-desc="true"
@@ -80,63 +99,13 @@
             <b-pagination
               class="mx-auto"
               style="width: 200px;"
-              v-model="currentPage"
+              v-model="EndcurrentPage"
               :total-rows="rows"
               :per-page="perPage"
               aria-controls="my-table"
             >
             </b-pagination>
-
-            <!-- 상세통계보기 버튼입니다 -->
-            <b-row>
-              <b-button
-                class="mx-auto"
-                style="width: 150px;"
-                variant="secondary"
-                id="show-btn"
-                @click="showTable"
-                >상세통계보기
-              </b-button>
-            </b-row>
           </b-card-footer>
-        </b-card>
-
-        <!-- 수정하기 팝업(modal)기능입니다. -->
-        <b-card v-if="showTableValue">
-          <table
-            class="table mt-3"
-            v-for="(selectedItem, i) in selected"
-            v-bind:key="i"
-          >
-            <tr>
-              <th width="25%" aline="center">이벤트유형</th>
-              <td width="70%">{{ selectedItem.EventType }}</td>
-            </tr>
-            <tr>
-              <th>이벤트명</th>
-              <td>{{ selectedItem.EventName }}</td>
-            </tr>
-            <tr>
-              <th>가게업종</th>
-              <td>{{ selectedItem.StoreType }}</td>
-            </tr>
-            <tr>
-              <th>가게명</th>
-              <td>{{ selectedItem.StoreName }}</td>
-            </tr>
-            <tr>
-              <th>가게전화번호</th>
-              <td>{{ selectedItem.StoreNum }}</td>
-            </tr>
-            <tr>
-              <th>가게주소</th>
-              <td>{{ selectedItem.EventPrise }}</td>
-            </tr>
-            <tr>
-              <th></th>
-              <td></td>
-            </tr>
-          </table>
         </b-card>
       </b-card>
     </base-header>
@@ -176,6 +145,8 @@ export default {
           label: "조회수"
         }
       ],
+      //상세정보보기 비활성화
+      showTableValue: false,
       //페이지네이션 기능입니다.
       perPage: 5,
       currentPage: 1,
@@ -282,8 +253,7 @@ export default {
       selectMode: "single",
       selected: [],
       modalShow: false,
-      changeEventName1: "",
-      showTableValue: false
+      changeEventName1: ""
     };
   },
   created() {
@@ -309,9 +279,23 @@ export default {
     // },
     // 테이블 행 셀렉트 기능입니다.
     //중복체크를 없애는 기능입니다.
-
-    ShowTable() {
-      this.showTableValue != this.showTableValue;
+    onRowSelected(items) {
+      if (this.selected == "") {
+        this.selected = items;
+      } else this.clearSelected();
+      this.selected = items;
+    },
+    clearSelected() {
+      this.$refs.selectableTable1.clearSelected();
+      this.$refs.selectableTable2.clearSelected();
+    },
+    changeEventName() {
+      console.log(this.changeEventName1);
+      console.log(this.selected.EventName);
+      this.$refs.selected.EventName = this.changeEventName1;
+    },
+    showTable() {
+      this.showTableValue = !this.showTableValue;
     }
   }
 };
