@@ -65,7 +65,7 @@
               <img alt="Image placeholder" src="img/theme/team-4.jpg" />
             </span>
             <b-media-body class="ml-2 d-none d-lg-block">
-              <span class="mb-1 text-sm font-weight-bold">John Snow</span>
+              <span class="mb-1 text-sm font-weight-bold">User</span>
               <br />
               <br />
             </b-media-body>
@@ -74,17 +74,17 @@
 
         <template>
           <b-dropdown-header class="noti-title">
-            <h6 class="text-overflow m-0">Welcome!</h6>
+            <h6 class="text-overflow m-0">환영합니다!</h6>
           </b-dropdown-header>
-          <b-dropdown-item href="#!">
+          <b-dropdown-item href="/SorryPage">
             <i class="ni ni-single-02"></i>
-            <span>My profile</span>
+            <span>프로필</span>
           </b-dropdown-item>
 
           <div class="dropdown-divider"></div>
           <b-dropdown-item href="#!">
             <i class="ni ni-user-run"></i>
-            <span>Logout</span>
+            <span>로그아웃</span>
           </b-dropdown-item>
         </template>
       </base-dropdown>

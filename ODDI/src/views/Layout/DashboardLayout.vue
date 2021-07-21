@@ -130,12 +130,12 @@
         </div>
 
         <!-- 로그인/회원가입 -->
-        <div>
-          <b-button class="" href="#/UserLogin34">로그인</b-button>
-          <br />
-          <b-link class="" href="#/UserRegi34">회원가입</b-link>
-          <br />
-          <b-link class="" href="#/BusRegi352">입점신청하기</b-link>
+        <div class="mx-auto my-3">
+          <a class="" href="/UserLogin34">로그인</a>
+          <a>|</a>
+          <a class="" href="/UserRegi34">회원가입</a>
+          <a>|</a>
+          <a class="" href="/BusRegi352">입점신청하기</a>
         </div>
       </template>
     </side-bar>
