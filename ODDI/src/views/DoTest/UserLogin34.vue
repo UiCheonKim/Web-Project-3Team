@@ -57,7 +57,7 @@
                 <a id="custom-login-btn" @click="kakaologin()">
                   <img
                     src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg"
-                    width="222"
+                    width="280"
                   />
                 </a>
               </div>
@@ -154,9 +154,9 @@ export default {
         firstName: "Songtaejun",
         email: "",
         password: "",
-        rememberMe: false,
+        rememberMe: false
       },
-      naverLogin: null,
+      naverLogin: null
     };
   },
   mounted() {
@@ -164,12 +164,12 @@ export default {
       clientId: "G3x4jYE0zDXPC9PKiYqF", //개발자센터에 등록된 ClientID
       callbackUrl: "http://localhost:8080/login", //개발자센터에 등록한 callback url
       isPopup: false,
-      loginButton: { color: "green", type: 3, height: 60 },
+      loginButton: { color: "green", type: 3, height: 60 }
     });
 
     this.naverLogin.init();
 
-    this.naverLogin.getLoginStatus((status) => {
+    this.naverLogin.getLoginStatus(status => {
       if (status) {
         console.log(status);
         console.log(this.naverLogin.user);
@@ -192,13 +192,13 @@ export default {
     kakaologin() {
       window.Kakao.Auth.login({
         scope: "profile_nickname, account_email, gender",
-        success: this.getKakaoAccount,
+        success: this.getKakaoAccount
       });
     },
     getKakaoAccount() {
       window.Kakao.API.request({
         url: "/v2/user/me",
-        success: (res) => {
+        success: res => {
           const kakaoAccount = res.kakao_account;
           const nickname = kakao_account.profile_nickname;
           const email = kakao_account.account_email;
@@ -210,11 +210,11 @@ export default {
 
           alert("로그인 성공!");
         },
-        fail: (error) => {
+        fail: error => {
           console.log(error);
-        },
+        }
       });
-    },
-  },
+    }
+  }
 };
 </script>
