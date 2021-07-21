@@ -77,7 +77,7 @@
               />
             </span>
             <b-media-body class="ml-2 d-none d-lg-block">
-              <span class="mb-0 text-sm font-weight-bold">User</span>
+              <span class="mb-0 text-sm font-weight-bold">John Snow</span>
             </b-media-body>
           </b-media>
         </b-dropdown-item>
