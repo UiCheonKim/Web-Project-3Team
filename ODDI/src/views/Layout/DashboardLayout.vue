@@ -206,7 +206,7 @@ export default {
       }
     },
     eventboard1() {
-      console.log(this.$store.state.loginaccess);
+      console.log(this.$store.state.user);
       this.test1 = !this.test1;
       this.test2 = false;
       this.test3 = false;

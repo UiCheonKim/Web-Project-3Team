@@ -46,7 +46,7 @@
               <span>프로필</span>
             </router-link>
             <div class="dropdown-divider"></div>
-            <a href="#!" class="dropdown-item">
+            <a href="/KimTest" class="dropdown-item" @click="loggout">
               <i class="ni ni-user-run"></i>
               <span>로그아웃</span>
             </a>
@@ -144,6 +144,10 @@ export default {
     },
     showSidebar() {
       this.$sidebar.displaySidebar(true);
+    },
+    loggout() {
+      console.log("asdf");
+      this.$store.commit("user", "로그인");
     }
   },
   beforeDestroy() {
@@ -151,5 +155,9 @@ export default {
       this.$sidebar.showSidebar = false;
     }
   }
+
+  // logout() {
+  //   this.$store.commit("user", "로그인");
+  // }
 };
 </script>

@@ -7,7 +7,8 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     user: {},
-    loginaccess: "로그인"
+    name: ""
+    //loginaccess: "로그인"
   },
   mutations: {
     increment(state) {
@@ -19,6 +20,9 @@ export default new Vuex.Store({
     },
     user(state, data) {
       state.user = data;
+    },
+    name(state, data) {
+      state.name = data;
     }
   },
   actions: {},
@@ -26,7 +30,7 @@ export default new Vuex.Store({
     persistedstate({
       // 재시작 시에도 유지시킬 state
       //paths: ["user"]
-      paths: "loginaccess"
+      paths: ["user", "name"]
     })
   ]
 });

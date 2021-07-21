@@ -9,6 +9,9 @@ module.exports = {
   getUser: {
     query: "select * from userTable where user_id = ? and user_password = ?",
   },
+  getName: {
+    query: "select * from userTable where user_id = ? and user_password = ?",
+  },
   deletePerson: {
     query: "delete from t_person where id=?",
   },

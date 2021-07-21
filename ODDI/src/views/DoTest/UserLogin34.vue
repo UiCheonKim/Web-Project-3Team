@@ -165,6 +165,7 @@ export default {
       loginPassword: ""
     };
   },
+
   mounted() {
     this.naverLogin = new window.naver.LoginWithNaverId({
       clientId: "G3x4jYE0zDXPC9PKiYqF", //개발자센터에 등록된 ClientID
@@ -203,8 +204,10 @@ export default {
       //   }
       if (this.loginInfo.length == 1) {
         window.location = "http://localhost:8080/KimTest";
-        this.$store.state.loginaccess = "로그아웃";
-        console.log(this.$store.state.loginaccess);
+        //this.$store.state.loginaccess = "로그아웃";
+        this.$store.commit("user", "로그아웃");
+        this.$store.commit("name", this.loginId);
+        // console.log(this.$store.state.loginaccess);
         //this.goToPages();
       } else if (this.loginId == "" || this.loginPassword == "") {
         alert("아이디와 비밀번호 입력해주세요.");
@@ -215,6 +218,8 @@ export default {
       //console.table(this.loginInfo);
     },
     login() {
+      // this.$store.commit("user", 1);
+      // console.log(this.$store.state.user);
       this.getUser();
     },
     goToPages() {

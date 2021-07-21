@@ -17,9 +17,9 @@
           <i class="ni ni-zoom-split-in"></i>
         </a>
       </li> -->
-      <div style="margin-bottom:40%">
+      <div style="margin-bottom:30%">
         <a class="" href="/UserLogin34" @click="loginprocess">
-          {{ login }}
+          {{ login2 }}
         </a>
       </div>
     </b-navbar-nav>
@@ -70,7 +70,7 @@
               <img alt="Image placeholder" src="img/theme/team-4.jpg" />
             </span>
             <b-media-body class="ml-2 d-none d-lg-block">
-              <span class="mb-1 text-sm font-weight-bold">User</span>
+              <span class="mb-1 text-sm font-weight-bold">{{ username }}</span>
               <br />
               <br />
             </b-media-body>
@@ -87,9 +87,9 @@
           </b-dropdown-item>
 
           <div class="dropdown-divider"></div>
-          <b-dropdown-item href="#!">
+          <b-dropdown-item href="" v-if="login2 == ''">
             <i class="ni ni-user-run"></i>
-            <span>로그아웃</span>
+            <span @click="loggout">{{ login }}</span>
           </b-dropdown-item>
         </template>
       </base-dropdown>
@@ -109,8 +109,9 @@ export default {
   },
   mounted() {
     //this.getstart();
-    console.log("asdfasfd");
-    console.log(this.$store.getters["loginaccess"]);
+    // console.log("asdfasfd");
+    // console.log(this.$store.getters["loginaccess"]);
+    this.getstart();
   },
   props: {
     type: {
@@ -132,17 +133,34 @@ export default {
       showMenu: false,
       searchModalVisible: false,
       searchQuery: "",
-      login: "로그인"
+      login: "로그인",
+      login2: "로그인", //따로 떨어져 있는거
+      username: "게스트님"
     };
   },
   methods: {
     loginprocess() {
-      if (this.$store.state.user.loginaccess == "로그아웃") {
-        this.$store.state.user.loginaccess = "로그인";
+      if (this.$store.state.user == "로그아웃") {
+        this.$store.commit("user", "로그인");
+        this.login = "로그인";
+      }
+    },
+    loggout() {
+      if (this.$store.state.user == "로그아웃") {
+        alert("로그아웃 되셨습니다");
+        this.$store.commit("user", "로그인");
+        this.login = "";
+        this.login2 = "로그인";
+        this.username = "게스트님";
       }
     },
     getstart() {
-      this.login = this.$store.state.loginaccess;
+      if (this.$store.state.user == "로그아웃") {
+        this.login2 = "";
+        this.login = "로그아웃";
+        this.username = "아이디: " + this.$store.state.name;
+      }
+      //this.login = this.$store.state.user;
     },
     capitalizeFirstLetter(string) {
       return string.charAt(0).toUpperCase() + string.slice(1);
