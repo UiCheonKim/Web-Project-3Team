@@ -21,13 +21,10 @@
               aria-haspopup="true"
               aria-expanded="false"
             >
-              <i class="ni ni-bell-55"></i>
+              <!-- <i class="ni ni-bell-55"></i> -->
             </a>
 
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
+            <!-- <a class="dropdown-item" href="#">알림</a> -->
           </base-dropdown>
           <base-dropdown class="nav-item" menu-on-right tag="li" title-tag="a">
             <a slot="title-container" class="nav-link" href="#" role="button">
@@ -39,16 +36,16 @@
             </a>
 
             <div class=" dropdown-header noti-title">
-              <h6 class="text-overflow m-0">Welcome!</h6>
+              <h6 class="text-overflow m-0">반갑습니다!</h6>
             </div>
-            <router-link to="/profile" class="dropdown-item">
+            <router-link to="/SorryPage" class="dropdown-item">
               <i class="ni ni-single-02"></i>
-              <span>My profile</span>
+              <span>내 프로필</span>
             </router-link>
             <div class="dropdown-divider"></div>
             <a href="#!" class="dropdown-item">
               <i class="ni ni-user-run"></i>
-              <span>Logout</span>
+              <span>로그아웃</span>
             </a>
           </base-dropdown>
         </ul>
