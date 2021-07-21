@@ -180,7 +180,6 @@
                     <option value="2">여자</option>
                   </select>
                 </span>
-                <span class="error_next_box">필수 정보입니다.</span>
               </div>
 
               <!-- 여기부터 -->
