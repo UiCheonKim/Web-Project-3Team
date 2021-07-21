@@ -44,7 +44,7 @@
                 <!-- 지도가 표시될 div -->
                 <div id="map" class="map"></div>
                 <!-- 지도 위에 표시될 마커 카테고리 -->
-                <div class="category">
+                <div class="category edgeradius">
                   <ul>
                     <li id="coffeeMenu" v-on:click="changeMarker(1)">
                       <span class="ico_comm ico_coffee"></span>
@@ -519,10 +519,11 @@ export default {
   overflow: hidden;
   top: 10px;
   left: 10px;
-  width: 155px; /* 커피숍 편의점 주자창 흰 배경 */
+  width: 150px; /* 커피숍 편의점 주자창 흰 배경 */
   height: 50px;
   z-index: 10;
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  box-shadow: 0px 0px 8px 4px hsla(225, 100%, 51%, 0.4);
   font-family: "Malgun Gothic", "맑은 고딕", sans-serif;
   font-size: 12px;
   text-align: center;
@@ -531,9 +532,12 @@ export default {
 .category .menu_selected {
   background: #ff5f4a;
   color: #fff;
-  border-left: 1px solid #915b2f;
-  border-right: 1px solid #915b2f;
-  margin: 0 -1px;
+  /* border-left: 1px solid #915b2f; */
+  /* border-right: 1px solid #915b2f; */
+  /* margin: 0 -1px; */
+}
+.category li:hover {
+  background-color: rgba(128, 128, 128, 0.247);
 }
 .category li {
   list-style: none;
