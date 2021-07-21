@@ -14,7 +14,7 @@
           style="background-color:hsla(260, 100%, 55%, 0.2); border-radius:60px; margin: 3%"
         >
           <br />
-          <div>
+          <div <div>
             <br />
             <br />
             <label class="pl-8" style="font-weight:bold; font-size: 0.9rem;"
@@ -47,86 +47,86 @@
                   <a class="dropdown-item" @click="first()">선착순</a>
                 </li>
               </ul>
+              <div v-if="type == 'a'" class="pl-4">
+                <label style="font-weight:bold; font-size: 0.9rem;"
+                  >할인범위:&nbsp;
+                </label>
+
+                <div class="btn-group">
+                  <button
+                    class="btn btn-success btn-sm dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    style="width: 6em; font-size: 0.8rem"
+                  >
+                    {{ discountRanges }}
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a class="dropdown-item" @click="discountrangetclick(10)"
+                        >10%</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" @click="discountrangetclick(20)"
+                        >20%</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" @click="discountrangetclick(30)"
+                        >30%</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" @click="discountrangetclick(40)"
+                        >40%</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" @click="discountrangetclick(50)"
+                        >50%</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+
+                <label
+                  style="font-weight:bold; font-size: 0.9rem;"
+                  for="validationDefault04"
+                  class="form-label"
+                  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;선착순 인원:&nbsp;&nbsp;
+                </label>
+
+                <input
+                  placeholder="0~999명"
+                  style="margin: auto; border:1px solid #ced4da;"
+                  size="17"
+                  type="text"
+                  v-model="number"
+                  maxlength="3"
+                  id="validationDefault04"
+                  required
+                />
+              </div>
+              <br />
+              <div v-if="type == 'b'" class=" pl-8">
+                <label
+                  style="font-weight:bold; font-size: 0.9rem;"
+                  for="validationDefault05"
+                  class="form-label"
+                  >&nbsp;&nbsp;추첨경품:&nbsp;&nbsp;
+                </label>
+                <input
+                  v-model="gift"
+                  style="margin: auto; border:1px solid #ced4da; width:26em"
+                  placeholder="입력하세요"
+                  id="validationDefault05"
+                  required
+                />
+              </div>
             </div>
             <!-- 이거 뭐야ㅋㅋㅋㅋ nbsp로 도배해놨어ㅋㅋ -->
-            <label style="font-weight:bold; font-size: 0.9rem;"
-              >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;할인범위:&nbsp;
-            </label>
-
-            <div class="btn-group">
-              <button
-                class="btn btn-success btn-sm dropdown-toggle"
-                type="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                style="width: 6em; font-size: 0.8rem"
-              >
-                {{ discountRanges }}
-              </button>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" @click="discountrangetclick(10)"
-                    >10%</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item" @click="discountrangetclick(20)"
-                    >20%</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item" @click="discountrangetclick(30)"
-                    >30%</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item" @click="discountrangetclick(40)"
-                    >40%</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item" @click="discountrangetclick(50)"
-                    >50%</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div v-if="type == 'a'" class="pl-8">
-            <label
-              style="font-weight:bold; font-size: 0.9rem;"
-              for="validationDefault04"
-              class="form-label"
-              >&nbsp;&nbsp;선착순 인원:&nbsp;&nbsp;
-            </label>
-
-            <input
-              placeholder="0~999명"
-              style="margin: auto; border:1px solid #ced4da;"
-              size="17"
-              type="text"
-              v-model="number"
-              maxlength="3"
-              id="validationDefault04"
-              required
-            />
-          </div>
-          <br />
-          <div v-if="type == 'b'" class=" pl-8">
-            <label
-              style="font-weight:bold; font-size: 0.9rem;"
-              for="validationDefault05"
-              class="form-label"
-              >&nbsp;&nbsp;추첨경품:&nbsp;&nbsp;
-            </label>
-            <input
-              v-model="gift"
-              style="margin: auto; border:1px solid #ced4da;"
-              placeholder="입력하세요"
-              id="validationDefault05"
-              required
-            />
           </div>
 
           <div style=" text-align:center">
