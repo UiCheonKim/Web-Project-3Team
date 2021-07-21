@@ -280,15 +280,9 @@ export default {
     // 테이블 행 셀렉트 기능입니다.
     //중복체크를 없애는 기능입니다.
     onRowSelected(items) {
-      if (this.selected == "") {
-        this.selected = items;
-      } else this.clearSelected();
       this.selected = items;
     },
-    clearSelected() {
-      this.$refs.selectableTable1.clearSelected();
-      this.$refs.selectableTable2.clearSelected();
-    },
+
     changeEventName() {
       console.log(this.changeEventName1);
       console.log(this.selected.EventName);
