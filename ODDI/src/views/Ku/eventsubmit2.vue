@@ -225,9 +225,13 @@
                   >
                     닫기
                   </button>
-                  <button type="button" class="btn btn-success">
+                  <b-button
+                    href="/KimTest"
+                    type="button"
+                    class="btn btn-success"
+                  >
                     등록
-                  </button>
+                  </b-button>
                 </div>
               </div>
             </div>
