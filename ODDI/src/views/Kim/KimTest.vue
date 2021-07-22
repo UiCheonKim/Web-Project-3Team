@@ -196,7 +196,11 @@
                   </b-col>
                 </b-row>
               </b-card>
-              <b-card style="width:100%" class="mouseimage border">
+              <b-card
+                style="width:100%"
+                class="mouseimage border"
+                @click="detail()"
+              >
                 <b-row>
                   <b-col>
                     <img src="img/listimage/cogi.jpg" width="100" />
@@ -209,7 +213,11 @@
                   </b-col>
                 </b-row>
               </b-card>
-              <b-card style="width:100%" class="mouseimage border">
+              <b-card
+                style="width:100%"
+                class="mouseimage border"
+                @click="detail()"
+              >
                 <b-row>
                   <b-col>
                     <img src="img/listimage/cogi.jpg" width="100" />
@@ -222,7 +230,11 @@
                   </b-col>
                 </b-row>
               </b-card>
-              <b-card style="width:100%" class="mouseimage border">
+              <b-card
+                style="width:100%"
+                class="mouseimage border"
+                @click="detail()"
+              >
                 <b-row>
                   <b-col>
                     <img src="img/listimage/cogi.jpg" width="100" />
@@ -481,7 +493,8 @@ export default {
           this.address = "양평역 2번출구";
           this.shopname = "한경 피자 양평역점";
           this.phone = "777-7777-7777";
-        } else if (coffee.indexOf("닷컴") > -1) {
+        }
+        if (coffee.indexOf("치킨") > -1) {
           this.eventtype = "선착순";
           this.eventname = "검은색 반팔 옷을 입은 분";
           this.discount = "50%";
@@ -490,6 +503,16 @@ export default {
           this.address = "양평역 해피건물 1층";
           this.shopname = "닷컴 치킨 한경점";
           this.phone = "111-1111-1111";
+        }
+        if (coffee.indexOf("이벤트") > -1) {
+          this.eventtype = "";
+          this.eventname = "";
+          this.discount = "";
+          this.person = "";
+          this.shop = "";
+          this.address = "";
+          this.shopname = "";
+          this.phone = "";
         }
       };
     },
@@ -631,6 +654,15 @@ export default {
         this.address = "양평역 해피건물 1층";
         this.shopname = "닷컴 치킨 한경점";
         this.phone = "111-1111-1111";
+      } else {
+        this.eventtype = "";
+        this.eventname = "";
+        this.discount = "";
+        this.person = "";
+        this.shop = "";
+        this.address = "";
+        this.shopname = "";
+        this.phone = "";
       }
     }
   }
