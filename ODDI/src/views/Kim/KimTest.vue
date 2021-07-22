@@ -295,7 +295,7 @@ export default {
         new window.kakao.maps.LatLng(37.52650673826706, 126.88732291381386),
         new window.kakao.maps.LatLng(37.526832636049726, 126.8889458399861),
         new window.kakao.maps.LatLng(37.52476215369032, 126.8909003488201),
-        new window.kakao.maps.LatLng(37.52408083188674, 126.8897531130222),
+        new window.kakao.maps.LatLng(37.52517826734245, 126.88320706875832),
         new window.kakao.maps.LatLng(37.52675285151404, 126.89034311302801)
       ],
       coffeeEvents: [
@@ -317,7 +317,7 @@ export default {
       ],
       //편의점
       storePositions: [
-        new kakao.maps.LatLng(37.52517826734245, 126.88320706875832),
+        new kakao.maps.LatLng(37.52517826734245, 126.88610706875832),
         new kakao.maps.LatLng(37.527637622516366, 126.89228767587413),
         new kakao.maps.LatLng(37.52612323773352, 126.89152057613941),
         new kakao.maps.LatLng(37.52717334887139, 126.88718615446912),
