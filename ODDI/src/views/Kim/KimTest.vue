@@ -61,54 +61,53 @@
                   </ul>
                 </div>
               </div>
-              <div
-                style="
-    box-shadow: 0px 0px 8px 3px hsla(233, 100%, 46%, 0.4)
-  background-color:white; margin-top:1em; padding-left:1em; padding:1em 1em; color:black"
-                class="edgeradius"
-              >
-                <table>
+
+              <!-- 아래 테이블 -->
+              <div class="mt-4 edgeradius col-12 col-sm-12 col-lg-12">
+                <table class="table ">
                   <tr>
-                    <td>이벤트유형 :</td>
-                    <td>선착순</td>
+                    <th width="40%">이벤트유형</th>
+                    <td width="40%">선착순</td>
                   </tr>
                   <tr>
-                    <td>이벤트명 :</td>
+                    <th>이벤트명</th>
                     <td>구씨성을 가진 3명</td>
                   </tr>
                   <tr>
-                    <td>할인율 :</td>
+                    <th>할인율</th>
                     <td>50%</td>
                   </tr>
                   <tr>
-                    <td>선착순 :</td>
+                    <th>선착순</th>
                     <td>1 / 3 명</td>
                   </tr>
                   <tr>
-                    <td>가게업종 :</td>
+                    <th>가게업종</th>
                     <td>음식점</td>
                   </tr>
                   <tr>
-                    <td>가게명 :</td>
+                    <th>가게명</th>
                     <td>샤브샤브 양평역점</td>
                   </tr>
                   <tr>
-                    <td>전화번호 :</td>
+                    <th>전화번호</th>
                     <td>010-0000-0000</td>
                   </tr>
                   <tr>
-                    <td>주소 :</td>
+                    <th>주소</th>
                     <td>양평역 2번출구</td>
                   </tr>
                 </table>
               </div>
-              <br />
             </div>
 
             <!-- 두번째 행 -->
-            <!-- 첫번째 drops down -->
-            <div class="col">
-              <div class="btn-group" style="padding-right:1em;">
+            <b-container
+              class="mx-3 col edgeradius"
+              style=" height:850px; box-shadow: 0px 0px 8px 3px hsla(260, 100%, 55%, 0.4)"
+            >
+              <!-- 첫번째 drops down -->
+              <!-- <div class="btn-group" style="padding-right:1em;">
                 <button
                   class="btn btn-secondary btn-sm dropdown-toggle"
                   type="button"
@@ -122,9 +121,10 @@
                   <li><a class="dropdown-item" href="#">오름차순</a></li>
                   <li><a class="dropdown-item" href="#">내림차순</a></li>
                 </ul>
-              </div>
+              </div> -->
+
               <!-- 두번째 drops down -->
-              <div class="btn-group">
+              <!-- <div class="btn-group">
                 <button
                   class="btn btn-secondary btn-sm dropdown-toggle"
                   type="button"
@@ -138,35 +138,92 @@
                   <li><a class="dropdown-item" href="#">추천순</a></li>
                   <li><a class="dropdown-item" href="#">선착순</a></li>
                 </ul>
+              </div> -->
+
+              <!-- 새로운 버튼 그룹 -->
+
+              <div class="my-2 float-end ">
+                <b-dropdown size="sm" right text="이름 정렬" class="mx-2">
+                  <b-dropdown-item>오름차순</b-dropdown-item>
+                  <b-dropdown-item>내림차순</b-dropdown-item>
+                </b-dropdown>
+
+                <b-dropdown size="sm" right text="이벤트 정렬" class="mx-2">
+                  <b-dropdown-item>추천순</b-dropdown-item>
+                  <b-dropdown-item>선착순</b-dropdown-item>
+                </b-dropdown>
               </div>
-              <br />
-              <br />
-              <div
-                style=" box-shadow: 0px 0px 8px 3px hsla(260, 100%, 55%, 0.4)
-  background-color:white; padding-left:1em; padding:1em 1em; overflow-y:scroll; width:100%; height:37.8em; background-color: white"
-                class="edgeradius"
-              >
-                <div>
-                  <!-- <div class="mouseimage"> -->
-                  <table style="width:100%">
-                    <tr>
-                      <td rowspan="2" style="text-align:center; width:30%">
-                        <img
-                          src="img/listimage/cogi.jpg"
-                          style="width:6em; height:6em"
-                        />
-                      </td>
-                      <td style="width:35%">샤브샤브 양평역점</td>
-                      <td>30%</td>
-                    </tr>
-                    <tr>
-                      <td>성이 '구' 씨 인분</td>
-                      <td>선착순</td>
-                    </tr>
-                  </table>
-                </div>
-              </div>
-            </div>
+
+              <!-- 카드 리스트 -->
+
+              <!-- b-card -->
+              <b-card style="width:100%" class="mouseimage border">
+                <b-row>
+                  <b-col>
+                    <img src="img/listimage/cogi.jpg" width="100" />
+                  </b-col>
+                  <b-col>
+                    <h4>샤브샤브 양평역점</h4>
+                    <h5>성이 '구' 씨 인분</h5>
+                    <p>선착순</p>
+                    <p>30%</p>
+                  </b-col>
+                </b-row>
+              </b-card>
+
+              <b-card style="width:100%" class="mouseimage border">
+                <b-row>
+                  <b-col>
+                    <img src="img/listimage/cogi.jpg" width="100" />
+                  </b-col>
+                  <b-col>
+                    <h4>샤브샤브 양평역점</h4>
+                    <h5>성이 '구' 씨 인분</h5>
+                    <p>선착순</p>
+                    <p>30%</p>
+                  </b-col>
+                </b-row>
+              </b-card>
+              <b-card style="width:100%" class="mouseimage border">
+                <b-row>
+                  <b-col>
+                    <img src="img/listimage/cogi.jpg" width="100" />
+                  </b-col>
+                  <b-col>
+                    <h4>샤브샤브 양평역점</h4>
+                    <h5>성이 '구' 씨 인분</h5>
+                    <p>선착순</p>
+                    <p>30%</p>
+                  </b-col>
+                </b-row>
+              </b-card>
+              <b-card style="width:100%" class="mouseimage border">
+                <b-row>
+                  <b-col>
+                    <img src="img/listimage/cogi.jpg" width="100" />
+                  </b-col>
+                  <b-col>
+                    <h4>샤브샤브 양평역점</h4>
+                    <h5>성이 '구' 씨 인분</h5>
+                    <p>선착순</p>
+                    <p>30%</p>
+                  </b-col>
+                </b-row>
+              </b-card>
+              <b-card style="width:100%" class="mouseimage border">
+                <b-row>
+                  <b-col>
+                    <img src="img/listimage/cogi.jpg" width="100" />
+                  </b-col>
+                  <b-col>
+                    <h4>샤브샤브 양평역점</h4>
+                    <h5>성이 '구' 씨 인분</h5>
+                    <p>선착순</p>
+                    <p>30%</p>
+                  </b-col>
+                </b-row>
+              </b-card>
+            </b-container>
           </div>
         </div>
       </b-card>
@@ -525,17 +582,17 @@ export default {
 }
 .mouseimage {
   /* position: relative; */
-  margin-left: 1em;
   vertical-align: middle;
-  background: hsl(0, 0%, 98%);
-  transition: 100ms ease;
-  transition-property: transform box-shadow;
-  border-radius: 3px;
+  background: hsl(0, 0%, 100%);
+  transition: 200ms ease;
+  border: 3px hsla(0, 2%, 20%, 0.349);
+  transform: scale(1);
 }
+
 .mouseimage:hover {
-  z-index: 1;
-  transform: scale(2.3);
-  box-shadow: 4px 2px 9px grey;
+  z-index: 2;
+  transform: scale(1.3);
+  box-shadow: 4px 2px 9px rgb(54, 54, 54);
 }
 .map {
   width: 100%;
@@ -614,9 +671,5 @@ export default {
 .b img {
   width: 70%;
   height: 30%;
-}
-
-table {
-  border-bottom: 1px solid black;
 }
 </style>
