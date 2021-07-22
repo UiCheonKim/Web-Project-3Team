@@ -273,6 +273,7 @@ export default {
       this.eventKinds = "추첨";
       this.type = "b";
       this.valid = true;
+      this.valid2 = true;
     },
     first() {
       this.eventKinds = "선착순";
