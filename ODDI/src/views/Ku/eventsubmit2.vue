@@ -279,6 +279,7 @@ export default {
       this.eventKinds = "선착순";
       this.type = "a";
       this.valid = true;
+      this.valid2 = false;
     },
 
     discountrangetclick(range) {
