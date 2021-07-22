@@ -208,7 +208,7 @@ export default {
       //     window.location = "http://localhost:8080/KimTest";
       //   }
       if (this.loginInfo.length == 1) {
-        //window.location = "http://localhost:8080/KimTest";
+        window.location = "http://localhost:8080/KimTest";
         //this.$store.state.loginaccess = "로그아웃";
         console.log(this.loginName);
         this.$store.commit("user", "로그아웃");

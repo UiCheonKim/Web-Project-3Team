@@ -1006,6 +1006,8 @@ export default {
           }
         ]
       });
+      alert("회원가입 되셨습니다");
+      window.location = "http://localhost:8080/KimTest";
     }
   }
 };
