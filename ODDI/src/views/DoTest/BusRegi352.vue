@@ -313,9 +313,32 @@
             </b-card-header>
             <b-card-body class="px-lg-5 py-lg-5">
               <div class="text-center">
-                <b-button type="submit" variant="primary" class="mt-4"
+                <!-- 여기부터 test -->
+
+                <b-button
+                  class="mt-3 float-start"
+                  @click="$bvModal.hide('btnModal')"
+                  >취소하기</b-button
+                >
+                <b-button
+                  @click="
+                    $bvModal.hide('btnModal'), $bvModal.show('cheakModal')
+                  "
+                  type="submit"
+                  variant="primary"
+                  class="mt-4"
                   >입점 신청하기</b-button
                 >
+                <b-modal id="cheakModal" hide-header hide-footer>
+                  <h4 class="float-center">
+                    입점이 성공적으로 신청 되었습니다.
+                    <br />ODDI의 가족이 될 당신을 기다리겠습니다.
+                  </h4>
+                  <b-button class="float-end btn bg-primary" href="/KimTest">
+                    좋아요
+                  </b-button>
+                </b-modal>
+                <!-- 여기까지 -->
               </div>
             </b-card-body>
           </b-card>
