@@ -162,7 +162,8 @@ export default {
       naverLogin: null,
       loginInfo: [],
       loginId: "",
-      loginPassword: ""
+      loginPassword: "",
+      loginName: []
     };
   },
 
@@ -198,15 +199,20 @@ export default {
         param: [this.loginId, this.loginPassword]
       });
 
+      this.loginName = await this.$api("/api/getName", "post", {
+        param: [this.loginId]
+      });
+
       // for (var id of this.loginInfo) {
       //   if (id.user_password == this.loginPassword) {
       //     window.location = "http://localhost:8080/KimTest";
       //   }
       if (this.loginInfo.length == 1) {
-        window.location = "http://localhost:8080/KimTest";
+        //window.location = "http://localhost:8080/KimTest";
         //this.$store.state.loginaccess = "로그아웃";
+        console.log(this.loginName);
         this.$store.commit("user", "로그아웃");
-        this.$store.commit("name", this.loginId);
+        this.$store.commit("name", this.loginName[0].user_name);
         // console.log(this.$store.state.loginaccess);
         //this.goToPages();
       } else if (this.loginId == "" || this.loginPassword == "") {

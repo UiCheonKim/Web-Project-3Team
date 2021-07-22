@@ -133,6 +133,7 @@ fs.watchFile(__dirname + "/sql.js", (curr, prev) => {
 //param이란 키가 들어감 -> req.body.param 에 들어감(배열 등등) where은 아직 안쓰고
 app.post("/api/:alias", async (req, res) => {
   try {
+    console.log(req.body.param);
     res.send(await sys.db(req.params.alias, req.body.param, req.body.where));
   } catch (err) {
     res.status(500).send({

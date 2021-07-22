@@ -158,7 +158,7 @@ export default {
       if (this.$store.state.user == "로그아웃") {
         this.login2 = "";
         this.login = "로그아웃";
-        this.username = "아이디: " + this.$store.state.name;
+        this.username = this.$store.state.name + " 님";
       }
       //this.login = this.$store.state.user;
     },

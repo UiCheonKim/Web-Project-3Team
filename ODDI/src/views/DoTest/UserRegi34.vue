@@ -1001,7 +1001,8 @@ export default {
               "." +
               this.userbirth_mon +
               "." +
-              this.userbirth_day
+              this.userbirth_day,
+            user_name: this.userName
           }
         ]
       });
