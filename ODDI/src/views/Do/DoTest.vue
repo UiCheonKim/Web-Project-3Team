@@ -90,8 +90,7 @@
           <b-card-footer>
             <!-- 페이지네이션 기능입니다. -->
             <b-pagination
-              class="mx-auto"
-              style="width: 200px;"
+              align="center"
               v-model="currentPage"
               :total-rows="rows"
               :per-page="perPage"
@@ -138,8 +137,7 @@
           <b-card-footer>
             <!-- 페이지네이션 기능입니다. -->
             <b-pagination
-              class="mx-auto"
-              style="width: 200px;"
+              align="center"
               v-model="EndcurrentPage"
               :total-rows="rows"
               :per-page="perPage"

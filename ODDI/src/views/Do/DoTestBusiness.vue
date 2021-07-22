@@ -92,8 +92,7 @@
           <b-card-footer>
             <!-- 페이지네이션 기능입니다. -->
             <b-pagination
-              class="mx-auto"
-              style="width: 200px;"
+              align="center"
               v-model="currentPage"
               :total-rows="rows"
               :per-page="perPage"
@@ -142,8 +141,7 @@
           <b-card-footer>
             <!-- 페이지네이션 기능입니다. -->
             <b-pagination
-              class="mx-auto"
-              style="width: 200px;"
+              align="center"
               v-model="EndcurrentPage"
               :total-rows="rows"
               :per-page="perPage"
@@ -284,7 +282,7 @@ export default {
     //이벤트 리스트 Mock 랜더링 기능입니다.
     async getList() {
       this.eventList = await this.$api(
-        "https://4d20c04e-97aa-4c1c-b612-4fe31a4b811c.mock.pstmn.io/eventlist",
+        "https://de123832-0f23-4e14-ae03-1bb6e4de11fb.mock.pstmn.io/eventlist",
         "get"
       );
     },
