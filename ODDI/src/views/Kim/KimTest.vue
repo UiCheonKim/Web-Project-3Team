@@ -67,35 +67,35 @@
                 <table class="table ">
                   <tr>
                     <th width="40%">이벤트유형</th>
-                    <td width="40%">선착순</td>
+                    <td width="40%">{{ eventtype }}</td>
                   </tr>
                   <tr>
                     <th>이벤트명</th>
-                    <td>구씨성을 가진 3명</td>
+                    <td>{{ eventname }}</td>
                   </tr>
                   <tr>
                     <th>할인율</th>
-                    <td>50%</td>
+                    <td>{{ discount }}</td>
                   </tr>
                   <tr>
                     <th>선착순</th>
-                    <td>1 / 3 명</td>
+                    <td>{{ person }}</td>
                   </tr>
                   <tr>
                     <th>가게업종</th>
-                    <td>음식점</td>
+                    <td>{{ shop }}</td>
                   </tr>
                   <tr>
                     <th>가게명</th>
-                    <td>샤브샤브 양평역점</td>
+                    <td>{{ shopname }}</td>
                   </tr>
                   <tr>
                     <th>전화번호</th>
-                    <td>010-0000-0000</td>
+                    <td>{{ phone }}</td>
                   </tr>
                   <tr>
                     <th>주소</th>
-                    <td>양평역 2번출구</td>
+                    <td>{{ address }}</td>
                   </tr>
                 </table>
               </div>
@@ -157,13 +157,17 @@
               <!-- 카드 리스트 -->
 
               <!-- b-card -->
-              <b-card style="width:100%" class="mouseimage border">
+              <b-card
+                style="width:100%"
+                class="mouseimage border"
+                @click="detail(1)"
+              >
                 <b-row>
                   <b-col>
-                    <img src="img/listimage/cogi.jpg" width="100" />
+                    <img src="img/listimage/pizza.jpg" width="100" />
                   </b-col>
                   <b-col>
-                    <h4>샤브샤브 양평역점</h4>
+                    <h4>한경 피자 양평역점</h4>
                     <h5>성이 '구' 씨 인분</h5>
                     <p>선착순</p>
                     <p>30%</p>
@@ -171,16 +175,24 @@
                 </b-row>
               </b-card>
 
-              <b-card style="width:100%" class="mouseimage border">
+              <b-card
+                style="width:100%"
+                class="mouseimage border"
+                @click="detail(2)"
+              >
                 <b-row>
                   <b-col>
-                    <img src="img/listimage/cogi.jpg" width="100" />
+                    <img
+                      src="img/listimage/chicken.jpg"
+                      width="100"
+                      height="100"
+                    />
                   </b-col>
                   <b-col>
-                    <h4>샤브샤브 양평역점</h4>
-                    <h5>성이 '구' 씨 인분</h5>
+                    <h4>닷컴 치킨 한경점</h4>
+                    <h5>검은색 반팔 옷을 입은 분</h5>
                     <p>선착순</p>
-                    <p>30%</p>
+                    <p>50%</p>
                   </b-col>
                 </b-row>
               </b-card>
@@ -236,6 +248,14 @@ export default {
   components: {},
   data() {
     return {
+      eventtype: "",
+      eventname: "",
+      discount: "",
+      person: "",
+      shop: "",
+      shopname: "",
+      phone: "",
+      address: "",
       lat: 0, // 위도
       lon: 0, // 경도
       locPosition: 0,
@@ -250,8 +270,8 @@ export default {
       storeMarkers: [],
       //커피숍
       coffeePositions: [
-        new window.kakao.maps.LatLng(37.525161040599585, 126.88869378096824),
-        new window.kakao.maps.LatLng(37.52512874051384, 126.88788496742713),
+        new window.kakao.maps.LatLng(37.52447440324203, 126.8867207437075),
+        new window.kakao.maps.LatLng(37.524033413655424, 126.8920666061318),
         new window.kakao.maps.LatLng(37.524860060129626, 126.8896049011449),
         new window.kakao.maps.LatLng(37.52563308042188, 126.88765229976035),
         new window.kakao.maps.LatLng(37.52521776125144, 126.88675355800514),
@@ -267,8 +287,8 @@ export default {
         new window.kakao.maps.LatLng(37.52675285151404, 126.89034311302801)
       ],
       coffeeEvents: [
-        '<div style="padding:5px;">첫번째 이벤트</div>',
-        '<div style="padding:5px;">두번째 이벤트</div>',
+        '<div style="padding:0.2em">첫번째 이벤트</div>',
+        '<div style="padding:0.2em">두번째 이벤트</div>',
         '<div style="padding:5px;">세번째 이벤트</div>',
         '<div style="padding:5px;">네번째 이벤트</div>',
         '<div style="padding:5px;">다섯번째 이벤트</div>',
@@ -277,10 +297,10 @@ export default {
 
         '<div style="padding:5px;">여덟번째 이벤트</div>',
         '<div style="padding:5px;">아홈번째 이벤트</div>',
-        '<div style="padding:5px;">열번째 이벤트</div>',
+        '<div style="padding:5px;">한경 피자 양평역점</div>',
         '<div style="padding:5px;">열한번째 이벤트</div>',
         '<div style="padding:5px;">열두번째 이벤트</div>',
-        '<div style="padding:5px;">열세번째 이벤트</div>',
+        '<div style="padding:5px;">닷컴 치킨 한경점</div>',
         '<div style="padding:5px;">열네번째 이벤트</div>'
       ],
       //편의점
@@ -337,11 +357,11 @@ export default {
       if (navigator.geolocation) {
         // GeoLocation을 이용해서 접속 위치를 얻어옵니다
         navigator.geolocation.getCurrentPosition(position => {
-          //this.lat = 37.52558; // 위도
-          //this.lon = 126.88887; // 경도
+          this.lat = 37.52564327826288; // 위도
+          this.lon = 126.88890800819377; // 경도
 
-          this.lat = position.coords.latitude; // 위도
-          this.lon = position.coords.longitude; // 경도
+          //this.lat = position.coords.latitude; // 위도
+          //this.lon = position.coords.longitude; // 경도
           this.initMap();
         });
       } else {
@@ -442,13 +462,35 @@ export default {
           "mouseout",
           this.makeOutListener(infowindow)
         );
-        window.kakao.maps.event.addListener(marker, "click", this.aaa());
+        window.kakao.maps.event.addListener(
+          marker,
+          "click",
+          this.aaa(this.coffeeEvents[i])
+        );
       }
     },
 
-    aaa() {
+    aaa(coffee) {
       return () => {
-        console.log("adfefe");
+        if (coffee.indexOf("한경") > -1) {
+          this.eventtype = "선착순";
+          this.eventname = "성이 '구'씨 인분";
+          this.discount = "30%";
+          this.person = "현재 1 / 5 명";
+          this.shop = "음식점";
+          this.address = "양평역 2번출구";
+          this.shopname = "한경 피자 양평역점";
+          this.phone = "777-7777-7777";
+        } else if (coffee.indexOf("닷컴") > -1) {
+          this.eventtype = "선착순";
+          this.eventname = "검은색 반팔 옷을 입은 분";
+          this.discount = "50%";
+          this.person = "현재 3 / 7 명";
+          this.shop = "음식점";
+          this.address = "양평역 해피건물 1층";
+          this.shopname = "닷컴 치킨 한경점";
+          this.phone = "111-1111-1111";
+        }
       };
     },
     // 마커이미지의 주소와, 크기, 옵션으로 마커 이미지를 생성하여 리턴하는 함수입니다
@@ -568,6 +610,27 @@ export default {
 
         this.setStoreMarkers(this.map);
         //setCarparkMarkers(null);
+      }
+    },
+    detail(num) {
+      if (num == 1) {
+        this.eventtype = "선착순";
+        this.eventname = "성이 '구'씨 인분";
+        this.discount = "30%";
+        this.person = "현재 1 / 5 명";
+        this.shop = "음식점";
+        this.address = "양평역 2번출구";
+        this.shopname = "한경 피자 양평역점";
+        this.phone = "777-7777-7777";
+      } else if (num == 2) {
+        this.eventtype = "선착순";
+        this.eventname = "검은색 반팔 옷을 입은 분";
+        this.discount = "50%";
+        this.person = "현재 3 / 7 명";
+        this.shop = "음식점";
+        this.address = "양평역 해피건물 1층";
+        this.shopname = "닷컴 치킨 한경점";
+        this.phone = "111-1111-1111";
       }
     }
   }
